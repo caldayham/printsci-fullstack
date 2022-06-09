@@ -1,5 +1,12 @@
+import Home from "./pages/Home";
+import { Body } from "./styles";
+
 const App = () => {
-  return <div>Hello world!</div>;
+  return (
+    <Body>
+      <Home />
+    </Body>
+  );
 };
 
 export default App;
