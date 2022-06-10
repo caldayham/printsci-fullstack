@@ -6,7 +6,8 @@ const Container = styled.div`
   top: 50px;
   width: 100vw;
   z-index: 3;
-  background-color: #ffffff;
+  background-color: rgb(0, 0, 0, 0.9);
+  color: white;
 `;
 
 const LogoImage = styled.img`
@@ -38,6 +39,7 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  background-color: rgb(255, 255, 255);
 `;
 
 const Input = styled.input`

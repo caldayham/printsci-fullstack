@@ -1,10 +1,13 @@
-import { Container } from "./styles";
+import { Container, BannerTitle, BannerTitleBold } from "./styles";
 
 const Announcement = () => {
   return (
     <Container>
-      Get the best custom parts, now with FREE SUMMER SHIPPING on orders over
-      $100!
+      <BannerTitle>
+        Get the best custom parts... with
+        <BannerTitleBold>FREE SUMMER SHIPPING </BannerTitleBold>on orders over
+        $100!
+      </BannerTitle>
     </Container>
   );
 };

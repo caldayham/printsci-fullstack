@@ -25,7 +25,9 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <YoutubeSearchedForIcon style={{ color: "gray", fontSize: 16 }} />
+            <YoutubeSearchedForIcon
+              style={{ color: "rgb(40,40,40)", fontSize: 20 }}
+            />
           </SearchContainer>
         </Left>
         <Center>
@@ -36,7 +38,7 @@ const Navbar = () => {
           <MenuItem>Register</MenuItem>
           <MenuItem>Sign In</MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={4} color="secondary">
               <ShoppingBagOutlinedIcon />
             </Badge>
           </MenuItem>
