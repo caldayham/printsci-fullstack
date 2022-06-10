@@ -3,7 +3,7 @@ export const sliderItems = [
         id: 1,
         img: "/TFlow_prone_img4.PNG",
         title: ["Choose two:", " high quality, low price"],
-        desc: "Don't compremise on the equipment you use most, order today for 20% off your first purchase!",
+        desc: "Don't compremise on the equipment your researchers use most.",
         bg: "f5fafd",
     },
     {
@@ -37,5 +37,23 @@ export const categories = [
         id: 3,
         img: "/TabConnect_img1.PNG",
         title: "Custom Parts",
+    },
+]
+
+export const products = [
+    {
+        id: 1,
+        img: "/TFlow_prone_img4.PNG",
+        title: "TFlow Nose Cone",
+    },
+    {
+        id: 1,
+        img: "/TFlow_prone_img4.PNG",
+        title: "SteriFlow Mask",
+    },
+    {
+        id: 1,
+        img: "/TFlow_prone_img4.PNG",
+        title: "TabConnect",
     },
 ]
