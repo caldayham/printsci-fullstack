@@ -1,12 +1,13 @@
 import React from "react";
-import { Container, Left, Center, Right, LogoImage, Logo } from "./styles.jsx";
+import { Container, Left, Center, Right } from "./styles.jsx";
+import { LogoImage, LogoTitle } from "../../globalStyles";
 
 const Footer = () => {
   return (
     <Container>
       <Left>
         <LogoImage src="/favicon.ico" alt="image" />
-        <Logo>Print Scientific</Logo>
+        <LogoTitle>Print Scientific</LogoTitle>
       </Left>
       <Center></Center>
       <Right></Right>

@@ -17,4 +17,13 @@ const ShopNowButton = styled.button`
   }
 `;
 
-export { Body, ShopNowButton };
+const LogoImage = styled.img`
+  width: 60px;
+  padding-right: 20px;
+`;
+
+const LogoTitle = styled.h1`
+  font-weight: bold;
+`;
+
+export { Body, ShopNowButton, LogoImage, LogoTitle };

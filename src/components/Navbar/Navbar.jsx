@@ -8,10 +8,9 @@ import {
   Input,
   Center,
   Right,
-  Logo,
   MenuItem,
-  LogoImage,
 } from "./styles.jsx";
+import { LogoImage, LogoTitle } from "../../globalStyles";
 
 import { Badge } from "@mui/material";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
@@ -32,7 +31,7 @@ const Navbar = () => {
         </Left>
         <Center>
           <LogoImage src="/favicon.ico" alt="image" />
-          <Logo>Print Scientific</Logo>
+          <LogoTitle>Print Scientific</LogoTitle>
         </Center>
         <Right>
           <MenuItem>Register</MenuItem>

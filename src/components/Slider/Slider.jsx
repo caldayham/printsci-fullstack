@@ -9,7 +9,7 @@ import {
   Title,
   Desc,
 } from "./styles";
-import { ShopNowButton } from "../../styles";
+import { ShopNowButton } from "../../globalStyles";
 import { useState } from "react";
 
 import KeyboardDoubleArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftOutlined";

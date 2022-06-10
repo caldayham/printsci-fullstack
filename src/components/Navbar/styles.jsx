@@ -5,14 +5,9 @@ const Container = styled.div`
   position: fixed;
   top: 50px;
   width: 100vw;
-  z-index: 3;
+  z-index: 5;
   background-color: rgb(0, 0, 0, 0.9);
   color: white;
-`;
-
-const LogoImage = styled.img`
-  width: 60px;
-  padding-right: 20px;
 `;
 
 const Wrapper = styled.div`
@@ -53,10 +48,6 @@ const Center = styled.div`
   justify-content: flex-start;
 `;
 
-const Logo = styled.h1`
-  font-weight: bold;
-`;
-
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -73,14 +64,12 @@ const MenuItem = styled.div`
 
 export {
   Container,
-  LogoImage,
   Wrapper,
   Left,
   Language,
   SearchContainer,
   Input,
   Center,
-  Logo,
   Right,
   MenuItem,
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Image, Info, Title } from "./styles";
-import { ShopNowButton } from "../../../styles";
+import { ShopNowButton } from "../../../globalStyles";
 
 const CategoryItem = ({ item }) => {
   return (
