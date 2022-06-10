@@ -1,10 +1,12 @@
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
+import ProductList from "./pages/ProductList/ProductList";
+
 import { Body } from "./globalStyles";
 
 const App = () => {
   return (
     <Body>
-      <Home />
+      <ProductList />
     </Body>
   );
 };
