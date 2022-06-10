@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Image, Info, Title, Button } from "./styles";
+import { Container, Image, Info, Title } from "./styles";
+import { ShopNowButton } from "../../../styles";
 
 const CategoryItem = ({ item }) => {
   return (
@@ -7,7 +8,7 @@ const CategoryItem = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button>SHOP NOW</Button>
+        <ShopNowButton>SHOP NOW</ShopNowButton>
       </Info>
     </Container>
   );

@@ -8,8 +8,8 @@ import {
   Image,
   Title,
   Desc,
-  Button,
 } from "./styles";
+import { ShopNowButton } from "../../styles";
 import { useState } from "react";
 
 import KeyboardDoubleArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftOutlined";
@@ -34,7 +34,7 @@ const Slider = () => {
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
-          <Slide bg={item.bg}>
+          <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
               <Image src={item.img} />
             </ImgContainer>
@@ -45,7 +45,7 @@ const Slider = () => {
                 {item.title[1]}
               </Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOP NOW</Button>
+              <ShopNowButton>SHOP NOW</ShopNowButton>
             </InfoContainer>
           </Slide>
         ))}

@@ -1,22 +1,22 @@
 export const sliderItems = [
     {
         id: 1,
-        img: "/TFlow_prone_img4.PNG",
+        img: "/images/TFlow_prone_img4.PNG",
         title: ["Choose two:", " high quality, low price"],
         desc: "Don't compremise on the equipment your researchers use most.",
         bg: "f5fafd",
     },
     {
         id: 2,
-        img: "/SLA_SteriFlow_assembly_img2.PNG",
-        title: ["Choose two:", " high quality, low price"],
+        img: "/images/SLA_SteriFlow_assembly_img2.PNG",
+        title: ["Custom order?", "No problemo"],
         desc: "All stereotaxic anesthesia masks are 20% off!",
         bg: "fcf1ed",
     },
     {
         id: 3,
-        img: "/TabConnect_img1.PNG",
-        title: ["Choose two:", " high quality, low price"],
+        img: "/images/TabConnect_img1.PNG",
+        title: ["You know the part,", "we know the path."],
         desc: "Custom parts are SHIPPED FREE on orders over $100 this summer! ",
         bg: "fbf0f4",
     },
@@ -25,35 +25,60 @@ export const sliderItems = [
 export const categories = [
     {
         id: 1,
-        img: "/TFlow_prone_img4.PNG",
+        img: "/images/TFlow_prone_img4.PNG",
         title: "Hardware",
     },
     {
         id: 2,
-        img: "/SLA_SteriFlow_assembly_img2.PNG",
+        img: "/images/SLA_SteriFlow_assembly_img2.PNG",
         title: "Anesthesia",
     },
     {
         id: 3,
-        img: "/TabConnect_img1.PNG",
+        img: "/images/TabConnect_img1.PNG",
         title: "Custom Parts",
     },
 ]
 
-export const products = [
+export const popularProducts = [
     {
         id: 1,
-        img: "/TFlow_prone_img4.PNG",
+        img: "/images/TFlow_prone_img4.PNG",
         title: "TFlow Nose Cone",
     },
     {
-        id: 1,
-        img: "/TFlow_prone_img4.PNG",
+        id: 2,
+        img: "/images/TFlow_prone_img4.PNG",
         title: "SteriFlow Mask",
     },
     {
-        id: 1,
-        img: "/TFlow_prone_img4.PNG",
+        id: 3,
+        img: "/images/TFlow_prone_img4.PNG",
         title: "TabConnect",
+    },
+    {
+        id: 4,
+        img: "/images/TFlow_prone_img4.PNG",
+        title: "TFlow Nose Cone",
+    },
+    {
+        id: 5,
+        img: "/images/TFlow_prone_img4.PNG",
+        title: "SteriFlow Mask",
+    },
+    {
+        id: 6,
+        img: "/images/TFlow_prone_img4.PNG",
+        title: "TabConnect",
+    },
+    {
+        id: 7,
+        img: "/images/TFlow_prone_img4.PNG",
+        title: "TFlow Nose Cone",
+    },
+    {
+        id: 8,
+        img: "/images/TFlow_prone_img4.PNG",
+        title: "SteriFlow Mask",
     },
 ]

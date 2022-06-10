@@ -30,12 +30,5 @@ const Title = styled.h1`
   color: white;
   margin-bottom: 20px;
 `;
-const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
-  background-color: white;
-  color: rgb(10, 10, 10);
-  cursor: pointer;
-`;
 
-export { Container, Image, Info, Title, Button };
+export { Container, Image, Info, Title };
