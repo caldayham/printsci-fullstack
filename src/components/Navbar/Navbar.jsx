@@ -9,6 +9,9 @@ import {
   Center,
   Right,
   MenuItem,
+  Logo,
+  NavLinkBar,
+  Link,
 } from "./styles.jsx";
 import { LogoImage, LogoTitle } from "../../globalStyles";
 
@@ -30,8 +33,14 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <LogoImage src="/favicon.ico" alt="image" />
-          <LogoTitle>Print Scientific</LogoTitle>
+          <Logo>
+            <LogoImage src="/favicon.ico" alt="image" />
+            <LogoTitle>Print Scientific</LogoTitle>
+          </Logo>
+          <NavLinkBar>
+            <Link>Home</Link>
+            <Link>Catalogue</Link>
+          </NavLinkBar>
         </Center>
         <Right>
           <MenuItem>Register</MenuItem>

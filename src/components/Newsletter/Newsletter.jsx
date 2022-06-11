@@ -12,7 +12,7 @@ import SendIcon from "@mui/icons-material/Send";
 const Newsletter = () => {
   return (
     <Container>
-      <Title>NewsLetter</Title>
+      <Title>Newsletter</Title>
       <Desc>Constantly improving. We never spam email.</Desc>
       <InputContainer>
         <Input placeholder="Your email" />

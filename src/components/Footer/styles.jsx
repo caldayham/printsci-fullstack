@@ -4,8 +4,6 @@ const Container = styled.div`
   display: flex;
   background-color: rgb(0, 0, 0, 0.95);
   color: white;
-  position: fixed;
-  bottom: 0px;
 `;
 
 const Left = styled.div`

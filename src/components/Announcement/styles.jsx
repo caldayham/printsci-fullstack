@@ -22,7 +22,7 @@ const BannerTitle = styled.h1`
   display: flex;
 `;
 
-const BannerTitleBold = styled.h1`
+const BannerTitleBold = styled.div`
   letter-spacing: 2px;
   font-size: 24px;
   font-weight: 900;

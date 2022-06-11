@@ -62,6 +62,24 @@ const MenuItem = styled.div`
   margin-left: 25px;
 `;
 
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const NavLinkBar = styled.div`
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: space-between;
+  padding: 0% 10% 0% 10%;
+`;
+
+const Link = styled.p`
+  font-size: 20px;
+  font-weight: 200;
+`;
+
 export {
   Container,
   Wrapper,
@@ -72,4 +90,7 @@ export {
   Center,
   Right,
   MenuItem,
+  Logo,
+  NavLinkBar,
+  Link,
 };

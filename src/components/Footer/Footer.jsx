@@ -12,7 +12,6 @@ import {
   List,
   ListItem,
   ContactItem,
-  ContactItemDesc,
   Payment,
 } from "./styles.jsx";
 import { LogoImage, LogoTitle } from "../../globalStyles";

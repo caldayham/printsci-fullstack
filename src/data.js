@@ -25,7 +25,7 @@ export const sliderItems = [
 export const categories = [
     {
         id: 1,
-        img: "/images/TFlow_prone_img4.PNG",
+        img: "/images/SLA_SteriFlow_assembly_img1.PNG",
         title: "Hardware",
     },
     {
@@ -43,7 +43,7 @@ export const categories = [
 export const popularProducts = [
     {
         id: 1,
-        img: "/images/TFlow_prone_img4.PNG",
+        img: "/images/EvenFlow_Open1_img1.PNG",
         title: "TFlow Nose Cone",
     },
     {
@@ -53,7 +53,7 @@ export const popularProducts = [
     },
     {
         id: 3,
-        img: "/images/TFlow_prone_img4.PNG",
+        img: "/images/StableFlow_Box1_img3.PNG",
         title: "TabConnect",
     },
     {
