@@ -10,9 +10,6 @@ import {
   Price,
   FilterSize,
   FilterMaterial,
-  AddContainer,
-  AmountContainer,
-  Amount,
   ProductCheckoutWrapper,
   ProductCheckout,
   ActionBin,
@@ -30,7 +27,7 @@ import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Newsletter from "../../components/Newsletter/Newsletter";
-import { Add, Remove } from "@mui/icons-material";
+import ProductAmount from "../../components/SubComponents/ProductAmount/ProductAmount";
 
 const ProductPage = () => {
   return (
@@ -75,13 +72,7 @@ const ProductPage = () => {
           <ProductCheckout>
             <SetupBin>
               <Price>$87.42 </Price>
-              <AddContainer>
-                <AmountContainer>
-                  <Remove />
-                  <Amount>2</Amount>
-                  <Add />
-                </AmountContainer>
-              </AddContainer>
+              <ProductAmount />
             </SetupBin>
             <ActionBin>
               <CheckoutButton>Add to Cart</CheckoutButton>

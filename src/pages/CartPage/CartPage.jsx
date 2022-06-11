@@ -22,7 +22,9 @@ import {
   ProductMaterial,
   ProductSize,
   PriceDetail,
+  MaterialSwatch,
 } from "./styles";
+import ProductAmount from "../../components/SubComponents/ProductAmount/ProductAmount";
 
 const CartPage = () => {
   return (
@@ -43,23 +45,26 @@ const CartPage = () => {
           <Info>
             <Product>
               <ProductDetail>
-                <Image src="" />
+                <Image src="/images/StableFlow_Box1_img2.PNG" />
                 <Details>
                   <ProductName>
-                    <b>Product:</b>TFlow Nonstereotaxic Anesthesia Nose Cone
+                    <b>Product:</b> TFlow Nonstereotaxic Anesthesia Nose Cone
                   </ProductName>
                   <ProductId>
                     <b>ID:</b> 21613
                   </ProductId>
                   <ProductMaterial>
                     <b>Material:</b> PLA Plastic
+                    <MaterialSwatch color="#cf7500" />
                   </ProductMaterial>
                   <ProductSize>
                     <b>Size:</b> Medium
                   </ProductSize>
                 </Details>
               </ProductDetail>
-              <PriceDetail>price</PriceDetail>
+              <PriceDetail>
+                <ProductAmount />
+              </PriceDetail>
             </Product>
           </Info>
           <Summary>summary</Summary>

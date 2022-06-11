@@ -52,16 +52,52 @@ const Summary = styled.div`
   flex: 1;
 `;
 
-const Product = styled.div``;
-const ProductDetail = styled.div``;
-const Image = styled.img``;
-const Details = styled.div``;
-const ProductName = styled.div``;
-const ProductId = styled.div``;
-const ProductMaterial = styled.div``;
-const ProductSize = styled.div``;
+const Product = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
-const PriceDetail = styled.div``;
+const ProductDetail = styled.div`
+  display: flex;
+  flex: 2;
+`;
+
+const Image = styled.img`
+  width: 200px;
+`;
+
+const Details = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+const ProductName = styled.span``;
+const ProductId = styled.span``;
+
+const ProductMaterial = styled.span`
+  display: flex;
+`;
+
+const MaterialSwatch = styled.div`
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  border-radius: 50%;
+
+  background-color: ${(props) => props.color};
+`;
+
+const ProductSize = styled.span``;
+
+const PriceDetail = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 export {
   Product,
@@ -83,4 +119,5 @@ export {
   TopText,
   TopTexts,
   PriceDetail,
+  MaterialSwatch,
 };
