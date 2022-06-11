@@ -28,7 +28,13 @@ const TopButton = styled.button`
   background-color: white;
 
   background-color: ${(props) =>
-    props.type === "filled" ? "#d9ebfc" : "transparent"};
+    props.type === "filled" ? "rgb(25, 25, 25)" : "transparent"};
+  color: ${(props) => (props.type === "filled" ? "white" : "black")};
+
+  &:hover {
+    background-color: ${(props) =>
+      props.type === "filled" ? "rgb(0, 0, 0)" : "rgb(238, 238, 238)"};
+  }
 `;
 
 const TopTexts = styled.div``;
@@ -48,8 +54,10 @@ const Info = styled.div`
   flex: 3;
 `;
 
-const Summary = styled.div`
-  flex: 1;
+const Hr = styled.hr`
+  background-color: #eee;
+  border: none;
+  height: 1px;
 `;
 
 const Product = styled.div`
@@ -99,7 +107,57 @@ const PriceDetail = styled.div`
   justify-content: center;
 `;
 
+const ProductPrice = styled.h1`
+  font-weight: 200;
+  font-size: 32px;
+`;
+
+const Summary = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: right;
+`;
+
+const SummaryTitle = styled.h1`
+  font-weight: 200;
+  font-size: 180%;
+`;
+
+const SummaryItem = styled.div`
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: ${(props) => (props.type === "total" ? "500" : "200")};
+  font-size: ${(props) => (props.type === "total" ? "24px" : "16px")};
+`;
+
+const SummaryItemText = styled.span``;
+
+const SummaryItemPrice = styled.span``;
+
+const ProductCheckout = styled.div`
+  padding: 50px;
+  height: 50%;
+  width: 15%;
+  margin: 20px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: white;
+`;
+
 export {
+  ProductCheckout,
+  SummaryItem,
+  SummaryItemText,
+  SummaryTitle,
+  Hr,
+  ProductPrice,
   Product,
   ProductDetail,
   Image,
@@ -120,4 +178,5 @@ export {
   TopTexts,
   PriceDetail,
   MaterialSwatch,
+  SummaryItemPrice,
 };

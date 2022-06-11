@@ -100,6 +100,15 @@ const ActionBin = styled.div`
   width: 100%;
 `;
 
+const AddContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  height: 40px;
+  width: 100%;
+  background-color: red;
+`;
+
 export {
   Container,
   Wrapper,
@@ -115,4 +124,5 @@ export {
   ProductCheckout,
   ActionBin,
   SetupBin,
+  AddContainer,
 };

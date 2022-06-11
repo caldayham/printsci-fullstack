@@ -54,14 +54,14 @@ const Select = styled.select`
 const CheckoutButton = styled.button`
   padding: 5px 10px 5px 10px;
   margin: 5px 0px 5px 0px;
-  background-color: #d9ebfc;
-  color: black;
+  background-color: rgb(25, 25, 25);
+  color: white;
   font-size: 16px;
   font-weight: 500;
   transition: all 0.1s ease;
 
   &:hover {
-    background-color: rgb(111, 171, 228);
+    background-color: rgb(0, 0, 0);
   }
 `;
 

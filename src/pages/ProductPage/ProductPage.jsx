@@ -14,6 +14,7 @@ import {
   ProductCheckout,
   ActionBin,
   SetupBin,
+  AddContainer,
 } from "./styles";
 import {
   FilterContainer,
@@ -72,7 +73,9 @@ const ProductPage = () => {
           <ProductCheckout>
             <SetupBin>
               <Price>$87.42 </Price>
-              <ProductAmount />
+              <AddContainer>
+                <ProductAmount />
+              </AddContainer>
             </SetupBin>
             <ActionBin>
               <CheckoutButton>Add to Cart</CheckoutButton>

@@ -1,17 +1,9 @@
 import styled from "styled-components";
 
-const AddContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: top;
-  height: 40px;
-  width: 100%;
-`;
-
 const AmountContainer = styled.div`
   display: flex;
   border: 1px solid rgb(0, 0, 0);
-  width: 50%;
+  width: 100px;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(255, 255, 255);
@@ -31,4 +23,4 @@ const Amount = styled.div`
   color: black;
 `;
 
-export { AddContainer, AmountContainer, Amount };
+export { AmountContainer, Amount };
