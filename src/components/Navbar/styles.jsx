@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
 const Container = styled.div`
   height: auto;
@@ -8,6 +9,7 @@ const Container = styled.div`
   z-index: 5;
   background-color: rgb(0, 0, 0, 0.9);
   color: white;
+  ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
