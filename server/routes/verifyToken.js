@@ -19,9 +19,9 @@ const verifyTokenAndAuth = (req, res, next) => {
     verifyToken(req, res, () => {
 
         console.log(req.params);
-        req.params.id = (req.params.id).trim(" ");
+        req.params.id = (req.params.id).trim(" "); 
         
-        if (req.user.id === (req.params.id)|| req.user.isAdmin) {
+        if (req.user.id === (req.params.id) || req.user.isAdmin) {
             next();
         }else{
             res.status(403).json("not allowed, sorry");
@@ -31,13 +31,11 @@ const verifyTokenAndAuth = (req, res, next) => {
 
 const verifyTokenAndAdmin = (req, res, next) => {
     verifyToken(req, res, () => {
-
-        console.log(req.params);
         
         if (req.user.isAdmin) {
             next();
         }else{
-            res.status(403).json("not allowed, sorry");
+            res.status(403).json("not allowed, sorry (THIS IS ADMIN VERIFY)");
         }
     });
 };
