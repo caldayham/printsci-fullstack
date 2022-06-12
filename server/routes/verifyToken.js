@@ -2,25 +2,44 @@ const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers.token
-    if (authHeader) {
+    if (authHeader) { 
+
+        const token = authHeader.split(" ")[1];
         jwt.verify(token, process.env.JWT_SEC, (err, user) => {
             if (err) return res.status(401).json("you're not authenticated");
             req.user = user;
             next();
         })
     } else {
-        return res.status(401).json("you're not authenticated");
+        return res.status(401).json("you're not authenticated, bad header token");
     }
 };
 
 const verifyTokenAndAuth = (req, res, next) => {
     verifyToken(req, res, () => {
-        if (req.user.id === req.params.id || req.user.isAdmin) {
-            next()
-        } else {
+
+        console.log(req.params);
+        req.params.id = (req.params.id).trim(" ");
+        
+        if (req.user.id === (req.params.id)|| req.user.isAdmin) {
+            next();
+        }else{
             res.status(403).json("not allowed, sorry");
         }
     });
 };
 
-module.exports = { verifyToken, verifyTokenAndAuth }; 
+const verifyTokenAndAdmin = (req, res, next) => {
+    verifyToken(req, res, () => {
+
+        console.log(req.params);
+        
+        if (req.user.isAdmin) {
+            next();
+        }else{
+            res.status(403).json("not allowed, sorry");
+        }
+    });
+};
+
+module.exports = { verifyToken, verifyTokenAndAuth, verifyTokenAndAdmin}; 
