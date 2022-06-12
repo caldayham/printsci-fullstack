@@ -106,7 +106,6 @@ const AddContainer = styled.div`
   align-items: top;
   height: 40px;
   width: 100%;
-  background-color: red;
 `;
 
 export {
