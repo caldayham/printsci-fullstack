@@ -19,7 +19,10 @@ const verifyTokenAndAuth = (req, res, next) => {
     verifyToken(req, res, () => {
 
         console.log(req.params);
-        req.params.id = (req.params.id).trim(" "); 
+        console.log("verifytokenandauth was called");
+        console.log(req.user);
+
+        req.params.id ? (req.params.id).trim(" ") : console.log("no params.id"); 
         
         if (req.user.id === (req.params.id) || req.user.isAdmin) {
             next();
