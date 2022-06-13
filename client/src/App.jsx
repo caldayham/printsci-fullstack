@@ -7,11 +7,17 @@ import NotFound404Page from "./pages/NotFound404Page/NotFound404Page";
 
 import { Body } from "./globalStyles";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 const App = () => {
   return (
-    <Body>
-      <HomePage />
-    </Body>
+    <Router>
+      <Routes>
+        <Route path="/">
+          <HomePage />
+        </Route>
+      </Routes>
+    </Router>
   );
 };
 
