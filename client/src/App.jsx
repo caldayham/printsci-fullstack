@@ -10,7 +10,7 @@ import { Body } from "./globalStyles";
 const App = () => {
   return (
     <Body>
-      <CartPage />
+      <HomePage />
     </Body>
   );
 };

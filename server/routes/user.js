@@ -48,11 +48,11 @@ router.get("/find/:id", verifyTokenAndAdmin, async (req, res) => {
 //GET ALL USERS
 router.get("/find", verifyTokenAndAdmin, async (req, res) => {
 
-    const queryNew = req.query.new
-    const queryNum = req.query.num
+    const qNew = req.query.new
+    const qNum = req.query.num
 
    try {
-    const users = queryNew ? await User.find().sort({ _id: -1 }).limit(queryNum ? queryNum : 2) : await User.find();
+    const users = qNew ? await User.find().sort({ _id: -1 }).limit(qNum ? qNum : 2) : await User.find();
 
        // remove encrypted password from the array of users
        console.log(users);
