@@ -1,4 +1,5 @@
 import React from "react";
+import {} from "../../globalStyles";
 import {
   Container,
   Wrapper,
@@ -11,13 +12,18 @@ import {
   MenuItem,
   Logo,
   NavLinkBar,
-  Link,
+  Link as LocalLink,
+  LogoImage,
+  LogoImageBox,
+  LogoTitle,
+  LocalMinorLink,
 } from "./styles.jsx";
-import { LogoImage, LogoTitle } from "../../globalStyles";
 
 import { Badge } from "@mui/material";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -33,18 +39,53 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>
-            <LogoImage src="/favicon.ico" alt="image" />
-            <LogoTitle>Print Scientific</LogoTitle>
-          </Logo>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Logo>
+              <LogoImageBox>
+                <LogoImage src="/favicon.ico" alt="image" />
+              </LogoImageBox>
+              <LogoTitle>Print Scientific</LogoTitle>
+            </Logo>
+          </Link>
           <NavLinkBar>
-            <Link>Home</Link>
-            <Link>Catalogue</Link>
+            <Link
+              to="/catalogue"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <LocalLink>Catalogue</LocalLink>
+            </Link>
+            <Link
+              to="/custom"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <LocalLink>Custom</LocalLink>
+            </Link>
+            <Link
+              to="/research"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <LocalLink>Research</LocalLink>
+            </Link>
+            <Link
+              to="/about"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <LocalLink>About Us</LocalLink>
+            </Link>
           </NavLinkBar>
         </Center>
         <Right>
-          <MenuItem>Register</MenuItem>
-          <MenuItem>Sign In</MenuItem>
+          <MenuItem>
+            <Link
+              to="/about"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <LocalMinorLink>
+                Login or <br />
+                Register
+              </LocalMinorLink>
+            </Link>
+          </MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
               <ShoppingBagOutlinedIcon />

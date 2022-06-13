@@ -64,22 +64,63 @@ const MenuItem = styled.div`
   margin-left: 25px;
 `;
 
+const LogoImageBox = styled.div`
+  width: 70px;
+  height: 70px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const LogoImage = styled.img`
+  display: flex;
+  width: 90%;
+  transition: all 0.1s ease;
+`;
+
+const LogoTitle = styled.h1`
+  font-weight: bold;
+  font-size: 30px;
+  transition: all 0.1s ease;
+  line-height: 90%;
+`;
+
 const Logo = styled.div`
   display: flex;
   align-items: center;
+  color: white;
+  width: 250px;
+  height: 60px;
+
+  &:hover ${LogoImage} {
+    width: 100%;
+  }
+  &:hover ${LogoTitle} {
+    font-size: 32px;
+  }
 `;
 
 const NavLinkBar = styled.div`
   display: flex;
   align-items: center;
-  width: 20%;
+  width: 50%;
   justify-content: space-between;
   padding: 0% 10% 0% 10%;
 `;
 
 const Link = styled.p`
   font-size: 20px;
+  font-weight: 400;
+`;
+
+const LocalMinorLink = styled.p`
+  font-size: 14px;
   font-weight: 200;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export {
@@ -95,4 +136,8 @@ export {
   Logo,
   NavLinkBar,
   Link,
+  LogoImage,
+  LogoImageBox,
+  LogoTitle,
+  LocalMinorLink,
 };

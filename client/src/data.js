@@ -27,16 +27,19 @@ export const categories = [
         id: 1,
         img: "/images/SLA_SteriFlow_assembly_img1.PNG",
         title: "Hardware",
+        cat: "hardware"
     },
     {
         id: 2,
         img: "/images/SLA_SteriFlow_assembly_img2.PNG",
         title: "Anesthesia",
+        cat: "anesthesia"
     },
     {
         id: 3,
         img: "/images/TabConnect_img1.PNG",
         title: "Custom Parts",
+        cat: "custom"
     },
 ]
 

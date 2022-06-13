@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-const Body = styled.div`
-  background-color: #ffffff;
-`;
-
 const ShopNowButton = styled.button`
   padding: 10px;
   font-size: 20px;
@@ -66,7 +62,6 @@ const CheckoutButton = styled.button`
 `;
 
 export {
-  Body,
   ShopNowButton,
   LogoImage,
   LogoTitle,
