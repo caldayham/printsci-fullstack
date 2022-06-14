@@ -1,5 +1,5 @@
 import HomePage from "./pages/HomePage/HomePage";
-import ProductListPage from "./pages/ProductListPage/ProductListPage";
+import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import LoginRegisterPage from "./pages/LoginRegisterPage/LoginRegisterPage";
 import CartPage from "./pages/CartPage/CartPage";
@@ -22,12 +22,8 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/home" element={<HomePage />} />
-          <Route
-            exact
-            path="/catalogue/:category"
-            element={<ProductListPage />}
-          />
-          <Route exact path="/catalogue" element={<ProductListPage />} />
+          <Route exact path="/catalog/:category" element={<CatalogPage />} />
+          <Route exact path="/catalog" element={<CatalogPage />} />
           <Route exact path="/product/:id" element={<ProductPage />} />
 
           <Route exact path="/mycart" element={<CartPage />} />

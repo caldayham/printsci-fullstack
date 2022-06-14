@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const CategoryItem = ({ item }) => {
   return (
     <Container>
-      <Link to={`/product/${item.cat}`}>
+      <Link to={`/catalog/${item.cat}`}>
         <Image src={item.img} />
         <Info>
           <Title>{item.title}</Title>

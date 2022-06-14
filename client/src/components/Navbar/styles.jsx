@@ -109,9 +109,13 @@ const NavLinkBar = styled.div`
   padding: 0% 10% 0% 10%;
 `;
 
-const Link = styled.p`
+const LocalLink = styled.p`
   font-size: 20px;
   font-weight: 400;
+
+  &:hover {
+    border-bottom: 2px solid white;
+  }
 `;
 
 const LocalMinorLink = styled.p`
@@ -123,7 +127,18 @@ const LocalMinorLink = styled.p`
   }
 `;
 
+const BadgeWrapper = styled.div`
+  font-size: 32px;
+  transition: all 0.1s ease;
+  width: 30px;
+
+  &:hover {
+    font-size: 34px;
+  }
+`;
+
 export {
+  BadgeWrapper,
   Container,
   Wrapper,
   Left,
@@ -135,7 +150,7 @@ export {
   MenuItem,
   Logo,
   NavLinkBar,
-  Link,
+  LocalLink,
   LogoImage,
   LogoImageBox,
   LogoTitle,

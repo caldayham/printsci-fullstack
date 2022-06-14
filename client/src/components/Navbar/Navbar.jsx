@@ -12,11 +12,12 @@ import {
   MenuItem,
   Logo,
   NavLinkBar,
-  Link as LocalLink,
+  LocalLink,
   LogoImage,
   LogoImageBox,
   LogoTitle,
   LocalMinorLink,
+  BadgeWrapper,
 } from "./styles.jsx";
 
 import { Badge } from "@mui/material";
@@ -49,10 +50,10 @@ const Navbar = () => {
           </Link>
           <NavLinkBar>
             <Link
-              to="/catalogue"
+              to="/catalog"
               style={{ textDecoration: "none", color: "white" }}
             >
-              <LocalLink>Catalogue</LocalLink>
+              <LocalLink>Catalog</LocalLink>
             </Link>
             <Link
               to="/custom"
@@ -77,7 +78,7 @@ const Navbar = () => {
         <Right>
           <MenuItem>
             <Link
-              to="/about"
+              to="/login"
               style={{ textDecoration: "none", color: "white" }}
             >
               <LocalMinorLink>
@@ -87,9 +88,13 @@ const Navbar = () => {
             </Link>
           </MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingBagOutlinedIcon />
-            </Badge>
+            <Link to="/cart" style={{ textDecoration: "none", color: "white" }}>
+              <BadgeWrapper>
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingBagOutlinedIcon style={{ fontSize: "inherit" }} />
+                </Badge>
+              </BadgeWrapper>
+            </Link>
           </MenuItem>
         </Right>
       </Wrapper>

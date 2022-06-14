@@ -30,13 +30,13 @@ const Button = styled.button`
   width: 100%;
   padding: 10px;
   font-size: 20px;
-  background-color: white;
-  color: rgb(10, 10, 10);
+  background-color: rgb(25, 25, 25);
+  color: white;
   cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: rgb(20, 20, 255, 0.05);
+    background-color: rgb(0, 0, 0);
   }
 `;
 

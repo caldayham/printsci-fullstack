@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -14,7 +14,25 @@ import {
   Select,
 } from "../../globalStyles";
 
-const ProductListPage = () => {
+import { useLocation } from "react-router-dom";
+
+const CatalogPage = () => {
+  const location = useLocation();
+  const cat = location.pathname.split("/")[2];
+  console.log(cat + " this is cat (category)");
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("newest");
+
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    });
+  };
+
+  console.log(filters);
+
   return (
     <Container>
       <Announcement id="announcement" />
@@ -23,18 +41,14 @@ const ProductListPage = () => {
       <FilterContainer>
         <Filter>
           <FilterTitle>Filter Products</FilterTitle>
-          <Select>
-            <FilterOption disabled selected>
-              Material
-            </FilterOption>
+          <Select name="material" onChange={handleFilters}>
+            <FilterOption>Material</FilterOption>
             <FilterOption>PLA</FilterOption>
             <FilterOption>ABS</FilterOption>
             <FilterOption>PVC</FilterOption>
           </Select>
-          <Select>
-            <FilterOption disabled selected>
-              Size
-            </FilterOption>
+          <Select name="size" onChange={handleFilters}>
+            <FilterOption>Size</FilterOption>
             <FilterOption>XS</FilterOption>
             <FilterOption>S</FilterOption>
             <FilterOption>M</FilterOption>
@@ -44,19 +58,19 @@ const ProductListPage = () => {
         </Filter>
         <Filter>
           <FilterTitle>Sort Products</FilterTitle>
-          <Select>
-            <FilterOption>Newest</FilterOption>
-            <FilterOption>Price (asc)</FilterOption>
-            <FilterOption>Price (desc)</FilterOption>
-            <FilterOption>Rating</FilterOption>
+          <Select onChange={(e) => setSort(e.target.value)}>
+            <FilterOption value="newest">Newest</FilterOption>
+            <FilterOption value="asc">Price (asc)</FilterOption>
+            <FilterOption value="desc">Price (desc)</FilterOption>
+            <FilterOption value="rating">Rating</FilterOption>
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <Products cat={cat} filters={filters} sort={sort} />
       <Newsletter />
       <Footer />
     </Container>
   );
 };
 
-export default ProductListPage;
+export default CatalogPage;
