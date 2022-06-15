@@ -7,9 +7,14 @@ const Container = styled.div`
   top: 50px;
   width: 100vw;
   z-index: 5;
-  background-color: rgb(0, 0, 0, 0.9);
   color: white;
   ${mobile({ height: "50px" })}
+
+  transition: all 0.2s ease;
+  background-color: rgb(0, 0, 0, 0.95);
+  &:hover {
+    background-color: rgb(0, 0, 0, 1);
+  }
 `;
 
 const Wrapper = styled.div`

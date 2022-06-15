@@ -15,6 +15,10 @@ const Button = styled.button`
   flex: 1;
   background-color: rgb(20, 20, 20);
   color: white;
+
+  &:hover {
+    background-color: rgb(0, 0, 0);
+  }
 `;
 
 const Container = styled.div`

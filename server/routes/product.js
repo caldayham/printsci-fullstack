@@ -62,7 +62,9 @@ router.get("/find/:id", async (req, res) => {
 });
 
 //GET ALL PRODUCTS
-router.get("/find", async (req, res) => {
+router.get("/", async (req, res) => {
+
+    console.log("main products route called!")
 
     const qNew = req.query.new
     const qNum = req.query.num
@@ -74,7 +76,7 @@ router.get("/find", async (req, res) => {
 
         const products = qNew ? await Product.find().sort({ createdAt: -1 }).limit(qNum ? qNum : 4) : 
             
-            qCategory ? await Product.find({
+            (qCategory && qCategory == !null) ? await Product.find({
                 categories: {
                 $in:[qCategory],
                 },
@@ -82,7 +84,8 @@ router.get("/find", async (req, res) => {
                 
                 await Product.find().limit(qNum ? qNum : 4);
         
-        res.status(200).json(products);
+        console.log(products);
+        res.setHeader('Access-Control-Allow-Origin', '*').status(200).json(products);
         
     } catch (err) {
         

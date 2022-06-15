@@ -2,8 +2,13 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  background-color: rgb(0, 0, 0, 0.95);
   color: white;
+
+  transition: all 0.2s ease;
+  background-color: rgb(0, 0, 0, 0.95);
+  &:hover {
+    background-color: rgb(0, 0, 0, 1);
+  }
 `;
 
 const Left = styled.div`
