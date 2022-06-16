@@ -10,12 +10,8 @@ import {
   Center,
   Right,
   MenuItem,
-  Logo,
   NavLinkBar,
   LocalLink,
-  LogoImage,
-  LogoImageBox,
-  LogoTitle,
   LocalMinorLink,
   BadgeWrapper,
 } from "./styles.jsx";
@@ -25,6 +21,7 @@ import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 
 import { Link } from "react-router-dom";
+import ClickLogo from "../SubComponents/Logo/ClickLogo";
 
 const Navbar = () => {
   return (
@@ -40,14 +37,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Logo>
-              <LogoImageBox>
-                <LogoImage src="/favicon.ico" alt="image" />
-              </LogoImageBox>
-              <LogoTitle>Print Scientific</LogoTitle>
-            </Logo>
-          </Link>
+          <ClickLogo />
           <NavLinkBar>
             <Link
               to="/catalog"

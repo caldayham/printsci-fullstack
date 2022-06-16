@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  flex: 1.2;
+  flex: 1.4;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -24,7 +24,7 @@ const Center = styled.div`
   padding-left: 5%;
 `;
 
-const Title = styled.h3`
+const Title = styled.h2`
   margin-bottom: 30px;
   margin-top: 20px;
 `;
@@ -40,6 +40,8 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  font-weight: 200;
+  color: white;
 
   &:hover {
     text-decoration: underline;
@@ -55,6 +57,11 @@ const ContactItem = styled.div`
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 const Logo = styled.div`

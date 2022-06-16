@@ -25,18 +25,20 @@ import PermPhoneMsgIcon from "@mui/icons-material/PermPhoneMsg";
 import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
 
 import { Link } from "react-router-dom";
+import ClickLogo from "../SubComponents/Logo/ClickLogo.jsx";
+import { color } from "@mui/system";
 
 const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>
-          <LogoImage src="/favicon.ico" alt="image" />
-          <LogoTitle>Print Scientific</LogoTitle>
-        </Logo>
+        <ClickLogo />
         <Desc>
-          Print Scientific composes high-fidelity 3D printing pipelines to get
-          custom orders shipped fast so you can focus without worrying.
+          Composing high-fidelity 3D printing pipelines to get parts out of your
+          head and in your hands.
+          <br />
+          <br />
+          You know the part, we know the path.
         </Desc>
         <SocialContainer>
           <SocialIcon color="0077b5">
@@ -56,31 +58,85 @@ const Footer = () => {
       <Center>
         <Title>Helpful Links</Title>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Hardware</ListItem>
-          <ListItem>Anesthesia</ListItem>
-          <ListItem>Custom Parts</ListItem>
-          <ListItem>Privacy Policy</ListItem>
-          <ListItem>Terms of Service</ListItem>
-          <ListItem>Return Policy </ListItem>
+          <ListItem>
+            <Link
+              to="/home/#"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Home
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              to="/mycart/#"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Cart
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              to="/catalog/hardware"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Hardware
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              to="/catalog/anesthesia"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Anesthesia
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              to="/custom/"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Custom Parts
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              to="/about-us/privacy-policy"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Privacy Policy
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              to="/about-us/terms-of-service"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Terms of Service
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              to="/about-us/return-policy"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Return Policy
+            </Link>
+          </ListItem>
         </List>
       </Center>
       <Right>
         <Title>Contact</Title>
         <ContactItem>
           <PinDropIcon style={{ marginRight: "20px" }} />
-          1101 University Ave SE, Minneapolis, MN
-          <br />
-          suite 106
+          1101 University Ave SE, Minneapolis, MN, suite 106
         </ContactItem>
         <ContactItem>
           <PermPhoneMsgIcon style={{ marginRight: "20px" }} />
-          +1 (650) 521-7269
+          show number
         </ContactItem>
         <ContactItem>
           <MarkEmailReadIcon style={{ marginRight: "20px" }} />
-          support@printscientific.com
+          show email
         </ContactItem>
         <Payment
           src="https://i.ibb.co/Qfvn4z6/payment.png"

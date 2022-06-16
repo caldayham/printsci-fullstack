@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -18,7 +18,9 @@ import { useLocation } from "react-router-dom";
 
 const CatalogPage = () => {
   const location = useLocation();
-  const [category, setCategory] = useState(location.pathname.split("/")[2]);
+  const [category, setCategory] = useState(
+    location.pathname.split("/")[2] ? location.pathname.split("/")[2] : "all"
+  );
   console.log(category);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
@@ -30,6 +32,17 @@ const CatalogPage = () => {
       [e.target.name]: value,
     });
   };
+
+  // useEffect(() => {
+  //   const getCategory = () => {
+  //     setCategory(
+  //       location.pathname.split("/")[2]
+  //         ? location.pathname.split("/")[2]
+  //         : "all"
+  //     );
+  //   };
+  //   getCategory();
+  // }, [update]);
 
   return (
     <Container>

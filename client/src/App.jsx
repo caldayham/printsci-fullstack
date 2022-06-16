@@ -5,7 +5,7 @@ import LoginRegisterPage from "./pages/LoginRegisterPage/LoginRegisterPage";
 import CartPage from "./pages/CartPage/CartPage";
 import NotFound404Page from "./pages/NotFound404Page/NotFound404Page";
 
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
