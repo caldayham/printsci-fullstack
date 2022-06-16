@@ -41,7 +41,6 @@ const Circle = styled.div`
   background-color: white;
   position: absolute;
   display: flex;
-  right: 8%;
 `;
 
 const Image = styled.img`

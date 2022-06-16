@@ -4,7 +4,6 @@ import {
   Left,
   Center,
   Right,
-  Logo,
   Desc,
   SocialContainer,
   SocialIcon,
@@ -14,7 +13,6 @@ import {
   ContactItem,
   Payment,
 } from "./styles.jsx";
-import { LogoImage, LogoTitle } from "../../globalStyles";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -26,7 +24,6 @@ import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
 
 import { Link } from "react-router-dom";
 import ClickLogo from "../SubComponents/Logo/ClickLogo.jsx";
-import { color } from "@mui/system";
 
 const Footer = () => {
   return (

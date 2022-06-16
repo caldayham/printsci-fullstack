@@ -13,15 +13,6 @@ const ShopNowButton = styled.button`
   }
 `;
 
-const LogoImage = styled.img`
-  width: 60px;
-  padding-right: 20px;
-`;
-
-const LogoTitle = styled.h1`
-  font-weight: bold;
-`;
-
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -63,8 +54,6 @@ const CheckoutButton = styled.button`
 
 export {
   ShopNowButton,
-  LogoImage,
-  LogoTitle,
   FilterContainer,
   Filter,
   FilterTitle,

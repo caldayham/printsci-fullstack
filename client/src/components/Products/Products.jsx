@@ -11,8 +11,9 @@ const Products = ({ category, filters, sort }) => {
 
   useEffect(() => {
     const getProducts = async () => {
+      console.log("category was changed and now we refetch data");
       try {
-        console.log(category + "this is category");
+        console.log("this is category: " + category);
         const res = await axios.get(
           `http://localhost:5000/api/products?category=${category}&num=${8}`
         );
@@ -41,21 +42,22 @@ const Products = ({ category, filters, sort }) => {
   console.log(filteredProducts);
 
   useEffect(() => {
+    console.log("this is sort: " + sort);
     if (sort === "newest") {
       setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+        [...prev].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
       );
     } else if (sort === "asc") {
       setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+        [...prev].sort((a, b) => a.price - b.price)
       );
     } else if (sort === "desc") {
       setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+        [...prev].sort((a, b) => b.price - a.price)
       );
     } else if (sort === "rating") {
       setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+        [...prev].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
       );
     }
   }, [sort]);

@@ -33,16 +33,16 @@ const CatalogPage = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const getCategory = () => {
-  //     setCategory(
-  //       location.pathname.split("/")[2]
-  //         ? location.pathname.split("/")[2]
-  //         : "all"
-  //     );
-  //   };
-  //   getCategory();
-  // }, [update]);
+  useEffect(() => {
+    const getCategory = () => {
+      setCategory(
+        location.pathname.split("/")[2]
+          ? location.pathname.split("/")[2]
+          : "all"
+      );
+    };
+    getCategory();
+  });
 
   return (
     <Container>
@@ -50,7 +50,7 @@ const CatalogPage = () => {
       <Navbar id="navbar" />
       <Title>
         Category:{" "}
-        {category == !null
+        {category === !null
           ? "none"
           : category.charAt(0).toUpperCase() + category.slice(1)}
       </Title>

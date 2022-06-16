@@ -77,7 +77,7 @@ router.get("/", async (req, res) => {
 
         const products = qNew ? await Product.find().sort({ createdAt: -1 }).limit(qNum ? qNum : 4) : 
             
-            qCategory == !null ? await Product.find({
+            qCategory ? await Product.find({
                 categories: {
                 $in:[qCategory], 
                 },
