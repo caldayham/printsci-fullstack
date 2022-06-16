@@ -5,8 +5,6 @@ const { verifyToken, verifyTokenAndAuth, verifyTokenAndAdmin } = require("./veri
 //UPDATE
 router.put("/:id", verifyTokenAndAuth, async (req, res) => {
 
-    console.log(req.params);
-
     if (req.body.password) {
         req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC).toString();
     }
@@ -36,7 +34,6 @@ router.delete("/:id", verifyTokenAndAuth, async (req, res) => {
 router.get("/find/:id", verifyTokenAndAdmin, async (req, res) => {
    try {
        const user = await User.findById(req.params.id);
-       console.log(req.params);
 
        const { password, ...others } = user._doc;
        res.status(200).json({...others});
@@ -50,8 +47,6 @@ router.get("/find", verifyTokenAndAdmin, async (req, res) => {
 
     const qNew = req.query.new
     const qNum = req.query.num
-
-    console.log(req.query.num);
 
    try {
     const users = qNew ? await User.find().sort({ _id: -1 }).limit(qNum ? qNum : 2) : await User.find().limit(qNum ? qNum : 2);

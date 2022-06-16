@@ -40,6 +40,10 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Right = styled.div`

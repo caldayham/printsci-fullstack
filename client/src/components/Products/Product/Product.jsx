@@ -6,7 +6,6 @@ import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const Product = ({ item }) => {
-  console.log(item);
   return (
     <Container>
       <Circle />

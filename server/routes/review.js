@@ -5,8 +5,6 @@ const { verifyToken, verifyTokenAndAuth, verifyTokenAndAdmin } = require("./veri
 //CREATE RATING
 router.post("/", verifyTokenAndAuth, async (req, res) => {
 
-    console.log("Review called");
-
     const newReview = new Review(req.body)
     
     try {
@@ -41,8 +39,6 @@ router.get("/fetch/:productId", async (req, res) => {
        
         const qNum = req.query.num
         const qFilter = req.query.filter
-
-        console.log("get reviews by product endpoint reached");
    
        const reviews = await Review.find({userId: req.params.userId});
        res.status(200).json(reviews);
@@ -58,7 +54,6 @@ router.get("/fetch/:productId", async (req, res) => {
 router.get("/fetch", verifyTokenAndAdmin, async (req, res) => {
 
     const qNum = req.query.num
-    console.log("get all reviews endpoint reached");
    
     try {
         

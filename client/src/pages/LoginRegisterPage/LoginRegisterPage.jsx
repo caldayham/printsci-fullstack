@@ -6,11 +6,9 @@ import Register from "../../components/Login/Register";
 const LoginRegisterPage = () => {
   const [isRegister, setIsRegister] = useState(false);
   const setRegister = () => {
-    console.log("setRegister function");
     setIsRegister(true);
   };
   const setLogin = () => {
-    console.log("setLogin function");
     setIsRegister(false);
   };
 

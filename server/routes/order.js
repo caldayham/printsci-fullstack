@@ -5,8 +5,6 @@ const { verifyToken, verifyTokenAndAuth, verifyTokenAndAdmin } = require("./veri
 //CREATE
 router.post("/", verifyToken, async (req, res) => {
 
-    console.log("order called");
-
     const newOrder = new Order(req.body)
     
     try {

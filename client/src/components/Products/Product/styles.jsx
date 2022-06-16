@@ -18,11 +18,13 @@ const Info = styled.div`
 `;
 
 const Container = styled.div`
-  flex: 1;
+  // this is the item wrapper
+  flex-grow: 1;
+  min-width: 340px;
   margin: 5px;
-  min-width: 400px;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   background-color: #f5fbfd;
   position: relative;
@@ -33,20 +35,22 @@ const Container = styled.div`
 `;
 
 const Circle = styled.div`
-  width: 60%;
-  height: 60%;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
   display: flex;
-  right: 20%;
+  right: 8%;
 `;
 
 const Image = styled.img`
-  height: 75%;
-  width: 100%;
+  height: 320px;
   object-fit: cover;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Icon = styled.div`

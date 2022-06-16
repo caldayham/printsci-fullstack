@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 
 // LOGIN
 router.post("/login", async (req, res) => {
-    console.log("/login route called");
     try {
         const user = await User.findOne({
             username: req.body.username
@@ -37,7 +36,6 @@ router.post("/login", async (req, res) => {
 
 // REGISTER
 router.post("/register", async (req, res) => {
-    console.log("/register route called");
     const newUser = new User({
         username: req.body.username,
         email: req.body.email,

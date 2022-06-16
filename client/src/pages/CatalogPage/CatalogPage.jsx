@@ -18,7 +18,8 @@ import { useLocation } from "react-router-dom";
 
 const CatalogPage = () => {
   const location = useLocation();
-  const cat = location.pathname.split("/")[2];
+  const [category, setCategory] = useState(location.pathname.split("/")[2]);
+  console.log(category);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
 
@@ -36,7 +37,9 @@ const CatalogPage = () => {
       <Navbar id="navbar" />
       <Title>
         Category:{" "}
-        {cat == !null ? cat.charAt(0).toUpperCase() + cat.slice(1) : "none"}
+        {category == !null
+          ? "none"
+          : category.charAt(0).toUpperCase() + category.slice(1)}
       </Title>
       <FilterContainer>
         <Filter>
@@ -66,7 +69,7 @@ const CatalogPage = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products cat={cat} filters={filters} sort={sort} />
+      <Products category={category} filters={filters} sort={sort} />
       <Newsletter />
       <Footer />
     </Container>

@@ -24,6 +24,8 @@ import PinDropIcon from "@mui/icons-material/PinDrop";
 import PermPhoneMsgIcon from "@mui/icons-material/PermPhoneMsg";
 import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <Container>
@@ -33,10 +35,8 @@ const Footer = () => {
           <LogoTitle>Print Scientific</LogoTitle>
         </Logo>
         <Desc>
-          Research can be messy, you shouldn't have to throw the baby out with
-          the bathwater when one part breaks. Print Scientific composes
-          high-fidelity 3D printing pipelines to get custom orders shipped fast
-          so you can focus without worrying.
+          Print Scientific composes high-fidelity 3D printing pipelines to get
+          custom orders shipped fast so you can focus without worrying.
         </Desc>
         <SocialContainer>
           <SocialIcon color="0077b5">

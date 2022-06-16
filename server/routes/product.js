@@ -12,12 +12,13 @@ router.post("/new", verifyTokenAndAdmin, async (req, res) => {
     try {
 
         const savedProduct = await newProduct.save();
+        console.log("product was saved");
         res.status(200).json(savedProduct);
 
     } catch (err) {
 
         res.status(500).json(err);
-        
+         
     }
 });
 
@@ -76,15 +77,14 @@ router.get("/", async (req, res) => {
 
         const products = qNew ? await Product.find().sort({ createdAt: -1 }).limit(qNum ? qNum : 4) : 
             
-            (qCategory && qCategory == !null) ? await Product.find({
+            qCategory == !null ? await Product.find({
                 categories: {
-                $in:[qCategory],
+                $in:[qCategory], 
                 },
             }).sort({ createdAt: -1 }).limit(qNum ? qNum : 4) :
                 
                 await Product.find().limit(qNum ? qNum : 4);
         
-        console.log(products);
         res.setHeader('Access-Control-Allow-Origin', '*').status(200).json(products);
         
     } catch (err) {

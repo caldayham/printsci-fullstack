@@ -5,25 +5,27 @@ import { popularProducts } from "../../data";
 import Product from "./Product/Product";
 import axios from "axios";
 
-const Products = ({ cat, filters, sort }) => {
+const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       try {
+        console.log(category + "this is category");
         const res = await axios.get(
-          `http://localhost:5000/api/products?category=${cat}&num=${8}`
+          `http://localhost:5000/api/products?category=${category}&num=${8}`
         );
-        console.log(res);
         setProducts(res.data);
-      } catch (err) {}
+      } catch (err) {
+        console.log(err);
+      }
     };
     getProducts();
-  }, [cat]); // when the cat (category) changes, run this function
+  }, [category]); // when the category (category) changes, run this function
 
   useEffect(() => {
-    cat &&
+    category &&
       setFilteredProducts(
         products.filter((item) =>
           Object.entries(filters).every(([key, value]) =>
@@ -31,13 +33,27 @@ const Products = ({ cat, filters, sort }) => {
           )
         )
       );
-  }, [cat, filters, products]);
+    console.log("next is filters");
+    console.log(filters);
+  }, [category, filters, products]);
 
-  console.log(filters);
+  console.log("next is filteredProducts");
   console.log(filteredProducts);
 
   useEffect(() => {
     if (sort === "newest") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+      );
+    } else if (sort === "asc") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+      );
+    } else if (sort === "desc") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+      );
+    } else if (sort === "rating") {
       setFilteredProducts((prev) =>
         [...prev].sort((a, b) => a.createdAt - b.createdAt)
       );
@@ -46,7 +62,7 @@ const Products = ({ cat, filters, sort }) => {
 
   return (
     <Container>
-      {products.map((item) => (
+      {filteredProducts.map((item) => (
         <Product item={item} key={item._id} />
       ))}
     </Container>
