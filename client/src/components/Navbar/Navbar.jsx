@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {} from "../../globalStyles";
 import {
   Container,
@@ -24,6 +24,11 @@ import { Link } from "react-router-dom";
 import ClickLogo from "../SubComponents/Logo/ClickLogo";
 
 const Navbar = () => {
+  const [catalogMenu, setCatalogMenu] = useState(false);
+  const [customMenu, setCustomMenu] = useState(false);
+  const [researchMenu, setResearchMenu] = useState(false);
+  const [aboutMenu, setAboutMenu] = useState(false);
+
   return (
     <Container>
       <Wrapper>

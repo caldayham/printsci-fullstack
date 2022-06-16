@@ -6,9 +6,13 @@ import {
   Agreement,
   Button,
   ActionWrapper,
+  BackButton,
 } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  let history = useNavigate();
+
   return (
     <Wrapper>
       <Form>
@@ -23,6 +27,7 @@ const Register = () => {
           I consent to the <u>privacy policy</u>
         </Agreement>
         <Button>Register</Button>
+        <BackButton onClick={() => history(-1)}>go back</BackButton>
       </ActionWrapper>
     </Wrapper>
   );

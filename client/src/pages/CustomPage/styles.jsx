@@ -10,14 +10,4 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.h1``;
-
-const Desc = styled.p``;
-
-const SearchBox = styled.div``;
-
-const Input = styled.input``;
-
-const SubmitButton = styled.button``;
-
-export { Container, Title, Desc, SearchBox, Input, SubmitButton };
+export { Container };

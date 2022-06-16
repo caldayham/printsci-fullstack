@@ -58,13 +58,13 @@ const CatalogPage = () => {
         <Filter>
           <FilterTitle>Filter Products</FilterTitle>
           <Select name="material" onChange={handleFilters}>
-            <FilterOption>Material</FilterOption>
+            <FilterOption>material</FilterOption>
             <FilterOption>PLA</FilterOption>
             <FilterOption>ABS</FilterOption>
             <FilterOption>PVC</FilterOption>
           </Select>
           <Select name="size" onChange={handleFilters}>
-            <FilterOption>Size</FilterOption>
+            <FilterOption>size</FilterOption>
             <FilterOption>XS</FilterOption>
             <FilterOption>S</FilterOption>
             <FilterOption>M</FilterOption>

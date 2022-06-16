@@ -30,7 +30,7 @@ const Button = styled.button`
   width: 100%;
   padding: 10px;
   font-size: 20px;
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(14, 14, 14);
   color: white;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -59,4 +59,29 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export { Form, Title, Input, Agreement, Button, ActionWrapper, Link, Wrapper };
+const BackButton = styled.button`
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: left;
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 200;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export {
+  Form,
+  Title,
+  Input,
+  Agreement,
+  Button,
+  ActionWrapper,
+  Link,
+  Wrapper,
+  BackButton,
+};
