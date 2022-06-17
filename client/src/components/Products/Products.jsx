@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "./styles";
-import { popularProducts } from "../../data";
 
 import Product from "./Product/Product";
 import axios from "axios";
@@ -15,7 +14,9 @@ const Products = ({ category, filters, sort }) => {
       try {
         console.log("this is category: " + category);
         const res = await axios.get(
-          `http://localhost:5000/api/products?category=${category}&num=${8}`
+          category == null
+            ? `http://localhost:5000/api/products?num=${8}`
+            : `http://localhost:5000/api/products?category=${category}&num=${8}`
         );
         setProducts(res.data);
       } catch (err) {
@@ -64,11 +65,13 @@ const Products = ({ category, filters, sort }) => {
 
   return (
     <Container>
-      {category
-        ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
-        : products
+      {category == null
+        ? products
             .slice(0, 8)
-            .map((item) => <Product item={item} key={item._id} />)}
+            .map((item) => <Product item={item} key={item._id} />)
+        : filteredProducts.map((item) => (
+            <Product item={item} key={item._id} />
+          ))}
     </Container>
   );
 };

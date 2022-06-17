@@ -12,6 +12,7 @@ const HomePage = () => {
     <div>
       <Announcement />
       <Navbar />
+      <div style={{ height: "14.0vh" }} />
       <Slider />
       <Categories />
       <Products />

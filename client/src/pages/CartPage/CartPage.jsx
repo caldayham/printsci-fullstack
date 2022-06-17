@@ -32,7 +32,7 @@ import {
   ProductCheckout,
 } from "./styles";
 import ProductAmount from "../../components/SubComponents/ProductAmount/ProductAmount";
-import { CheckoutButton } from "../../globalStyles";
+import { CheckoutButton } from "../../tools/globalStyles";
 
 const CartPage = () => {
   return (

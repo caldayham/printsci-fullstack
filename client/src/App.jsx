@@ -16,12 +16,15 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import ScrollToTop from "./tools/ScrollToTop";
+
 const App = () => {
   const user = false;
 
   return (
     <Router>
       <Fragment>
+        <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/home" element={<HomePage />} />

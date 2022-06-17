@@ -3,15 +3,15 @@ import { Container } from "./styles";
 import Navbar from "../../components/Navbar/Navbar";
 import Announcement from "../../components/Announcement/Announcement";
 import Footer from "../../components/Footer/Footer";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 const CustomPage = () => {
   return (
     <div>
-      <Container>
-        <Announcement />
-        <Navbar />
-        Custom Page
-      </Container>
+      <Announcement />
+      <Navbar />
+      <Container>Custom Page</Container>
+      <Newsletter />
       <Footer />
     </div>
   );

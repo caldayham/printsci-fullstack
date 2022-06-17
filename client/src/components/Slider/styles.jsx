@@ -7,7 +7,6 @@ const Container = styled.div`
   background-color: #eeeeee;
   position: relative;
   overflow: hidden;
-  padding-top: 10vh;
 `;
 
 const Arrow = styled.div`

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Image, Info, Title } from "./styles";
-import { ShopNowButton } from "../../../globalStyles";
+import { ShopNowButton } from "../../../tools/globalStyles";
 import { Link } from "react-router-dom";
 
 const CategoryItem = ({ item }) => {

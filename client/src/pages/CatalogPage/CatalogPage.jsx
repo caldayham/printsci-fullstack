@@ -12,7 +12,7 @@ import {
   FilterTitle,
   FilterOption,
   Select,
-} from "../../globalStyles";
+} from "../../tools/globalStyles";
 
 import { useLocation } from "react-router-dom";
 

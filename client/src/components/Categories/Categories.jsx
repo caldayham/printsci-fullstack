@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./styles";
 import CategoryItem from "./CategoryItem/CategoryItem";
-import { categories } from "../../data";
+import { categories } from "../../tools/data";
 
 const Categories = () => {
   return (

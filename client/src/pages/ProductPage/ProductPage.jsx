@@ -22,7 +22,7 @@ import {
   FilterTitle,
   Select,
   CheckoutButton,
-} from "../../globalStyles";
+} from "../../tools/globalStyles";
 
 import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";

@@ -9,13 +9,13 @@ import {
   Title,
   Desc,
 } from "./styles";
-import { ShopNowButton } from "../../globalStyles";
+import { ShopNowButton } from "../../tools/globalStyles";
 import { useState } from "react";
 
 import KeyboardDoubleArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftOutlined";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 
-import { sliderItems } from "../../data";
+import { sliderItems } from "../../tools/data";
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -27,6 +27,9 @@ const Slider = () => {
     }
   };
 
+  setTimeout(() => {
+    handleClick();
+  }, 5000);
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
