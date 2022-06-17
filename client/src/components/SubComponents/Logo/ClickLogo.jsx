@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ClickLogo = () => {
   return (
     <Container>
-      <Link to="/home/#" style={{ textDecoration: "none" }}>
+      <Link to={`/home/#`} style={{ textDecoration: "none" }}>
         <Logo>
           <LogoImageBox>
             <LogoImage src="/favicon.ico" alt="image" />

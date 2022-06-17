@@ -27,19 +27,22 @@ export const categories = [
         id: 1,
         img: "/images/SLA_SteriFlow_assembly_img1.PNG",
         title: "Hardware",
-        cat: "hardware"
+        cat: "hardware",
+        desc: "Nuts, bolts, and everything in between."
     },
     {
         id: 2,
         img: "/images/SLA_SteriFlow_assembly_img2.PNG",
         title: "Anesthesia",
-        cat: "anesthesia"
+        cat: "anesthesia",
+        desc: "Nose cones, masks, tubing, and other supplies."
     },
     {
         id: 3,
         img: "/images/TabConnect_img1.PNG",
-        title: "Custom Parts",
-        cat: "custom"
+        title: "Lab Consumables",
+        cat: "consumables",
+        desc: "Transfer pipettes, underpads, centerfuge tubes and much more."
     },
 ]
 

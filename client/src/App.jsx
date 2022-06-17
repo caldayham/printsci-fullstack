@@ -7,7 +7,7 @@ import NotFound404Page from "./pages/NotFound404Page/NotFound404Page";
 import CustomPage from "./pages/CustomPage/CustomPage";
 import ResearchPage from "./pages/ResearchPage/ResearchPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
-import TermsOfServicePage from "./pages/RequiredPages/TermsOfServicePage";
+import ServiceTermsPage from "./pages/RequiredPages/ServiceTermsPage";
 import ReturnPolicyPage from "./pages/RequiredPages/ReturnPolicyPage";
 import PrivacyPolicyPage from "./pages/RequiredPages/PrivacyPolicyPage";
 
@@ -41,7 +41,7 @@ const App = () => {
           <Route exact path="/checkout" element={<CartPage />} />
 
           <Route exact path="/about" element={<AboutPage />} />
-          <Route exact path="/about/terms" element={<TermsOfServicePage />} />
+          <Route exact path="/about/terms" element={<ServiceTermsPage />} />
           <Route exact path="/about/privacy" element={<PrivacyPolicyPage />} />
           <Route exact path="/about/return" element={<ReturnPolicyPage />} />
 

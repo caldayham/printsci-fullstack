@@ -5,7 +5,15 @@ import Footer from "../../components/Footer/Footer";
 import Products from "../../components/Products/Products";
 import Newsletter from "../../components/Newsletter/Newsletter";
 
-import { Container, Title } from "./styles";
+import {
+  Container,
+  CategoriesWrapper,
+  CategoryDesc,
+  CategoryWrapper,
+  CategoryImage,
+  CategoryText,
+  CategoryTitle,
+} from "./styles";
 import {
   FilterContainer,
   Filter,
@@ -14,7 +22,8 @@ import {
   Select,
 } from "../../tools/globalStyles";
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { categories } from "../../tools/data";
 
 const CatalogPage = () => {
   const location = useLocation();
@@ -48,12 +57,28 @@ const CatalogPage = () => {
     <Container>
       <Announcement id="announcement" />
       <Navbar id="navbar" />
-      <Title>
-        Category:{" "}
-        {category === !null
-          ? "none"
-          : category.charAt(0).toUpperCase() + category.slice(1)}
-      </Title>
+      <CategoriesWrapper>
+        {categories.map((item) => (
+          <Link
+            to={`/catalog/${item.cat}`}
+            style={{
+              textDecoration: "none",
+              color: "white",
+              display: "flex",
+              flex: "1",
+              margin: "2% 1% 2% 1%",
+            }}
+          >
+            <CategoryWrapper selectedCat={category} thisCat={item.cat}>
+              <CategoryText>
+                <CategoryTitle>{item.title}</CategoryTitle>
+                <CategoryDesc>{item.desc}</CategoryDesc>
+              </CategoryText>
+              <CategoryImage src={item.img} />
+            </CategoryWrapper>
+          </Link>
+        ))}
+      </CategoriesWrapper>
       <FilterContainer>
         <Filter>
           <FilterTitle>Filter Products</FilterTitle>
