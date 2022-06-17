@@ -7,16 +7,19 @@ import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
+import { Container } from "./styles";
+
 const HomePage = () => {
   return (
     <div>
       <Announcement />
       <Navbar />
-      <div style={{ height: "14.0vh" }} />
-      <Slider />
-      <Categories />
-      <Products />
-      <Newsletter />
+      <Container>
+        <Slider />
+        <Categories />
+        <Products />
+        <Newsletter />
+      </Container>
       <Footer />
     </div>
   );

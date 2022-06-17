@@ -97,7 +97,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
-              to="/about-us/privacy-policy"
+              to="/about/privacy"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               Privacy Policy
@@ -105,7 +105,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
-              to="/about-us/terms-of-service"
+              to="/about/terms"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               Terms of Service
@@ -113,7 +113,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
-              to="/about-us/return-policy"
+              to="/about/return"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               Return Policy

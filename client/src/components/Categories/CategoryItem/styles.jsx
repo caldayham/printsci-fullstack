@@ -6,12 +6,16 @@ const Container = styled.div`
   height: 70vh;
   background-color: #eeeeee;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
 `;
 
 const Info = styled.div`
