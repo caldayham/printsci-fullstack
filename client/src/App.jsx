@@ -7,9 +7,9 @@ import NotFound404Page from "./pages/NotFound404Page/NotFound404Page";
 import CustomPage from "./pages/CustomPage/CustomPage";
 import ResearchPage from "./pages/ResearchPage/ResearchPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
-import ServiceTermsPage from "./pages/RequiredPages/ServiceTermsPage";
-import ReturnPolicyPage from "./pages/RequiredPages/ReturnPolicyPage";
-import PrivacyPolicyPage from "./pages/RequiredPages/PrivacyPolicyPage";
+import ServiceTermsPage from "./pages/StaticPages/ServiceTermsPage";
+import ReturnPolicyPage from "./pages/StaticPages/ReturnPolicyPage";
+import PrivacyPolicyPage from "./pages/StaticPages/PrivacyPolicyPage";
 
 import React, { Fragment } from "react";
 import {

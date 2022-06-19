@@ -74,31 +74,6 @@ const Desc = styled.p`
   width: 80%;
 `;
 
-const SocialContainer = styled.div`
-  display: flex;
-`;
-
-const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  background-color: #${(props) => props.color};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-right: 20px;
-  cursor: pointer;
-
-  transition: all 0.2s ease;
-
-  &:hover {
-    width: 45px;
-    height: 45px;
-  }
-`;
-
 const Payment = styled.img`
   margin-top: 10px;
   width: 50%;
@@ -111,8 +86,6 @@ export {
   Right,
   Logo,
   Desc,
-  SocialContainer,
-  SocialIcon,
   Title,
   List,
   ListItem,

@@ -5,14 +5,17 @@ import {
   Center,
   Right,
   Desc,
-  SocialContainer,
-  SocialIcon,
   Title,
   List,
   ListItem,
   ContactItem,
   Payment,
 } from "./styles.jsx";
+import {
+  SocialContainer,
+  SocialIcon,
+  SocialIconContainer,
+} from "../../tools/globalStyles.jsx";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -38,18 +41,26 @@ const Footer = () => {
           You know the part, we know the path.
         </Desc>
         <SocialContainer>
-          <SocialIcon color="0077b5">
-            <LinkedInIcon />
-          </SocialIcon>
-          <SocialIcon color="4267b2">
-            <FacebookIcon />
-          </SocialIcon>
-          <SocialIcon color="1da1f2">
-            <TwitterIcon />
-          </SocialIcon>
-          <SocialIcon color="e1306c">
-            <InstagramIcon />
-          </SocialIcon>
+          <SocialIconContainer>
+            <SocialIcon color="0077b5">
+              <LinkedInIcon />
+            </SocialIcon>
+          </SocialIconContainer>
+          <SocialIconContainer>
+            <SocialIcon color="4267b2">
+              <FacebookIcon />
+            </SocialIcon>
+          </SocialIconContainer>
+          <SocialIconContainer>
+            <SocialIcon color="1da1f2">
+              <TwitterIcon />
+            </SocialIcon>
+          </SocialIconContainer>
+          <SocialIconContainer>
+            <SocialIcon color="e1306c">
+              <InstagramIcon />
+            </SocialIcon>
+          </SocialIconContainer>
         </SocialContainer>
       </Left>
       <Center>

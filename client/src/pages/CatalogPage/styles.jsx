@@ -24,15 +24,15 @@ const CategoryWrapper = styled.button`
   flex: 1;
   padding: 10px;
   background-color: ${(props) =>
-    props.selectedCat == props.thisCat ? "rgb(14,14,14)" : "rgb(255,255,255)"};
+    props.selectedCat === props.thisCat ? "rgb(14,14,14)" : "rgb(255,255,255)"};
   color: ${(props) =>
-    props.selectedCat == props.thisCat ? "rgb(255,255,255)" : "rgb(0,0,0)"};
+    props.selectedCat === props.thisCat ? "rgb(255,255,255)" : "rgb(0,0,0)"};
   transition: all 0.1s ease;
   cursor: pointer;
 
   &:hover {
     background: ${(props) =>
-      props.selectedCat == props.thisCat ? "rgb(0,0,0)" : "rgb(14,14,14)"};
+      props.selectedCat === props.thisCat ? "rgb(0,0,0)" : "rgb(14,14,14)"};
     color: white;
   }
 `;

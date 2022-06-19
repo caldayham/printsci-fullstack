@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./styles";
+import { StaticContainer } from "../../tools/globalStyles";
 import Navbar from "../../components/Navbar/Navbar";
 import Announcement from "../../components/Announcement/Announcement";
 import Footer from "../../components/Footer/Footer";
@@ -10,7 +10,7 @@ const CustomPage = () => {
     <div>
       <Announcement />
       <Navbar />
-      <Container>Custom Page</Container>
+      <StaticContainer>Custom Page</StaticContainer>
       <Newsletter />
       <Footer />
     </div>

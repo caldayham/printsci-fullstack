@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./styles";
+import { StaticContainer } from "../../tools/globalStyles";
 import Research from "../../components/Research/Research";
 import Navbar from "../../components/Navbar/Navbar";
 import Announcement from "../../components/Announcement/Announcement";
@@ -11,9 +11,9 @@ const ResearchPage = () => {
     <div>
       <Announcement />
       <Navbar />
-      <Container>
+      <StaticContainer>
         <Research />
-      </Container>
+      </StaticContainer>
       <Newsletter />
       <Footer />
     </div>

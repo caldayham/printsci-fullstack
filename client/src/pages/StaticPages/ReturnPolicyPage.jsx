@@ -1,5 +1,10 @@
 import React from "react";
-import { Container, Title, Subtitle, Paragraph } from "./styles";
+import {
+  StaticContainer,
+  Title,
+  Subtitle,
+  Paragraph,
+} from "../../tools/globalStyles";
 import Navbar from "../../components/Navbar/Navbar";
 import Announcement from "../../components/Announcement/Announcement";
 import Footer from "../../components/Footer/Footer";
@@ -10,7 +15,7 @@ const ReturnPolicyPage = () => {
     <div>
       <Announcement />
       <Navbar />
-      <Container>Return Policy Page</Container>
+      <StaticContainer>Return Policy Page</StaticContainer>
       <Newsletter />
       <Footer />
     </div>

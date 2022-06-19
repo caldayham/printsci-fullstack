@@ -4,9 +4,11 @@ import CategoryItem from "./CategoryItem/CategoryItem";
 import { categories } from "../../tools/data";
 
 const Categories = () => {
+  const subCategories = categories.slice(1);
+
   return (
     <Container>
-      {categories.map((item) => (
+      {subCategories.map((item) => (
         <CategoryItem item={item} key={item.id}></CategoryItem>
       ))}
     </Container>
