@@ -45,7 +45,12 @@ const Footer = () => {
         </Desc>
         <SocialContainer>
           {companySocials.map((account) => (
-            <a href={account.link} target="_blank" title={account.linkTitle}>
+            <a
+              href={account.link}
+              target="_blank"
+              title={account.linkTitle}
+              key={account.id}
+            >
               <SocialIconContainer>
                 <SocialIcon color={account.color}>
                   <Icon icon={account.icon} size={"60%"} />

@@ -17,7 +17,7 @@ const ImgContainer = styled.div`
   flex: 1;
 `;
 
-const Image = styled.img`
+const SelectedImage = styled.img`
   width: 100%;
   object-fit: cover;
   background-color: rgb(0, 0, 0, 0.05);
@@ -25,6 +25,24 @@ const Image = styled.img`
   &:hover {
     background-color: rgb(20, 20, 255, 0.05);
   }
+`;
+const DeckImage = styled.img`
+  width: 20%;
+  object-fit: cover;
+  background-color: rgb(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: rgb(20, 20, 255, 0.05);
+  }
+`;
+
+const ImageDeck = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  overflow: hidden;
+  gap: 10px;
+  margin-top: 10px;
 `;
 
 const InfoContainer = styled.div`
@@ -112,7 +130,7 @@ export {
   Container,
   Wrapper,
   ImgContainer,
-  Image,
+  SelectedImage,
   InfoContainer,
   Title,
   Desc,
@@ -124,4 +142,6 @@ export {
   ActionBin,
   SetupBin,
   AddContainer,
+  ImageDeck,
+  DeckImage,
 };

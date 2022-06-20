@@ -5,6 +5,8 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
+import { Link } from "react-router-dom";
+
 const Product = ({ item }) => {
   return (
     <Container>
@@ -15,7 +17,17 @@ const Product = ({ item }) => {
           <ShoppingBagOutlinedIcon />
         </Icon>
         <Icon>
-          <YoutubeSearchedForIcon />
+          <Link
+            to={`/product/${item._id}`}
+            style={{
+              textDecoration: "none",
+              color: "black",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <YoutubeSearchedForIcon />
+          </Link>
         </Icon>
         <Icon>
           <FavoriteBorderIcon />

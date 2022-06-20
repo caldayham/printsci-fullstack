@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Wrapper,
   ImgContainer,
-  Image,
+  SelectedImage,
   InfoContainer,
   Title,
   Desc,
@@ -15,6 +15,8 @@ import {
   ActionBin,
   SetupBin,
   AddContainer,
+  ImageDeck,
+  DeckImage,
 } from "./styles";
 import {
   FilterContainer,
@@ -30,7 +32,27 @@ import Footer from "../../components/Footer/Footer";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import ProductAmount from "../../components/SubComponents/ProductAmount/ProductAmount";
 
+import { useLocation } from "react-router-dom";
+import { publicRequest } from "../../tools/requestMethods";
+
 const ProductPage = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const getProduct = async (product) => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getProduct();
+  }, [id]);
+
   return (
     <div>
       <Announcement />
@@ -38,14 +60,16 @@ const ProductPage = () => {
       <Container>
         <Wrapper>
           <ImgContainer>
-            <Image
-              src="/images/SLA_SteriFlow_assembly_img2.PNG"
-              alt="product image"
-            />
+            <SelectedImage src={product.mainImg} alt="product image" />
+            <ImageDeck>
+              {product.imgs.map((img) => (
+                <DeckImage src={img}></DeckImage>
+              ))}
+            </ImageDeck>
           </ImgContainer>
           <InfoContainer>
-            <Title>TFlow Nonstereotaxic Nose Cone</Title>
-            <Price>$87.42 USD</Price>
+            <Title>{product.title}</Title>
+            <Price>{product.price} USD / piece</Price>
             <Desc>
               Buit for small rodents such as rats, mice, and gerbils. Not
               effective for guineapigs, click HERE for guineapig products
