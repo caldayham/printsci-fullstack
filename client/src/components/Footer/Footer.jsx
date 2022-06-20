@@ -28,6 +28,9 @@ import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
 import { Link } from "react-router-dom";
 import ClickLogo from "../SubComponents/Logo/ClickLogo.jsx";
 
+import Icon from "react-icons-kit";
+import { companySocials } from "../../tools/data";
+
 const Footer = () => {
   return (
     <Container>
@@ -41,26 +44,15 @@ const Footer = () => {
           You know the part, we know the path.
         </Desc>
         <SocialContainer>
-          <SocialIconContainer>
-            <SocialIcon color="0077b5">
-              <LinkedInIcon />
-            </SocialIcon>
-          </SocialIconContainer>
-          <SocialIconContainer>
-            <SocialIcon color="4267b2">
-              <FacebookIcon />
-            </SocialIcon>
-          </SocialIconContainer>
-          <SocialIconContainer>
-            <SocialIcon color="1da1f2">
-              <TwitterIcon />
-            </SocialIcon>
-          </SocialIconContainer>
-          <SocialIconContainer>
-            <SocialIcon color="e1306c">
-              <InstagramIcon />
-            </SocialIcon>
-          </SocialIconContainer>
+          {companySocials.map((account) => (
+            <a href={account.link} target="_blank" title={account.linkTitle}>
+              <SocialIconContainer>
+                <SocialIcon color={account.color}>
+                  <Icon icon={account.icon} size={"60%"} />
+                </SocialIcon>
+              </SocialIconContainer>
+            </a>
+          ))}
         </SocialContainer>
       </Left>
       <Center>

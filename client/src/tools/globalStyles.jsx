@@ -6,7 +6,7 @@ const ShopNowButton = styled.button`
   background-color: white;
   color: rgb(10, 10, 10);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 
   &:hover {
     font-size: 22px;
@@ -17,9 +17,16 @@ const SocialContainer = styled.div`
   display: flex;
 `;
 
-const SocialIconContainer = styled.div`
+const SocialIconContainer = styled.button`
   width: 45px;
+  height: 45px;
   margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
 `;
 
 const SocialIcon = styled.div`
@@ -31,15 +38,13 @@ const SocialIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-right: 20px;
   cursor: pointer;
 
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 
   &:hover {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
 `;
 
@@ -85,20 +90,31 @@ const CheckoutButton = styled.button`
 const StaticContainer = styled.div`
   min-height: 82vh;
   margin-top: 18vh;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px 100px 20px;
 `;
 
 const Title = styled.h1``;
 
-const Subtitle = styled.h3`
-  padding-top: 40px;
+const Subtitle = styled.h2`
+  font-size: 32px;
+  font-weight: 500;
 `;
 
 const Paragraph = styled.p`
   width: 50%;
+  font-size: 18px;
+  font-weight: 200;
+`;
+
+const HorizontalLine = styled.hr`
+  height: 1px;
+  border: none;
+  background-color: black;
+  margin: 40px 0px;
 `;
 
 export {
+  HorizontalLine,
   StaticContainer,
   SocialIconContainer,
   Title,
