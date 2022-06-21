@@ -60,6 +60,7 @@ const Members = () => {
                 <a
                   href={account.link}
                   target="_blank"
+                  rel="noreferrer"
                   title={account.linkTitle}
                 >
                   <SocialIconContainer>

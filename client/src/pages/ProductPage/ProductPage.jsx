@@ -42,7 +42,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const getProduct = async (product) => {
+    const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
         setProduct(res.data);
@@ -53,6 +53,9 @@ const ProductPage = () => {
     getProduct();
   }, [id]);
 
+  console.log("next is the product");
+  console.log(product);
+
   return (
     <div>
       <Announcement />
@@ -62,8 +65,8 @@ const ProductPage = () => {
           <ImgContainer>
             <SelectedImage src={product.mainImg} alt="product image" />
             <ImageDeck>
-              {product.imgs.map((img) => (
-                <DeckImage src={img}></DeckImage>
+              {product.imgs.map((img, index) => (
+                <DeckImage src={img} key={index}></DeckImage>
               ))}
             </ImageDeck>
           </ImgContainer>

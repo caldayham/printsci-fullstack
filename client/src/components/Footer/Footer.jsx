@@ -16,10 +16,6 @@ import {
   SocialIcon,
   SocialIconContainer,
 } from "../../tools/globalStyles.jsx";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
 
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import PermPhoneMsgIcon from "@mui/icons-material/PermPhoneMsg";
@@ -48,6 +44,7 @@ const Footer = () => {
             <a
               href={account.link}
               target="_blank"
+              rel="noreferrer"
               title={account.linkTitle}
               key={account.id}
             >

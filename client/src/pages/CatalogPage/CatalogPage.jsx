@@ -68,6 +68,8 @@ const CatalogPage = () => {
               flex: "1",
               margin: "2% 1% 2% 1%",
             }}
+            key={item.id}
+            id={item.id}
           >
             <CategoryWrapper selectedCat={category} thisCat={item.cat}>
               <CategoryText>

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   StaticContainer,
-  Title,
   Subtitle,
   Paragraph,
   HorizontalLine,
