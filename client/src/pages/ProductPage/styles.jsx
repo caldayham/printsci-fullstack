@@ -139,7 +139,15 @@ const AddContainer = styled.div`
   width: 100%;
 `;
 
+const OptionsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  width: 100%;
+`;
+
 export {
+  OptionsWrapper,
   Container,
   Wrapper,
   ImgContainer,

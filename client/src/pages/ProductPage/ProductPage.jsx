@@ -8,8 +8,6 @@ import {
   Title,
   Desc,
   Price,
-  FilterSize,
-  FilterMaterial,
   ProductCheckoutWrapper,
   ProductCheckout,
   ActionBin,
@@ -18,14 +16,9 @@ import {
   ImageDeck,
   DeckImage,
   DeckImageButton,
+  OptionsWrapper,
 } from "./styles";
-import {
-  FilterContainer,
-  Filter,
-  FilterTitle,
-  Select,
-  CheckoutButton,
-} from "../../tools/globalStyles";
+import { CheckoutButton } from "../../tools/globalStyles";
 
 import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
@@ -35,6 +28,7 @@ import ProductAmount from "../../components/SubComponents/ProductAmount/ProductA
 
 import { useLocation } from "react-router-dom";
 import { publicRequest } from "../../tools/requestMethods";
+import ProductOptions from "../../components/SubComponents/ProductOptions/ProductOptions";
 
 const ProductPage = () => {
   const location = useLocation();
@@ -44,6 +38,7 @@ const ProductPage = () => {
   const [rendering, setRendering] = useState(true);
   const [selectedImg, setSelectedImg] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const changeImage = (index) => {
     setSelectedImg(index);
@@ -55,6 +50,7 @@ const ProductPage = () => {
         const res = await publicRequest.get("/products/find/" + id);
         setProduct(res.data);
         setRendering(false);
+        setTotalPrice(product.basePrice);
       } catch (err) {
         console.log(err);
       }
@@ -97,32 +93,19 @@ const ProductPage = () => {
             </ImgContainer>
             <InfoContainer>
               <Title>{product.title}</Title>
-              <Price>{product.price} USD / piece</Price>
+              <Price>${product.basePrice} USD</Price>
               <Desc>{product.desc}</Desc>
-              <FilterContainer>
-                <Filter>
-                  <FilterTitle>Material</FilterTitle>
-                  {product.material?.map((mat) => (
-                    <FilterMaterial color="rgb(200,200,200)" key={mat}>
-                      {mat}
-                    </FilterMaterial>
-                  ))}
-                </Filter>
-                <Filter>
-                  <FilterTitle>Size</FilterTitle>
-                  <Select>
-                    {product.size?.map((size) => (
-                      <FilterSize key={size}>{size}</FilterSize>
-                    ))}
-                  </Select>
-                </Filter>
-              </FilterContainer>
+              <OptionsWrapper>
+                {product.options.map((option) => (
+                  <ProductOptions option={option} key={option.optionTitle} /> // this is where each option will be rendered
+                ))}
+              </OptionsWrapper>
             </InfoContainer>
           </Wrapper>
           <ProductCheckoutWrapper>
             <ProductCheckout>
               <SetupBin>
-                <Price>{product.price} </Price>
+                <Price>${product.basePrice} </Price>
                 <AddContainer>
                   <ProductAmount quantity={quantity} change={setQuantity} />
                 </AddContainer>

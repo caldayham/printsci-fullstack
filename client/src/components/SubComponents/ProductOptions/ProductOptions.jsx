@@ -1,17 +1,37 @@
-import { OptionUnstyled } from "@mui/base";
 import React from "react";
-import { Container } from "./styles";
+import {
+  Container,
+  Title,
+  OptionWrapper,
+  OptionImg,
+  OptionText,
+  OptionColor,
+} from "./styles";
 
-const ProductOptions = () => {
+const ProductOptions = ({ option }) => {
+  console.log("next is option in the product option component");
+  console.log(option);
+
   return (
     <Container>
-      <Title></Title>
-      {options.map((opt) => (
-        <OptionWrapper key={opt}>
-          <OptionTitle>{opt.title}</OptionTitle>
-          <OptionDesc>{opt.desc}</OptionDesc>
-        </OptionWrapper>
-      ))}
+      <Title>{option.optionTitle}</Title>
+      {option ? (
+        option.optionSelections.map((opt) => (
+          <OptionWrapper key={opt}>
+            {opt.selectionContentType === "img" && (
+              <OptionImg src={opt.selectionContent} />
+            )}
+            {opt.selectionContentType === "text" && (
+              <OptionText>{opt.selectionContent}</OptionText>
+            )}
+            {opt.selectionContentType === "" && (
+              <OptionColor color={opt.selectionContent} />
+            )}
+          </OptionWrapper>
+        ))
+      ) : (
+        <div>no option specified</div>
+      )}
     </Container>
   );
 };
