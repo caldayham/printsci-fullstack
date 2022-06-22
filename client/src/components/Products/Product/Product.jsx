@@ -11,7 +11,7 @@ const Product = ({ item }) => {
   return (
     <Container>
       <Circle />
-      <Image src={item.mainImg} />
+      <Image src={item.imgs[0]} />
       <Info>
         <Icon>
           <ShoppingBagOutlinedIcon />

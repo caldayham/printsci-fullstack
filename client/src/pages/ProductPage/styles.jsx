@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
   margin-top: 14vh;
   display: flex;
-  height: 86vh;
+  min-height: 86vh;
 `;
 
 const Wrapper = styled.div`
@@ -20,20 +20,33 @@ const ImgContainer = styled.div`
 const SelectedImage = styled.img`
   width: 100%;
   object-fit: cover;
-  background-color: rgb(0, 0, 0, 0.05);
+  background-color: rgb(238, 238, 238);
+  transition: all 0.1s ease;
 
   &:hover {
-    background-color: rgb(20, 20, 255, 0.05);
+    background-color: rgb(14, 14, 14, 1);
   }
 `;
 const DeckImage = styled.img`
-  width: 20%;
+  width: 100%;
   object-fit: cover;
-  background-color: rgb(0, 0, 0, 0.05);
+  transition: all 0.1s ease;
+  background-color: ${(props) =>
+    props.selectedImg === props.thisImg ? "rgb(14,14,14)" : "rgb(238,238,238)"};
 
   &:hover {
-    background-color: rgb(20, 20, 255, 0.05);
+    background-color: rgb(14, 14, 14, 1);
   }
+`;
+
+const DeckImageButton = styled.button`
+  width: 20%;
+  display: flex;
+  justify-content: left;
+  overflow: hidden;
+  margin-top: 10px;
+  border: none;
+  background-color: transparent;
 `;
 
 const ImageDeck = styled.div`
@@ -144,4 +157,5 @@ export {
   AddContainer,
   ImageDeck,
   DeckImage,
+  DeckImageButton,
 };

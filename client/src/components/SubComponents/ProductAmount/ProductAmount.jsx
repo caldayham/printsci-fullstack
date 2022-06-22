@@ -1,13 +1,21 @@
 import { Add, Remove } from "@mui/icons-material";
-import React from "react";
+import React, { useState } from "react";
 import { AmountContainer, Amount } from "./styles";
 
-const ProductAmount = () => {
+const ProductAmount = ({ quantity, change }) => {
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && change(quantity - 1);
+    } else {
+      change(quantity + 1);
+    }
+  };
+
   return (
     <AmountContainer>
-      <Remove />
-      <Amount>2</Amount>
-      <Add />
+      <Remove onClick={() => handleQuantity("dec")} />
+      <Amount>{quantity}</Amount>
+      <Add onClick={() => handleQuantity("inc")} />
     </AmountContainer>
   );
 };
