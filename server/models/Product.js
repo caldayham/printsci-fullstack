@@ -3,7 +3,12 @@ const mongoose = require("mongoose");
 const ProductSchema = new mongoose.Schema(
     {
         title: { type: String, required: true, unique: true },      // title of the product
-        partId: {type: String, required: true, unique: true},
+        partId: { type: String, required: true, unique: true },     // ledgible 8 character id string for customers to use
+        rating: {
+            totalAvgRating: { type: Number },
+            totalNumRatings: { type: Number },
+            totalAnsweredQuestions: { type: Number}
+        },
         desc: { type: String, required: true, unique: true },       // description of the product
         imgs: { type: Array },                                      // images & videos & models of the product
         categories: { type: Array },                                // categories the product is in
