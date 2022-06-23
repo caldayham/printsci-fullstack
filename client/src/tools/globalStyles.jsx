@@ -98,12 +98,15 @@ const Title = styled.h1``;
 const Subtitle = styled.h2`
   font-size: 32px;
   font-weight: 500;
+  padding-top: ${(props) => props.paddingTop};
+  padding-bottom: ${(props) => props.paddingBottom};
 `;
 
 const Paragraph = styled.p`
-  width: 50%;
   font-size: 18px;
   font-weight: 200;
+  padding-top: ${(props) => props.paddingTop};
+  padding-bottom: ${(props) => props.paddingBottom};
 `;
 
 const HorizontalLine = styled.hr`

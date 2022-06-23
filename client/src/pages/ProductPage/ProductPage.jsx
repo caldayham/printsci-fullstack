@@ -17,8 +17,10 @@ import {
   DeckImage,
   DeckImageButton,
   OptionsWrapper,
+  BulletDesc,
+  Specs,
 } from "./styles";
-import { CheckoutButton } from "../../tools/globalStyles";
+import { CheckoutButton, Paragraph, Subtitle } from "../../tools/globalStyles";
 
 import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
@@ -153,10 +155,46 @@ const ProductPage = () => {
             </ImgContainer>
             <InfoContainer>
               <Title>{product.title}</Title>
+              <Paragraph>
+                <b>Part ID: </b>
+                {product.partId}
+                <b
+                  style={{
+                    marginLeft: "20px",
+                  }}
+                >
+                  {product.inStock ? (
+                    <b
+                      style={{
+                        backgroundColor: "rgb(0, 110, 255)",
+                        color: "white",
+                        padding: "0px 6px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      IN STOCK ✔
+                    </b>
+                  ) : (
+                    <b
+                      style={{
+                        backgroundColor: "rgb(0, 110, 255)",
+                        color: "white",
+                        padding: "0px 6px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      OUT OF STOCK ✖
+                    </b>
+                  )}
+                </b>
+              </Paragraph>
               <Price>
                 ${packagePrice && numberWithCommas(packagePrice)} USD
               </Price>
-              <Desc>{product.desc}</Desc>
+              <Paragraph paddingTop={"50px"}>{product.desc}</Paragraph>
+              <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
+                Options
+              </Subtitle>
               <OptionsWrapper>
                 {product.options.map((option, i) => (
                   <ProductOptions
@@ -168,6 +206,28 @@ const ProductPage = () => {
                   /> // this is where each option will be rendered
                 ))}
               </OptionsWrapper>
+              <BulletDesc>
+                <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
+                  Description
+                </Subtitle>
+                {product.bulletDesc.map((desc) => (
+                  <Paragraph>
+                    <b style={{ fontSize: "30px" }}>• </b>
+                    {desc}
+                  </Paragraph>
+                ))}
+              </BulletDesc>
+              <Specs>
+                <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
+                  Product Specs
+                </Subtitle>
+                {product.specs.map((spec) => (
+                  <Paragraph>
+                    <b style={{ fontSize: "30px" }}>• </b>
+                    {spec}
+                  </Paragraph>
+                ))}
+              </Specs>
             </InfoContainer>
           </Wrapper>
           <ProductCheckoutWrapper>

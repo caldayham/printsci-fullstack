@@ -28,6 +28,7 @@ const OptionWrapper = styled.button`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border: 0.5px dashed rgb(0, 0, 0);
   background-color: ${(props) =>
     props.currentSelection === props.thisSelection
       ? "rgb(14,14,14)"

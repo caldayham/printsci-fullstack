@@ -147,7 +147,13 @@ const OptionsWrapper = styled.div`
   border-bottom: 1px solid rgb(200, 200, 200);
 `;
 
+const BulletDesc = styled.div``;
+
+const Specs = styled.div``;
+
 export {
+  BulletDesc,
+  Specs,
   OptionsWrapper,
   Container,
   Wrapper,
