@@ -144,6 +144,7 @@ const OptionsWrapper = styled.div`
   flex-direction: column;
   align-items: top;
   width: 100%;
+  border-bottom: 1px solid rgb(200, 200, 200);
 `;
 
 export {

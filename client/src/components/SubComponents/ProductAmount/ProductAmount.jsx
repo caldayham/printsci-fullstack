@@ -1,5 +1,5 @@
 import { Add, Remove } from "@mui/icons-material";
-import React, { useState } from "react";
+import React from "react";
 import { AmountContainer, Amount } from "./styles";
 
 const ProductAmount = ({ quantity, change }) => {
