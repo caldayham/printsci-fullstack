@@ -4,6 +4,8 @@ const ProductSchema = new mongoose.Schema(
     {
         title: { type: String, required: true, unique: true },      // title of the product
         desc: { type: String, required: true, unique: true },       // description of the product
+        bulletDesc: { type: Array },                                // this is where bullet point items will be saved
+        specs: {type: Array},                                       // this is where specs will be saved
         imgs: { type: Array },                                      // images & videos & models of the product
         categories: { type: Array },                                // categories the product is in
         family: {type: String},                                     // related to the product, products in the same family are great for cross-sales

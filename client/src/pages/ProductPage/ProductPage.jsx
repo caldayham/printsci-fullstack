@@ -30,6 +30,8 @@ import { useLocation } from "react-router-dom";
 import { publicRequest } from "../../tools/requestMethods";
 import ProductOptions from "../../components/SubComponents/ProductOptions/ProductOptions";
 
+import numberWithCommas from "../../tools/stylingTools";
+
 const ProductPage = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
@@ -38,6 +40,7 @@ const ProductPage = () => {
   const [rendering, setRendering] = useState(true);
   const [selectedImg, setSelectedImg] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [packagePrice, setPackagePrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
@@ -50,6 +53,7 @@ const ProductPage = () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
         setProduct(res.data);
+        setPackagePrice(res.data.basePrice);
         setTotalPrice(res.data.basePrice);
         console.log("next is res data options");
         console.log(res.data.options);
@@ -69,6 +73,13 @@ const ProductPage = () => {
   }, [id]);
 
   useEffect(() => {
+    const updateTotalPrice = () => {
+      setTotalPrice((packagePrice * quantity).toFixed(2));
+    };
+    updateTotalPrice();
+  }, [quantity, packagePrice]);
+
+  useEffect(() => {
     const updatePrice = () => {
       console.log("================================");
       console.log(
@@ -76,7 +87,7 @@ const ProductPage = () => {
       );
       console.log(selectedOptions);
       console.log("next is the current total price:");
-      console.log(totalPrice);
+      console.log(packagePrice);
       console.log("================================");
 
       const allPriceMultipliers = [];
@@ -93,10 +104,23 @@ const ProductPage = () => {
       console.log(totalOptionsMultiplier);
       const newPrice = product.basePrice * totalOptionsMultiplier;
 
-      setTotalPrice(newPrice.toFixed(2));
+      setPackagePrice(newPrice.toFixed(2));
     };
     updatePrice();
   }, [selectedOptions, id, rendering]);
+
+  const handleAddToCart = () => {
+    // this is where we will handle adding to the cart
+    //update cart
+  };
+  const handleBuyNow = () => {
+    // this is where we will handle buying the product immediately
+    //update cart
+  };
+  const handleCustomize = () => {
+    // this is where we will handle customizing the selected product
+    //update cart
+  };
 
   return (
     <div>
@@ -129,7 +153,9 @@ const ProductPage = () => {
             </ImgContainer>
             <InfoContainer>
               <Title>{product.title}</Title>
-              <Price>${totalPrice} USD</Price>
+              <Price>
+                ${packagePrice && numberWithCommas(packagePrice)} USD
+              </Price>
               <Desc>{product.desc}</Desc>
               <OptionsWrapper>
                 {product.options.map((option, i) => (
@@ -147,15 +173,19 @@ const ProductPage = () => {
           <ProductCheckoutWrapper>
             <ProductCheckout>
               <SetupBin>
-                <Price>${totalPrice} </Price>
+                <Price>${numberWithCommas(totalPrice)} </Price>
                 <AddContainer>
                   <ProductAmount quantity={quantity} change={setQuantity} />
                 </AddContainer>
               </SetupBin>
               <ActionBin>
-                <CheckoutButton>Add to Cart</CheckoutButton>
-                <CheckoutButton>Buy Now</CheckoutButton>
-                <CheckoutButton>Customize</CheckoutButton>
+                <CheckoutButton onClick={handleAddToCart}>
+                  Add to Cart
+                </CheckoutButton>
+                <CheckoutButton onClick={handleBuyNow}>Buy Now</CheckoutButton>
+                <CheckoutButton onClick={handleCustomize}>
+                  Customize
+                </CheckoutButton>
               </ActionBin>
             </ProductCheckout>
           </ProductCheckoutWrapper>

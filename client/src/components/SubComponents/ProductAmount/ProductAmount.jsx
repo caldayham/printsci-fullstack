@@ -7,7 +7,7 @@ const ProductAmount = ({ quantity, change }) => {
     if (type === "dec") {
       quantity > 1 && change(quantity - 1);
     } else {
-      change(quantity + 1);
+      quantity < 20 && change(quantity + 1);
     }
   };
 
