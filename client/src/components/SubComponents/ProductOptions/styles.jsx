@@ -16,7 +16,7 @@ const Title = styled.h1`
 const OptionsWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 2%;
+  gap: 10px;
   flex-wrap: wrap;
   padding-top: 5px;
 `;
