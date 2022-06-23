@@ -4,22 +4,21 @@ const Container = styled.div`
   margin-top: 14vh;
   display: flex;
   min-height: 86vh;
-`;
-
-const Wrapper = styled.div`
-  padding: 50px;
-  display: flex;
-  flex: 5;
+  margin-left: 6vw;
+  margin-right: 6vw;
 `;
 
 const ImgContainer = styled.div`
+  position: sticky;
+  top: 16vh;
   width: 100%;
-  flex: 1;
+  display: flex;
+  gap: 10px;
+  min-width: 300px;
 `;
 
 const SelectedImage = styled.img`
   width: 100%;
-  object-fit: cover;
   background-color: rgb(238, 238, 238);
   transition: all 0.1s ease;
 
@@ -27,8 +26,20 @@ const SelectedImage = styled.img`
     background-color: rgb(14, 14, 14, 1);
   }
 `;
+
+const ImageDeck = styled.div`
+  min-width: 80px;
+  max-width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  overflow: hidden;
+  gap: 10px;
+`;
+
 const DeckImage = styled.img`
   width: 100%;
+  height: 80px;
   object-fit: cover;
   transition: all 0.1s ease;
   background-color: ${(props) =>
@@ -39,40 +50,16 @@ const DeckImage = styled.img`
   }
 `;
 
-const DeckImageButton = styled.button`
-  width: 20%;
-  display: flex;
-  justify-content: left;
-  overflow: hidden;
-  margin-top: 10px;
-  border: none;
-  background-color: transparent;
-`;
-
-const ImageDeck = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: left;
-  overflow: hidden;
-  gap: 10px;
-  margin-top: 10px;
-`;
-
 const InfoContainer = styled.div`
+  padding: 50px 50px 50px 50px;
+  flex: 2;
   width: 100%;
-  flex: 1;
-  padding: 0px 50px;
+  min-width: 260px;
 `;
 
 const Title = styled.h1`
   font-weight: 600;
   font-size: 40px;
-`;
-
-const Desc = styled.p`
-  margin: 20px 0px;
-  font-size: 18px;
-  font-weight: 300;
 `;
 
 const Price = styled.span`
@@ -97,17 +84,17 @@ const FilterMaterial = styled.div`
 `;
 
 const ProductCheckoutWrapper = styled.div`
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   flex: 1;
-  background-color: rgb(0, 0, 0, 0);
 `;
 
 const ProductCheckout = styled.div`
-  padding: 50px;
-  height: 50%;
-  width: 10%;
-  position: fixed;
+  padding: 20px;
+  height: 50vh;
+  position: sticky;
+  top: 16vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -156,12 +143,10 @@ export {
   Specs,
   OptionsWrapper,
   Container,
-  Wrapper,
   ImgContainer,
   SelectedImage,
   InfoContainer,
   Title,
-  Desc,
   Price,
   FilterSize,
   ProductCheckoutWrapper,
@@ -172,5 +157,4 @@ export {
   AddContainer,
   ImageDeck,
   DeckImage,
-  DeckImageButton,
 };
