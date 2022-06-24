@@ -22,4 +22,5 @@ Main Gray: rgb(25, 25, 25) or rgb(0, 0, 0, 0.9)
 or maybe rgb(14, 14, 14) or
 Light Gray: rgb(238, 238, 238)
 Secondary Blue: rgb(217, 235, 252)
+Great Blue: rgb(0, 110, 255)
 Dark Blue: rgb()

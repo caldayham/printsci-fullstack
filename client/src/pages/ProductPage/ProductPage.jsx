@@ -28,6 +28,7 @@ import ProductAmount from "../../components/SubComponents/ProductAmount/ProductA
 import { useLocation } from "react-router-dom";
 import { publicRequest } from "../../tools/requestMethods";
 import ProductOptions from "../../components/SubComponents/ProductOptions/ProductOptions";
+import Rating from "../../components/SubComponents/Rating/Rating";
 
 import numberWithCommas from "../../tools/stylingTools";
 
@@ -54,8 +55,8 @@ const ProductPage = () => {
         setProduct(res.data);
         setPackagePrice(res.data.basePrice);
         setTotalPrice(res.data.basePrice);
-        console.log("next is res data options");
-        console.log(res.data.options);
+        console.log("next is res.data");
+        console.log(res.data);
         res.data.options.map((option) => {
           const oldSelectedOptions = selectedOptions;
           oldSelectedOptions.push(option.optionSelections[0]);
@@ -121,6 +122,15 @@ const ProductPage = () => {
     //update cart
   };
 
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
   return (
     <div>
       <Announcement />
@@ -181,7 +191,7 @@ const ProductPage = () => {
                 ) : (
                   <b
                     style={{
-                      backgroundColor: "rgb(0, 110, 255)",
+                      backgroundColor: "rgb(255, 51, 0)",
                       color: "white",
                       padding: "0px 6px",
                       borderRadius: "10px",
@@ -192,6 +202,12 @@ const ProductPage = () => {
                 )}
               </b>
             </Paragraph>
+            <Rating
+              size={100}
+              avgRating={product.rating.totalAvgRating}
+              numRatings={product.rating.totalNumRatings}
+              numAnsweredQuestions={product.rating.totalAnsweredQuestions}
+            />
             <Price>${packagePrice && numberWithCommas(packagePrice)} USD</Price>
             <Paragraph paddingTop={"50px"}>{product.desc}</Paragraph>
             <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
@@ -212,8 +228,8 @@ const ProductPage = () => {
               <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
                 Description
               </Subtitle>
-              {product.bulletDesc.map((desc) => (
-                <Paragraph>
+              {product.bulletDesc.map((desc, i) => (
+                <Paragraph key={i}>
                   <b style={{ fontSize: "30px" }}>• </b>
                   {desc}
                 </Paragraph>
@@ -223,8 +239,8 @@ const ProductPage = () => {
               <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
                 Product Specs
               </Subtitle>
-              {product.specs.map((spec) => (
-                <Paragraph>
+              {product.specs.map((spec, i) => (
+                <Paragraph key={i}>
                   <b style={{ fontSize: "30px" }}>• </b>
                   {spec}
                 </Paragraph>
@@ -252,7 +268,9 @@ const ProductPage = () => {
           </ProductCheckoutWrapper>
         </Container>
       )}
-      <Newsletter />
+      <a id="newsletter">
+        <Newsletter />
+      </a>
       <Footer />
     </div>
   );

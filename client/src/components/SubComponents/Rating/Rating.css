@@ -1,0 +1,18 @@
+.st0 {
+    fill: rgb(0, 0, 0, 0.0);
+}
+
+.st1 {
+    fill: rgb(0, 0, 0, 0.2);
+}
+
+.st2 {
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 40;
+    stroke-miterlimit: 10; 
+}
+
+.st3 {
+    fill: rgb(0, 110, 255);
+}
