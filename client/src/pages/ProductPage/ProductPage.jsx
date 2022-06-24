@@ -19,7 +19,7 @@ import {
   InfoSection,
   InfoSectionTitle,
 } from "./styles";
-import { CheckoutButton, Paragraph, Subtitle } from "../../tools/globalStyles";
+import { CheckoutButton, Paragraph } from "../../tools/globalStyles";
 
 import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
@@ -55,24 +55,32 @@ const ProductPage = () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
         setProduct(res.data);
-        setPackagePrice(res.data.basePrice);
-        setTotalPrice(res.data.basePrice);
-        console.log("next is res.data");
-        console.log(res.data);
-        res.data.options.map((option) => {
-          const oldSelectedOptions = selectedOptions;
-          oldSelectedOptions.push(option.optionSelections[0]);
-          setSelectedOptions(oldSelectedOptions);
-        });
         setRendering(false);
-        console.log("next is selectedOptions");
-        console.log(selectedOptions);
       } catch (err) {
         console.log(err);
       }
     };
     getProduct();
   }, [id]);
+
+  useEffect(() => {
+    const setVars = () => {
+      setPackagePrice(product.basePrice);
+      console.log("THIS IS PACKAGE PRICE" + packagePrice);
+      console.log(product.basePrice);
+      setTotalPrice(product.basePrice);
+      console.log("next is product");
+      console.log(product);
+      setSelectedOptions(
+        product.options.map((option) => {
+          const oldSelectedOptions = selectedOptions;
+          oldSelectedOptions.push(option.optionSelections[0]);
+          return oldSelectedOptions;
+        })
+      );
+    };
+    !rendering && setVars();
+  }, [product]);
 
   useEffect(() => {
     const updateTotalPrice = () => {
@@ -96,6 +104,7 @@ const ProductPage = () => {
       selectedOptions.map((opt) => {
         allPriceMultipliers.push(opt.selectionPriceMultiplier);
         console.log(allPriceMultipliers);
+        return allPriceMultipliers;
       });
 
       const initialValue = 1;
@@ -215,12 +224,21 @@ const ProductPage = () => {
                   )}
                 </b>
               </Paragraph>
-              <Rating
-                size={100}
-                avgRating={product.rating.totalAvgRating}
-                numRatings={product.rating.totalNumRatings}
-                numAnsweredQuestions={product.rating.totalAnsweredQuestions}
-              />
+              {product.rating ? (
+                <Rating
+                  size={100}
+                  avgRating={product.rating.totalAvgRating}
+                  numRatings={product.rating.totalNumRatings}
+                  numAnsweredQuestions={product.rating.totalAnsweredQuestions}
+                />
+              ) : (
+                <Rating
+                  size={100}
+                  avgRating={2.5}
+                  numRatings={10}
+                  numAnsweredQuestions={10}
+                />
+              )}
               <Price>
                 ${packagePrice && numberWithCommas(packagePrice)} USD
               </Price>
@@ -290,9 +308,8 @@ const ProductPage = () => {
           </ProductCheckoutWrapper>
         </Container>
       )}
-      <a id="newsletter">
-        <Newsletter />
-      </a>
+      <button id="newsletter" />
+      <Newsletter />
       <Footer />
     </div>
   );
