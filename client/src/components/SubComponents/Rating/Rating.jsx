@@ -21,9 +21,12 @@ const Rating = (props) => {
           <FillRatingSVG size={props.size} avgRating={decimalAvgRating} />
         </BottomLayer>
       </RatingLayers>
-      <RatingLink href="#newsletter">{props.numRatings} ratings</RatingLink>|
       <RatingLink href="#newsletter">
-        {props.numAnsweredQuestions} answered questions
+        <b>{props.numRatings}</b> ratings
+      </RatingLink>
+      |
+      <RatingLink href="#newsletter">
+        <b>{props.numAnsweredQuestions}</b> answered questions
       </RatingLink>
     </Container>
   );

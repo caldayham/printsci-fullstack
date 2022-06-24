@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px 0px;
-  border-top: 0.5px solid rgb(200, 200, 200);
+  border-bottom: 1px solid rgb(200, 200, 200);
 `;
 
 const Title = styled.h1`

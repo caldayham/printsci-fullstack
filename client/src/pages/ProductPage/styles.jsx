@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin-top: 14vh;
+  margin-top: 120px;
   display: flex;
   min-height: 86vh;
   margin-left: 6vw;
@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const ImgContainer = styled.div`
   position: sticky;
-  top: 16vh;
+  top: 140px;
   width: 100%;
   display: flex;
   gap: 10px;
@@ -57,9 +57,26 @@ const InfoContainer = styled.div`
   min-width: 260px;
 `;
 
+const InfoSection = styled.div``;
+
 const Title = styled.h1`
   font-weight: 600;
   font-size: 40px;
+  position: sticky;
+  background-color: white;
+`;
+
+const InfoSectionTitle = styled.h3`
+  font-size: 32px;
+  font-weight: 500;
+  padding-top: ${(props) => props.paddingTop};
+  padding-bottom: ${(props) => props.paddingBottom};
+  position: sticky;
+  top: 275px;
+  z-index: 2;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid rgb(200, 200, 200);
 `;
 
 const Price = styled.span`
@@ -94,7 +111,7 @@ const ProductCheckout = styled.div`
   padding: 20px;
   height: 50vh;
   position: sticky;
-  top: 16vh;
+  top: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,11 +144,11 @@ const AddContainer = styled.div`
 `;
 
 const OptionsWrapper = styled.div`
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: top;
   width: 100%;
-  border-bottom: 1px solid rgb(200, 200, 200);
 `;
 
 const BulletDesc = styled.div``;
@@ -139,6 +156,7 @@ const BulletDesc = styled.div``;
 const Specs = styled.div``;
 
 export {
+  InfoSectionTitle,
   BulletDesc,
   Specs,
   OptionsWrapper,
@@ -157,4 +175,5 @@ export {
   AddContainer,
   ImageDeck,
   DeckImage,
+  InfoSection,
 };

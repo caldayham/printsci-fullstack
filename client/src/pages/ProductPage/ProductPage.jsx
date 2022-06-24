@@ -16,6 +16,8 @@ import {
   OptionsWrapper,
   BulletDesc,
   Specs,
+  InfoSection,
+  InfoSectionTitle,
 } from "./styles";
 import { CheckoutButton, Paragraph, Subtitle } from "../../tools/globalStyles";
 
@@ -168,77 +170,97 @@ const ProductPage = () => {
             </ImgContainer>
           </div>
           <InfoContainer>
-            <Title>{product.title}</Title>
-            <Paragraph>
-              <b>Part ID: </b>
-              {product.partId}
-              <b
-                style={{
-                  marginLeft: "20px",
-                }}
-              >
-                {product.inStock ? (
-                  <b
-                    style={{
-                      backgroundColor: "rgb(0, 110, 255)",
-                      color: "white",
-                      padding: "0px 6px",
-                      borderRadius: "10px",
-                    }}
-                  >
-                    IN STOCK ✔
-                  </b>
-                ) : (
-                  <b
-                    style={{
-                      backgroundColor: "rgb(255, 51, 0)",
-                      color: "white",
-                      padding: "0px 6px",
-                      borderRadius: "10px",
-                    }}
-                  >
-                    OUT OF STOCK ✖
-                  </b>
-                )}
-              </b>
+            <div
+              style={{
+                position: "sticky",
+                top: "130px",
+                width: "100%",
+                backgroundColor: "white",
+                padding: "2px 0px",
+                zIndex: "3",
+                borderBottom: "1px solid rgb(200,200,200)",
+              }}
+            >
+              <Title>{product.title}</Title>
+              <Paragraph>
+                <b>Part ID: </b>
+                {product.partId}
+                <b
+                  style={{
+                    marginLeft: "20px",
+                  }}
+                >
+                  {product.inStock ? (
+                    <b
+                      style={{
+                        backgroundColor: "rgb(0, 110, 255)",
+                        color: "white",
+                        padding: "0px 6px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      IN STOCK ✔
+                    </b>
+                  ) : (
+                    <b
+                      style={{
+                        backgroundColor: "rgb(255, 51, 0)",
+                        color: "white",
+                        padding: "0px 6px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      OUT OF STOCK ✖
+                    </b>
+                  )}
+                </b>
+              </Paragraph>
+              <Rating
+                size={100}
+                avgRating={product.rating.totalAvgRating}
+                numRatings={product.rating.totalNumRatings}
+                numAnsweredQuestions={product.rating.totalAnsweredQuestions}
+              />
+              <Price>
+                ${packagePrice && numberWithCommas(packagePrice)} USD
+              </Price>
+            </div>
+            <Paragraph paddingTop={"50px"} paddingBottom={"50px"}>
+              {product.desc}
             </Paragraph>
-            <Rating
-              size={100}
-              avgRating={product.rating.totalAvgRating}
-              numRatings={product.rating.totalNumRatings}
-              numAnsweredQuestions={product.rating.totalAnsweredQuestions}
-            />
-            <Price>${packagePrice && numberWithCommas(packagePrice)} USD</Price>
-            <Paragraph paddingTop={"50px"}>{product.desc}</Paragraph>
-            <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
-              Options
-            </Subtitle>
-            <OptionsWrapper>
-              {product.options.map((option, i) => (
-                <ProductOptions
-                  option={option}
-                  key={i}
-                  specIndex={i}
-                  selected={selectedOptions}
-                  changeSelected={setSelectedOptions}
-                /> // this is where each option will be rendered
-              ))}
-            </OptionsWrapper>
+            <InfoSection>
+              <InfoSectionTitle paddingTop={"5px"} paddingBottom={"5px"}>
+                Options
+              </InfoSectionTitle>
+              <OptionsWrapper>
+                {product.options.map((option, i) => (
+                  <ProductOptions
+                    option={option}
+                    key={i}
+                    specIndex={i}
+                    selected={selectedOptions}
+                    changeSelected={setSelectedOptions}
+                  /> // this is where each option will be rendered
+                ))}
+              </OptionsWrapper>
+              <div style={{ height: "50px" }} />
+            </InfoSection>
             <BulletDesc>
-              <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
+              <InfoSectionTitle paddingTop={"5px"} paddingBottom={"5px"}>
                 Description
-              </Subtitle>
+              </InfoSectionTitle>
               {product.bulletDesc.map((desc, i) => (
                 <Paragraph key={i}>
                   <b style={{ fontSize: "30px" }}>• </b>
                   {desc}
                 </Paragraph>
               ))}
+              <div style={{ height: "50px" }} />
             </BulletDesc>
             <Specs>
-              <Subtitle paddingTop={"50px"} paddingBottom={"20px"}>
+              <InfoSectionTitle paddingTop={"5px"} paddingBottom={"5px"}>
                 Product Specs
-              </Subtitle>
+              </InfoSectionTitle>
               {product.specs.map((spec, i) => (
                 <Paragraph key={i}>
                   <b style={{ fontSize: "30px" }}>• </b>
