@@ -4,6 +4,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   color: rgb(0, 110, 255);
+  flex-wrap: wrap;
 `;
 
 const RatingLayers = styled.div`
@@ -11,6 +12,7 @@ const RatingLayers = styled.div`
   height: ${(props) => `${(props.size * 1008) / 4466}px`};
   display: flex;
   position: relative;
+  margin-right: 10px;
 `;
 
 const TopLayer = styled.div`
@@ -26,7 +28,8 @@ const BottomLayer = styled.div`
 const RatingLink = styled.a`
   color: inherit;
   text-decoration: none;
-  padding: 0px 10px;
+  padding-right: ${(props) => `${props.paddingRight}px`};
+  padding-left: ${(props) => `${props.paddingLeft}px`};
   font-weight: 00;
 
   &:hover {
