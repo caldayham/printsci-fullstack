@@ -1,5 +1,4 @@
 import React from "react";
-import {} from "../../tools/globalStyles";
 import {
   Container,
   Wrapper,
@@ -23,7 +22,11 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { Link } from "react-router-dom";
 import ClickLogo from "../SubComponents/Logo/ClickLogo";
 
+import { useSelector } from "react-redux";
+
 const Navbar = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
+
   return (
     <Container>
       <Wrapper>
@@ -83,7 +86,7 @@ const Navbar = () => {
               style={{ textDecoration: "none", color: "white" }}
             >
               <BadgeWrapper>
-                <Badge badgeContent={4} color="primary">
+                <Badge badgeContent={quantity} color="primary">
                   <ShoppingBagOutlinedIcon style={{ fontSize: "inherit" }} />
                 </Badge>
               </BadgeWrapper>

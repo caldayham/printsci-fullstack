@@ -4,7 +4,7 @@ import { Container } from "./styles";
 import Product from "./Product/Product";
 import axios from "axios";
 
-const Products = ({ category, filters, sort }) => {
+const Products = ({ category, filters, sort, num }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -15,8 +15,10 @@ const Products = ({ category, filters, sort }) => {
         console.log("this is category: " + category);
         const res = await axios.get(
           category == null
-            ? `http://localhost:5000/api/products?num=${12}`
-            : `http://localhost:5000/api/products?category=${category}&num=${12}`
+            ? `http://localhost:5000/api/products?num=${num ? num : 12}`
+            : `http://localhost:5000/api/products?category=${category}&num=${
+                num ? num : 12
+              }`
         );
         setProducts(res.data);
       } catch (err) {

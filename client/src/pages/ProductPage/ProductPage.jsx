@@ -33,6 +33,8 @@ import ProductOptions from "../../components/SubComponents/ProductOptions/Produc
 import Rating from "../../components/SubComponents/Rating/Rating";
 
 import numberWithCommas from "../../tools/stylingTools";
+import { addProduct } from "../../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const ProductPage = () => {
   const location = useLocation();
@@ -44,7 +46,8 @@ const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [packagePrice, setPackagePrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const dispatch = useDispatch();
 
   const changeImage = (index) => {
     setSelectedImg(index);
@@ -64,65 +67,48 @@ const ProductPage = () => {
   }, [id]);
 
   useEffect(() => {
-    const setVars = () => {
-      setPackagePrice(product.basePrice);
-      console.log("THIS IS PACKAGE PRICE" + packagePrice);
-      console.log(product.basePrice);
-      setTotalPrice(product.basePrice);
-      console.log("next is product");
-      console.log(product);
-      setSelectedOptions(
-        product.options.map((option) => {
-          const oldSelectedOptions = selectedOptions;
-          oldSelectedOptions.push(option.optionSelections[0]);
-          return oldSelectedOptions;
-        })
+    console.log("NEXT IS PRODUCT");
+    console.log(product);
+
+    const updatePackagePrice = () => {
+      var currentPackagePriceMultiplier = 1;
+      product.options.map((option) => {
+        // getting the total multiples over the base price
+        console.log("NEXT IS OPTION");
+        console.log(option);
+
+        const selectionPriceMultiplier =
+          option.optionSelections[option.selectedOption]
+            .selectionPriceMultiplier;
+
+        console.log(selectionPriceMultiplier);
+
+        currentPackagePriceMultiplier *=
+          option.optionSelections[option.selectedOption]
+            .selectionPriceMultiplier;
+        return;
+      });
+      console.log(
+        "this is the currentPackagePriceMultiplier: " +
+          currentPackagePriceMultiplier
+      );
+
+      setPackagePrice(
+        (product.basePrice * currentPackagePriceMultiplier).toFixed(2)
       );
     };
-    !rendering && setVars();
-  }, [product]);
 
-  useEffect(() => {
     const updateTotalPrice = () => {
       setTotalPrice((packagePrice * quantity).toFixed(2));
     };
     updateTotalPrice();
+    !rendering && updatePackagePrice();
   }, [quantity, packagePrice]);
-
-  useEffect(() => {
-    const updatePrice = () => {
-      console.log("================================");
-      console.log(
-        "selectedOptions, or product id, or rendering state changed, here are the new selectedOptions:"
-      );
-      console.log(selectedOptions);
-      console.log("next is the current total price:");
-      console.log(packagePrice);
-      console.log("================================");
-
-      const allPriceMultipliers = [];
-      selectedOptions.map((opt) => {
-        allPriceMultipliers.push(opt.selectionPriceMultiplier);
-        console.log(allPriceMultipliers);
-        return allPriceMultipliers;
-      });
-
-      const initialValue = 1;
-      const totalOptionsMultiplier = allPriceMultipliers.reduce(
-        (a, b) => a * b,
-        initialValue
-      );
-      console.log(totalOptionsMultiplier);
-      const newPrice = product.basePrice * totalOptionsMultiplier;
-
-      setPackagePrice(newPrice.toFixed(2));
-    };
-    updatePrice();
-  }, [selectedOptions, id, rendering]);
 
   const handleAddToCart = () => {
     // this is where we will handle adding to the cart
     //update cart
+    dispatch(addProduct({ ...product, quantity }));
   };
   const handleBuyNow = () => {
     // this is where we will handle buying the product immediately
@@ -253,11 +239,10 @@ const ProductPage = () => {
               <OptionsWrapper>
                 {product.options.map((option, i) => (
                   <ProductOptions
-                    option={option}
+                    optionIndex={i}
+                    product={product}
+                    setProduct={setProduct}
                     key={i}
-                    specIndex={i}
-                    selected={selectedOptions}
-                    changeSelected={setSelectedOptions}
                   /> // this is where each option will be rendered
                 ))}
               </OptionsWrapper>

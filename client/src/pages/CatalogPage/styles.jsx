@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Container = styled.div`
   background-color: rgb(255, 255, 255, 1);
   color: rgb(0, 0, 0);
-  margin-top: 14vh;
+  margin-top: 120px;
+  padding-top: 20px;
 `;
 
 const CategoriesWrapper = styled.div`
@@ -12,6 +13,11 @@ const CategoriesWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 120px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(200, 200, 200);
+  z-index: 4;
 `;
 
 const CategoryWrapper = styled.button`

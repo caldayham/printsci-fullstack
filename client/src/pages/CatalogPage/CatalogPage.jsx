@@ -57,59 +57,61 @@ const CatalogPage = () => {
     <Container>
       <Announcement id="announcement" />
       <Navbar id="navbar" />
-      <CategoriesWrapper>
-        {categories.map((item) => (
-          <Link
-            to={`/catalog/${item.cat}`}
-            style={{
-              textDecoration: "none",
-              color: "white",
-              display: "flex",
-              flex: "1",
-              margin: "2% 1% 2% 1%",
-            }}
-            key={item.id}
-            id={item.id}
-          >
-            <CategoryWrapper selectedCat={category} thisCat={item.cat}>
-              <CategoryText>
-                <CategoryTitle>{item.title}</CategoryTitle>
-                <CategoryDesc>{item.desc}</CategoryDesc>
-              </CategoryText>
-              <CategoryImage src={item.img} />
-            </CategoryWrapper>
-          </Link>
-        ))}
-      </CategoriesWrapper>
-      <FilterContainer>
-        <Filter>
-          <FilterTitle>Filter Products</FilterTitle>
-          <Select name="material" onChange={handleFilters}>
-            <FilterOption>material</FilterOption>
-            <FilterOption>PLA</FilterOption>
-            <FilterOption>ABS</FilterOption>
-            <FilterOption>PVC</FilterOption>
-          </Select>
-          <Select name="size" onChange={handleFilters}>
-            <FilterOption>size</FilterOption>
-            <FilterOption>XS</FilterOption>
-            <FilterOption>S</FilterOption>
-            <FilterOption>M</FilterOption>
-            <FilterOption>L</FilterOption>
-            <FilterOption>XL</FilterOption>
-          </Select>
-        </Filter>
-        <Filter>
-          <FilterTitle>Sort Products</FilterTitle>
-          <Select onChange={(e) => setSort(e.target.value)}>
-            <FilterOption value="newest">Newest</FilterOption>
-            <FilterOption value="asc">Price (asc)</FilterOption>
-            <FilterOption value="desc">Price (desc)</FilterOption>
-            <FilterOption value="rating">Rating</FilterOption>
-          </Select>
-        </Filter>
-      </FilterContainer>
-      <Products category={category} filters={filters} sort={sort} />
+      <div>
+        <CategoriesWrapper>
+          {categories.map((item) => (
+            <Link
+              to={`/catalog/${item.cat}`}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                display: "flex",
+                flex: "1",
+                margin: "2% 1% 2% 1%",
+              }}
+              key={item.id}
+              id={item.id}
+            >
+              <CategoryWrapper selectedCat={category} thisCat={item.cat}>
+                <CategoryText>
+                  <CategoryTitle>{item.title}</CategoryTitle>
+                  <CategoryDesc>{item.desc}</CategoryDesc>
+                </CategoryText>
+                <CategoryImage src={item.img} />
+              </CategoryWrapper>
+            </Link>
+          ))}
+        </CategoriesWrapper>
+        <FilterContainer>
+          <Filter>
+            <FilterTitle>Filter Products</FilterTitle>
+            <Select name="material" onChange={handleFilters}>
+              <FilterOption>material</FilterOption>
+              <FilterOption>PLA</FilterOption>
+              <FilterOption>ABS</FilterOption>
+              <FilterOption>PVC</FilterOption>
+            </Select>
+            <Select name="size" onChange={handleFilters}>
+              <FilterOption>size</FilterOption>
+              <FilterOption>XS</FilterOption>
+              <FilterOption>S</FilterOption>
+              <FilterOption>M</FilterOption>
+              <FilterOption>L</FilterOption>
+              <FilterOption>XL</FilterOption>
+            </Select>
+          </Filter>
+          <Filter>
+            <FilterTitle>Sort Products</FilterTitle>
+            <Select onChange={(e) => setSort(e.target.value)}>
+              <FilterOption value="newest">Newest</FilterOption>
+              <FilterOption value="asc">Price (asc)</FilterOption>
+              <FilterOption value="desc">Price (desc)</FilterOption>
+              <FilterOption value="rating">Rating</FilterOption>
+            </Select>
+          </Filter>
+        </FilterContainer>
+        <Products category={category} filters={filters} sort={sort} />
+      </div>
       <Newsletter />
       <Footer />
     </Container>

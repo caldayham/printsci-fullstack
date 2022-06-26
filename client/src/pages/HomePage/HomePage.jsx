@@ -17,7 +17,7 @@ const HomePage = () => {
       <Container>
         <Slider />
         <Categories />
-        <Products />
+        <Products category={"all"} filters={{}} num={8} />
         <Newsletter />
       </Container>
       <Footer />

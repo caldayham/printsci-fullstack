@@ -16,6 +16,7 @@ const ProductSchema = new mongoose.Schema(
         options: [
             {
                 optionTitle: { type: String },                      // ex: 'color' or 'size'
+                selectedOption: {type: Number},
                 optionSelections: [                                 // the selections for that option for the product
                 {
                     selection: {type: String },
