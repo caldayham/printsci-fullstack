@@ -3,21 +3,24 @@ import styled from "styled-components";
 const CartContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: space-between;
-  padding: 20px;
-  flex: 4;
+  flex: 5;
+  padding-right: 50px;
 `;
 
 const CartCheckout = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
   flex: 1;
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  position: sticky;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  background-color: white;
+  padding-bottom: 10px;
+`;
 
 const TopText = styled.span`
   text-decoration: underline;
@@ -25,7 +28,7 @@ const TopText = styled.span`
   margin: 0px 30px 0px 0px;
 `;
 
-const Info = styled.div`
+const CartItems = styled.div`
   flex: 3;
 `;
 
@@ -81,12 +84,6 @@ const ProductPrice = styled.h1`
   font-size: 32px;
 `;
 
-const Summary = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: right;
-`;
-
 const SummaryTitle = styled.h1`
   font-weight: 200;
   font-size: 180%;
@@ -106,11 +103,10 @@ const SummaryItemText = styled.span``;
 const SummaryItemPrice = styled.span``;
 
 const ProductCheckout = styled.div`
-  padding: 50px;
-  height: 50%;
-  width: 15%;
-  margin: 20px;
-  position: fixed;
+  padding: 20px;
+  height: 50vh;
+  position: sticky;
+  top: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -134,8 +130,7 @@ export {
   ProductId,
   ProductMaterial,
   ProductSize,
-  Info,
-  Summary,
+  CartItems,
   TopText,
   TopTexts,
   PriceDetail,

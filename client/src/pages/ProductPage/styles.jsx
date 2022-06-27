@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const ImgWrapper = styled.div`
-  padding-top: 50px;
-  padding-bottom: 50px;
   margin: 0px;
   flex: 3;
 `;
@@ -50,7 +48,7 @@ const DeckImage = styled.img`
 `;
 
 const InfoContainer = styled.div`
-  padding: 50px 50px 50px 50px;
+  padding: 0px 50px;
   flex: 2;
   width: 100%;
   min-width: 260px;
@@ -93,8 +91,6 @@ const FilterMaterial = styled.div`
 `;
 
 const ProductCheckoutWrapper = styled.div`
-  padding-top: 50px;
-  padding-bottom: 50px;
   display: flex;
   flex: 1;
 `;

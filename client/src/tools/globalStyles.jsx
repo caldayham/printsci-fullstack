@@ -1,23 +1,25 @@
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  margin-top: 120px;
-  display: flex;
-  min-height: 86vh;
+  margin-top: 170px;
   margin-left: 6vw;
   margin-right: 6vw;
+  margin-bottom: 50px;
+  display: flex;
+  min-height: 86vh;
 `;
 
 const ShopNowButton = styled.button`
   padding: 10px;
   font-size: 20px;
   background-color: white;
-  color: rgb(10, 10, 10);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   transition: all 0.1s ease;
 
   &:hover {
-    font-size: 22px;
+    background-color: rgb(14, 14, 14);
+    color: white;
   }
 `;
 
@@ -104,7 +106,6 @@ const StaticContainer = styled.div`
 const Title = styled.h1`
   font-weight: 600;
   font-size: 40px;
-  position: sticky;
   background-color: white;
 `;
 

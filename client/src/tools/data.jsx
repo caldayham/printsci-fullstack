@@ -47,7 +47,7 @@ export const categories = [
   {
     id: 4,
     img: "/images/MicroTube.png",
-    title: "Lab Consumables",
+    title: "Consumables",
     cat: "consumables",
     desc: "Transfer pipettes, underpads, centerfuge tubes and much more.",
   },

@@ -164,7 +164,6 @@ const ProductPage = () => {
                 top: "130px",
                 width: "100%",
                 backgroundColor: "white",
-                padding: "2px 0px",
                 zIndex: "3",
                 borderBottom: "1px solid rgb(200,200,200)",
               }}

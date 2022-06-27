@@ -9,8 +9,7 @@ import ProductAmount from "../../components/SubComponents/ProductAmount/ProductA
 import {
   TopTexts,
   TopText,
-  Info,
-  Summary,
+  CartItems,
   Product,
   ProductDetail,
   Image,
@@ -31,6 +30,7 @@ import {
   CartCheckout,
 } from "./styles";
 import { CheckoutButton, MainContainer, Title } from "../../tools/globalStyles";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -42,12 +42,12 @@ const CartPage = () => {
       <MainContainer>
         {/*here is the left side content for the cart content*/}
         <CartContent>
-          <Title>Your Cart</Title>
           <TopTexts>
+            <Title>Your Cart</Title>
             <TopText>Cart (4)</TopText>
             <TopText>Saved (2)</TopText>
           </TopTexts>
-          <Info>
+          <CartItems>
             {cart.products.map((product, i) => (
               <Product key={i}>
                 <ProductDetail>
@@ -74,34 +74,33 @@ const CartPage = () => {
                 </PriceDetail>
               </Product>
             ))}
-          </Info>
+          </CartItems>
         </CartContent>
         {/*here is the right side content for the checkout*/}
         <CartCheckout>
-          <Summary>
-            <ProductCheckout>
-              <SummaryTitle>Order Summary</SummaryTitle>
-              <SummaryItem>
-                <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>$410.24</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryItem>
-                <SummaryItemText>Estimated Shipping</SummaryItemText>
-                <SummaryItemPrice>$18.00</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryItem>
-                <SummaryItemText>Shipping Discount</SummaryItemText>
-                <SummaryItemPrice>$-18.00</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryItem type="total">
-                <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>$410.24</SummaryItemPrice>
-              </SummaryItem>
-              <CheckoutButton>Checkout</CheckoutButton>
-            </ProductCheckout>
-          </Summary>
+          <ProductCheckout>
+            <SummaryTitle>Order Summary</SummaryTitle>
+            <SummaryItem>
+              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemPrice>$410.24</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemPrice>$18.00</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemPrice>$-18.00</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>$410.24</SummaryItemPrice>
+            </SummaryItem>
+            <CheckoutButton>Checkout</CheckoutButton>
+          </ProductCheckout>
         </CartCheckout>
       </MainContainer>
+      <Newsletter />
       <Footer />
     </div>
   );
