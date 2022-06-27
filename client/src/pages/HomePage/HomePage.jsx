@@ -16,10 +16,10 @@ const HomePage = () => {
       <Navbar />
       <Container>
         <Slider />
-        <Categories />
-        <Products category={"all"} filters={{}} num={8} />
-        <Newsletter />
+        <Categories paddingSides={"4vw"} />
+        <Products category={"all"} filters={{}} num={8} paddingSides={"4vw"} />
       </Container>
+      <Newsletter />
       <Footer />
     </div>
   );

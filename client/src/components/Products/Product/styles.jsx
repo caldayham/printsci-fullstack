@@ -21,7 +21,6 @@ const Container = styled.div`
   // this is the item wrapper
   flex-grow: 1;
   min-width: 340px;
-  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;

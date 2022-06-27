@@ -3,11 +3,11 @@ import { Container } from "./styles";
 import CategoryItem from "./CategoryItem/CategoryItem";
 import { categories } from "../../tools/data";
 
-const Categories = () => {
+const Categories = ({ paddingSides }) => {
   const subCategories = categories.slice(1);
 
   return (
-    <Container>
+    <Container paddingSides={paddingSides}>
       {subCategories.map((item) => (
         <CategoryItem item={item} key={item.id}></CategoryItem>
       ))}

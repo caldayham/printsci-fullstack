@@ -4,7 +4,7 @@ import { Container } from "./styles";
 import Product from "./Product/Product";
 import axios from "axios";
 
-const Products = ({ category, filters, sort, num }) => {
+const Products = ({ category, filters, sort, num, paddingSides }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -66,7 +66,7 @@ const Products = ({ category, filters, sort, num }) => {
   }, [sort]);
 
   return (
-    <Container>
+    <Container paddingSides={paddingSides}>
       {category == null
         ? products
             .slice(0, 8)
