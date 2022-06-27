@@ -1,23 +1,23 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  background-color: rgb(255, 255, 255, 1);
-  color: rgb(0, 0, 0);
-  margin-top: 120px;
-  padding-top: 20px;
+const FiltersWrapper = styled.div`
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: sticky;
+  top: 130px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(200, 200, 200);
+  z-index: 4;
 `;
 
 const CategoriesWrapper = styled.div`
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 120px;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(200, 200, 200);
-  z-index: 4;
+  gap: 20px;
+
+  justify-content: center;
+  align-items: top;
 `;
 
 const CategoryWrapper = styled.button`
@@ -69,11 +69,11 @@ const CategoryTitle = styled.h1`
 `;
 
 export {
-  Container,
   CategoriesWrapper,
   CategoryDesc,
   CategoryWrapper,
   CategoryImage,
   CategoryText,
   CategoryTitle,
+  FiltersWrapper,
 };

@@ -5,8 +5,11 @@ const MainContainer = styled.div`
   margin-left: 6vw;
   margin-right: 6vw;
   margin-bottom: 50px;
-  display: flex;
   min-height: 86vh;
+
+  display: flex;
+  flex-direction: ${(props) =>
+    props.flexDirection ? props.flexDirection : "auto"};
 `;
 
 const ShopNowButton = styled.button`
@@ -59,12 +62,13 @@ const SocialIcon = styled.div`
 `;
 
 const FilterContainer = styled.div`
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
+  height: auto;
 `;
 
 const Filter = styled.div`
-  margin: 20px;
   display: flex;
   align-items: top;
 `;

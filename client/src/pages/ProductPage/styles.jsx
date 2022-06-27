@@ -62,7 +62,7 @@ const InfoSectionTitle = styled.h3`
   padding-top: ${(props) => props.paddingTop};
   padding-bottom: ${(props) => props.paddingBottom};
   position: sticky;
-  top: 275px;
+  top: 274px;
   z-index: 2;
   width: 100%;
   background-color: white;
