@@ -26,7 +26,7 @@ const Products = ({ category, filters, sort, num }) => {
       }
     };
     getProducts();
-  }, [category]); // when the category (category) changes, run this function
+  }, [category, num]); // when the category (category) changes, run this function
 
   useEffect(() => {
     category &&

@@ -57,6 +57,11 @@ const ProductPage = () => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
+        console.log("--------------------------------");
+        console.log("next is the fetched product");
+        console.log(res.data);
+        console.log("--------------------------------");
+
         setProduct(res.data);
         setRendering(false);
       } catch (err) {
@@ -67,26 +72,14 @@ const ProductPage = () => {
   }, [id]);
 
   useEffect(() => {
-    console.log("NEXT IS PRODUCT");
-    console.log(product);
-
     const updatePackagePrice = () => {
       var currentPackagePriceMultiplier = 1;
       product.options.map((option) => {
         // getting the total multiples over the base price
-        console.log("NEXT IS OPTION");
-        console.log(option);
-
-        const selectionPriceMultiplier =
-          option.optionSelections[option.selectedOption]
-            .selectionPriceMultiplier;
-
-        console.log(selectionPriceMultiplier);
-
         currentPackagePriceMultiplier *=
           option.optionSelections[option.selectedOption]
             .selectionPriceMultiplier;
-        return;
+        return currentPackagePriceMultiplier;
       });
       console.log(
         "this is the currentPackagePriceMultiplier: " +
@@ -101,14 +94,17 @@ const ProductPage = () => {
     const updateTotalPrice = () => {
       setTotalPrice((packagePrice * quantity).toFixed(2));
     };
-    updateTotalPrice();
+    !rendering && updateTotalPrice();
     !rendering && updatePackagePrice();
-  }, [quantity, packagePrice]);
+  }, [quantity, packagePrice, rendering, product]);
 
   const handleAddToCart = () => {
     // this is where we will handle adding to the cart
     //update cart
     dispatch(addProduct({ ...product, quantity }));
+
+    console.log("next is the current porduct, the one that is being sent");
+    console.log(product);
   };
   const handleBuyNow = () => {
     // this is where we will handle buying the product immediately
@@ -237,14 +233,7 @@ const ProductPage = () => {
                 Options
               </InfoSectionTitle>
               <OptionsWrapper>
-                {product.options.map((option, i) => (
-                  <ProductOptions
-                    optionIndex={i}
-                    product={product}
-                    setProduct={setProduct}
-                    key={i}
-                  /> // this is where each option will be rendered
-                ))}
+                <ProductOptions product={product} changeProduct={setProduct} />
               </OptionsWrapper>
               <div style={{ height: "50px" }} />
             </InfoSection>
