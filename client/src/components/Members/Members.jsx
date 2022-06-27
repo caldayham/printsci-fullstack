@@ -22,8 +22,8 @@ import { members } from "../../tools/data";
 const Members = () => {
   return (
     <Container>
-      {members.map((item) => (
-        <MemberWrapper>
+      {members.map((item, i) => (
+        <MemberWrapper key={i}>
           <MemberText>
             <MemberTitleWrapper>
               <MemberTitle>{item.title}</MemberTitle>
@@ -56,12 +56,13 @@ const Members = () => {
               </MemberDesc>
             </MemberDescWrapper>
             <SocialContainer>
-              {item.socials.map((account) => (
+              {item.socials.map((account, i) => (
                 <a
                   href={account.link}
                   target="_blank"
                   rel="noreferrer"
                   title={account.linkTitle}
+                  key={i}
                 >
                   <SocialIconContainer>
                     <SocialIcon color={account.color}>

@@ -43,7 +43,7 @@ const AboutPage = () => {
         </Paragraph>
         <HorizontalLine />
         <Subtitle>Meet the team!</Subtitle>
-        <Members></Members>
+        <Members />
         <br />
         <br />
         <Subtitle>Contact us</Subtitle>

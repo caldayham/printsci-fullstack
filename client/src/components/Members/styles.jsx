@@ -8,7 +8,7 @@ const Container = styled.div`
   gap: 4%;
 `;
 
-const MemberWrapper = styled.button`
+const MemberWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: left;
@@ -20,6 +20,7 @@ const MemberWrapper = styled.button`
   background-color: white;
   color: black;
   transition: all 0.1s ease;
+  border: 1px solid rgb(200, 200, 200);
 
   &:hover {
     background: rgb(244, 244, 244);
