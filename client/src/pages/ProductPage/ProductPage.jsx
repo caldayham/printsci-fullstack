@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {
-  Container,
   ImgContainer,
   SelectedImage,
   InfoContainer,
-  Title,
   Price,
   ProductCheckoutWrapper,
   ProductCheckout,
@@ -18,8 +16,14 @@ import {
   Specs,
   InfoSection,
   InfoSectionTitle,
+  ImgWrapper,
 } from "./styles";
-import { CheckoutButton, Paragraph } from "../../tools/globalStyles";
+import {
+  CheckoutButton,
+  Paragraph,
+  MainContainer,
+  Title,
+} from "../../tools/globalStyles";
 
 import Announcement from "../../components/Announcement/Announcement";
 import Navbar from "../../components/Navbar/Navbar";
@@ -101,7 +105,7 @@ const ProductPage = () => {
   const handleAddToCart = () => {
     // this is where we will handle adding to the cart
     //update cart
-    dispatch(addProduct({ ...product, quantity }));
+    dispatch(addProduct({ ...product, quantity, totalPrice }));
 
     console.log("next is the current porduct, the one that is being sent");
     console.log(product);
@@ -131,15 +135,8 @@ const ProductPage = () => {
       {rendering ? (
         <div>"is rendering"</div>
       ) : (
-        <Container>
-          <div
-            style={{
-              paddingTop: "50px",
-              paddingBottom: "50px",
-              margin: "0px",
-              flex: "3",
-            }}
-          >
+        <MainContainer>
+          <ImgWrapper>
             <ImgContainer>
               <ImageDeck>
                 {product.imgs.map((img, index) => (
@@ -159,7 +156,7 @@ const ProductPage = () => {
                 />
               </div>
             </ImgContainer>
-          </div>
+          </ImgWrapper>
           <InfoContainer>
             <div
               style={{
@@ -280,7 +277,7 @@ const ProductPage = () => {
               </ActionBin>
             </ProductCheckout>
           </ProductCheckoutWrapper>
-        </Container>
+        </MainContainer>
       )}
       <button id="newsletter" />
       <Newsletter />

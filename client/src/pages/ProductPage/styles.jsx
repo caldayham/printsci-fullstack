@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  margin-top: 120px;
-  display: flex;
-  min-height: 86vh;
-  margin-left: 6vw;
-  margin-right: 6vw;
+const ImgWrapper = styled.div`
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0px;
+  flex: 3;
 `;
 
 const ImgContainer = styled.div`
@@ -58,13 +57,6 @@ const InfoContainer = styled.div`
 `;
 
 const InfoSection = styled.div``;
-
-const Title = styled.h1`
-  font-weight: 600;
-  font-size: 40px;
-  position: sticky;
-  background-color: white;
-`;
 
 const InfoSectionTitle = styled.h3`
   font-size: 32px;
@@ -156,15 +148,14 @@ const BulletDesc = styled.div``;
 const Specs = styled.div``;
 
 export {
+  ImgWrapper,
   InfoSectionTitle,
   BulletDesc,
   Specs,
   OptionsWrapper,
-  Container,
   ImgContainer,
   SelectedImage,
   InfoContainer,
-  Title,
   Price,
   FilterSize,
   ProductCheckoutWrapper,

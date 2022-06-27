@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+const MainContainer = styled.div`
+  margin-top: 120px;
+  display: flex;
+  min-height: 86vh;
+  margin-left: 6vw;
+  margin-right: 6vw;
+`;
+
 const ShopNowButton = styled.button`
   padding: 10px;
   font-size: 20px;
@@ -93,7 +101,12 @@ const StaticContainer = styled.div`
   padding: 0px 20px 100px 20px;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  font-weight: 600;
+  font-size: 40px;
+  position: sticky;
+  background-color: white;
+`;
 
 const Subtitle = styled.h2`
   font-size: 32px;
@@ -132,4 +145,5 @@ export {
   CheckoutButton,
   SocialContainer,
   SocialIcon,
+  MainContainer,
 };

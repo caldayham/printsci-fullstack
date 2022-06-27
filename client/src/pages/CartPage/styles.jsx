@@ -1,40 +1,20 @@
 import styled from "styled-components";
 
-const Container = styled.div``;
-
-const Wrapper = styled.div`
-  margin-top: 14vh;
+const CartContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
   padding: 20px;
-  min-height: 86vh;
+  flex: 4;
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  font-weight: 300;
-`;
-
-const Top = styled.div`
+const CartCheckout = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-`;
-
-const TopButton = styled.button`
-  padding: 10px;
-  font-weight: 200;
-  font-size: 22px;
-  cursor: pointer;
-  background-color: white;
-
-  background-color: ${(props) =>
-    props.type === "filled" ? "rgb(25, 25, 25)" : "transparent"};
-  color: ${(props) => (props.type === "filled" ? "white" : "black")};
-
-  &:hover {
-    background-color: ${(props) =>
-      props.type === "filled" ? "rgb(0, 0, 0)" : "rgb(238, 238, 238)"};
-  }
+  flex: 1;
 `;
 
 const TopTexts = styled.div``;
@@ -45,19 +25,8 @@ const TopText = styled.span`
   margin: 0px 30px 0px 0px;
 `;
 
-const Bottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 const Info = styled.div`
   flex: 3;
-`;
-
-const Hr = styled.hr`
-  background-color: #eee;
-  border: none;
-  height: 1px;
 `;
 
 const Product = styled.div`
@@ -156,7 +125,6 @@ export {
   SummaryItem,
   SummaryItemText,
   SummaryTitle,
-  Hr,
   ProductPrice,
   Product,
   ProductDetail,
@@ -168,15 +136,11 @@ export {
   ProductSize,
   Info,
   Summary,
-  Container,
-  Wrapper,
-  Title,
-  Top,
-  Bottom,
-  TopButton,
   TopText,
   TopTexts,
   PriceDetail,
   MaterialSwatch,
   SummaryItemPrice,
+  CartContent,
+  CartCheckout,
 };
