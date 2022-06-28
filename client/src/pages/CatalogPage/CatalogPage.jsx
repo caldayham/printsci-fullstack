@@ -23,7 +23,13 @@ import {
 import { useLocation } from "react-router-dom";
 import { categories } from "../../tools/data";
 
+import { useDispatch } from "react-redux";
+import { changePage } from "../../redux/currentPageRedux";
+
 const CatalogPage = () => {
+  const dispatch = useDispatch();
+  dispatch(changePage("catalog"));
+
   const location = useLocation();
   const [category, setCategory] = useState(
     location.pathname.split("/")[2] ? location.pathname.split("/")[2] : "all"
