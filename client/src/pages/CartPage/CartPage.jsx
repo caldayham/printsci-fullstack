@@ -40,8 +40,6 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import SaveAltOutlinedIcon from "@mui/icons-material/SaveAltOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
-import Newsletter from "../../components/Newsletter/Newsletter";
-
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
 

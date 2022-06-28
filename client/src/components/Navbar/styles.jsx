@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { mobile } from "../../tools/responsive";
 
+import { useSelector } from "react-redux";
+
 const Container = styled.div`
   height: auto;
   position: fixed;
@@ -80,6 +82,10 @@ const NavLinkBar = styled.div`
 const LocalLink = styled.p`
   font-size: 20px;
   font-weight: 400;
+  border-bottom: ${(props) =>
+    useSelector((state) => state.currentPage.page) === props.thisPage
+      ? "2px solid white"
+      : "auto"};
 
   &:hover {
     border-bottom: 2px solid white;

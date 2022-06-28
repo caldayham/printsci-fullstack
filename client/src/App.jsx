@@ -31,6 +31,7 @@ import ScrollToTop from "./tools/ScrollToTop";
 const App = () => {
   const user = false;
   const [isShowLoginOverlay, setIsShowLoginOverlay] = useState(false);
+  const [currentPage, setCurrentPage] = useState("home");
 
   const handleLoginClick = () => {
     setIsShowLoginOverlay((isShowLoginOverlay) => !isShowLoginOverlay);
@@ -39,10 +40,17 @@ const App = () => {
   return (
     <Router style={{ position: "relative" }}>
       <Announcement />
-      <Navbar setIsShowLoginOverlay={setIsShowLoginOverlay} />
+      <Navbar
+        setIsShowLoginOverlay={setIsShowLoginOverlay}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
 
       {isShowLoginOverlay ? (
-        <LoginRegisterOverlay setIsShowLoginOverlay={setIsShowLoginOverlay} />
+        <LoginRegisterOverlay
+          setIsShowLoginOverlay={setIsShowLoginOverlay}
+          handleLoginClick={handleLoginClick}
+        />
       ) : (
         <div />
       )}

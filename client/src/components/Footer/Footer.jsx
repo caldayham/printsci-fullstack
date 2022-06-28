@@ -27,7 +27,12 @@ import ClickLogo from "../SubComponents/Logo/ClickLogo.jsx";
 import Icon from "react-icons-kit";
 import { companySocials } from "../../tools/data";
 
+import { useDispatch } from "react-redux";
+import { changePage } from "../../redux/currentPageRedux";
+
 const Footer = () => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Left>
@@ -62,6 +67,7 @@ const Footer = () => {
         <List>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("home"))}
               to="/home/#"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -70,6 +76,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("cart"))}
               to="/mycart/#"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -78,6 +85,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("catalog"))}
               to="/catalog/hardware"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -86,6 +94,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("catalog"))}
               to="/catalog/anesthesia"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -94,6 +103,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("custom"))}
               to="/custom/"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -102,6 +112,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("privacy"))}
               to="/about/privacy"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -110,6 +121,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("terms"))}
               to="/about/terms"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -118,6 +130,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link
+              onClick={() => dispatch(changePage("return"))}
               to="/about/return"
               style={{ textDecoration: "none", color: "inherit" }}
             >
