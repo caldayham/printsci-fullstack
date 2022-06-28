@@ -7,14 +7,23 @@ const Info = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgb(0, 0, 255, 0.05);
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   transition: all 0.2s ease;
-  cursor: pointer;
+`;
+
+const Circle = styled.div`
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  transition: all 0.2s ease;
 `;
 
 const Container = styled.div`
@@ -25,21 +34,21 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: #f5fbfd;
+  background-color: rgb(231, 241, 255);
   position: relative;
 
   &:hover ${Info} {
     opacity: 1;
   }
-`;
 
-const Circle = styled.div`
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  display: flex;
+  &:hover ${Circle} {
+    opacity: 0;
+  }
+
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: rgb(193, 220, 255);
+  }
 `;
 
 const Image = styled.img`
@@ -61,9 +70,11 @@ const Icon = styled.div`
   justify-content: center;
   margin: 10px;
   transition: all 0.2s ease;
+  z-index: 5;
 
   &:hover {
-    background-color: #e9f5f5;
+    background-color: rgb(14, 14, 14);
+    color: white;
     transform: scale(1.2);
   }
 `;

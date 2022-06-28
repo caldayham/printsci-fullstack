@@ -30,7 +30,7 @@ const RatingLink = styled.a`
   text-decoration: none;
   padding-right: ${(props) => `${props.paddingRight}px`};
   padding-left: ${(props) => `${props.paddingLeft}px`};
-  font-weight: 00;
+  font-weight: 300;
 
   &:hover {
     text-decoration: underline;

@@ -16,7 +16,7 @@ const HomePage = () => {
       <Navbar />
       <Container>
         <Slider />
-        <Categories paddingSides={"4vw"} />
+        <Categories paddingSides={"4vw"} id={"categories"} />
         <Products category={"all"} filters={{}} num={8} paddingSides={"4vw"} />
       </Container>
       <Newsletter />

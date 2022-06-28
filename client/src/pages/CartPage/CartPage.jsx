@@ -14,8 +14,6 @@ import {
   ProductDetail,
   Image,
   Details,
-  ProductName,
-  ProductId,
   ProductMaterial,
   ProductSize,
   PriceDetail,
@@ -28,8 +26,23 @@ import {
   ProductCheckout,
   CartContent,
   CartCheckout,
+  EditOptions,
+  Icon,
 } from "./styles";
-import { CheckoutButton, MainContainer, Title } from "../../tools/globalStyles";
+import {
+  CheckoutButton,
+  MainContainer,
+  ShopNowButton,
+  Title,
+  Subtitle,
+  Paragraph,
+  CustomLink,
+} from "../../tools/globalStyles";
+
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import SaveAltOutlinedIcon from "@mui/icons-material/SaveAltOutlined";
+import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+
 import Newsletter from "../../components/Newsletter/Newsletter";
 
 const CartPage = () => {
@@ -43,22 +56,49 @@ const CartPage = () => {
         {/*here is the left side content for the cart content*/}
         <CartContent>
           <TopTexts>
-            <Title>Your Cart</Title>
-            <TopText>Cart (4)</TopText>
-            <TopText>Saved (2)</TopText>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Title>Your Cart</Title>
+              <CustomLink to={`/catalog/all`}>
+                <ShopNowButton style={{ marginTop: "10px" }}>
+                  Continue Shopping
+                </ShopNowButton>
+              </CustomLink>
+            </div>
+            <div style={{ display: "flex" }}>
+              <TopText>Cart ({cart.quantity})</TopText>
+              <TopText>Saved (0)</TopText>
+            </div>
           </TopTexts>
           <CartItems>
             {cart.products.map((product, i) => (
               <Product key={i}>
+                <EditOptions>
+                  <Icon>
+                    <CustomLink to={`/product/${product._id}`}>
+                      <EditOutlinedIcon />
+                    </CustomLink>
+                  </Icon>
+                  <Icon>
+                    <CustomLink to={`/mycart`}>
+                      <SaveAltOutlinedIcon />
+                    </CustomLink>
+                  </Icon>
+                  <Icon>
+                    <CustomLink to={`/home`}>
+                      <DeleteOutlinedIcon />
+                    </CustomLink>
+                  </Icon>
+                </EditOptions>
                 <ProductDetail>
-                  <Image src="/images/StableFlow_Box1_img2.PNG" />
+                  {console.log(product)}
+                  <Image src={product.imgs[0]} />
                   <Details>
-                    <ProductName>
-                      <b>Product:</b> TFlow Nonstereotaxic Anesthesia Nose Cone
-                    </ProductName>
-                    <ProductId>
-                      <b>ID:</b> 95021613
-                    </ProductId>
+                    <div>
+                      <Subtitle>{product.title}</Subtitle>
+                      <Paragraph>
+                        <b>Part ID:</b> {product.partId}
+                      </Paragraph>
+                    </div>
                     <ProductMaterial>
                       <b>Material:</b> PLA Plastic
                       <MaterialSwatch color="#cf7500" />

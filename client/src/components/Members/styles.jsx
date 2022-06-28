@@ -19,11 +19,12 @@ const MemberWrapper = styled.div`
   padding: 20px;
   background-color: white;
   color: black;
-  transition: all 0.1s ease;
   border: 1px solid rgb(200, 200, 200);
+  background: rgb(231, 241, 255);
 
+  transition: all 0.1s ease;
   &:hover {
-    background: rgb(244, 244, 244);
+    background: rgb(193, 220, 255);
   }
 `;
 

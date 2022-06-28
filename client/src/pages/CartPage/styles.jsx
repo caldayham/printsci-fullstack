@@ -20,6 +20,8 @@ const TopTexts = styled.div`
   border-bottom: 1px solid rgb(200, 200, 200);
   background-color: white;
   padding-bottom: 10px;
+
+  z-index: 4;
 `;
 
 const TopText = styled.span`
@@ -32,18 +34,46 @@ const CartItems = styled.div`
   flex: 3;
 `;
 
+const EditOptions = styled.div`
+  opacity: 0;
+  width: 180px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+`;
+
+const Image = styled.img`
+  width: 180px;
+`;
+
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  position: relative;
+  margin: 10px 0px;
+  background-color: rgb(231, 241, 255);
+
+  &:hover ${EditOptions} {
+    opacity: 1;
+  }
+
+  transition: all 0.1s ease;
+  &:hover {
+    background-color: rgb(193, 220, 255);
+  }
 `;
 
 const ProductDetail = styled.div`
   display: flex;
   flex: 2;
-`;
-
-const Image = styled.img`
-  width: 200px;
 `;
 
 const Details = styled.div`
@@ -52,9 +82,6 @@ const Details = styled.div`
   flex-direction: column;
   justify-content: space-around;
 `;
-
-const ProductName = styled.span``;
-const ProductId = styled.span``;
 
 const ProductMaterial = styled.span`
   display: flex;
@@ -111,12 +138,34 @@ const ProductCheckout = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  min-width: 200px;
   border: 1px solid rgb(0, 0, 0, 0.2);
   border-radius: 10px;
   background-color: white;
 `;
 
+const Icon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  transition: all 0.2s ease;
+  z-index: 4;
+
+  &:hover {
+    background-color: rgb(14, 14, 14);
+    color: white;
+    transform: scale(1.2);
+  }
+`;
+
 export {
+  Icon,
+  EditOptions,
   ProductCheckout,
   SummaryItem,
   SummaryItemText,
@@ -126,8 +175,6 @@ export {
   ProductDetail,
   Image,
   Details,
-  ProductName,
-  ProductId,
   ProductMaterial,
   ProductSize,
   CartItems,

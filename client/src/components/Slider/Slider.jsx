@@ -9,7 +9,7 @@ import {
   Title,
   Desc,
 } from "./styles";
-import { ShopNowButton } from "../../tools/globalStyles";
+import { CustomLink, ShopNowButton } from "../../tools/globalStyles";
 import { useState } from "react";
 
 import KeyboardDoubleArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftOutlined";
@@ -45,7 +45,9 @@ const Slider = () => {
                 {item.title[1]}
               </Title>
               <Desc>{item.desc}</Desc>
-              <ShopNowButton>SHOP NOW</ShopNowButton>
+              <CustomLink to={`/catalog/all`}>
+                <ShopNowButton>SHOP NOW</ShopNowButton>
+              </CustomLink>
             </InfoContainer>
           </Slide>
         ))}

@@ -23,7 +23,7 @@ const Button = styled.button`
 
 const Container = styled.div`
   height: 60vh;
-  background-color: #d9ebfc;
+  background-color: rgb(231, 241, 255);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,10 @@ const Container = styled.div`
     width: 60%;
     height: 50px;
   }
-  &:hover ${Button} {
+
+  transition: all 0.4s ease;
+  &:hover {
+    background-color: rgb(193, 220, 255);
   }
 `;
 

@@ -21,9 +21,10 @@ import {
   FilterOption,
   Select,
   MainContainer,
+  CustomLink,
 } from "../../tools/globalStyles";
 
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { categories } from "../../tools/data";
 
 const CatalogPage = () => {
@@ -36,11 +37,12 @@ const CatalogPage = () => {
   const [sort, setSort] = useState("newest");
 
   const handleFilters = (e) => {
-    const value = e.target.value;
-    setFilters({
-      ...filters,
-      [e.target.name]: value,
-    });
+    setFilters({});
+    // const value = e.target.value;
+    // setFilters({
+    //   ...filters,
+    //   [e.target.name]: value,
+    // });
   };
 
   useEffect(() => {
@@ -62,12 +64,9 @@ const CatalogPage = () => {
         <FiltersWrapper>
           <CategoriesWrapper>
             {categories.map((item) => (
-              <Link
+              <CustomLink
                 to={`/catalog/${item.cat}`}
                 style={{
-                  textDecoration: "none",
-                  color: "white",
-                  display: "flex",
                   flex: "1",
                 }}
                 key={item.id}
@@ -80,7 +79,7 @@ const CatalogPage = () => {
                   </CategoryText>
                   <CategoryImage src={item.img} />
                 </CategoryWrapper>
-              </Link>
+              </CustomLink>
             ))}
           </CategoriesWrapper>
           <FilterContainer>

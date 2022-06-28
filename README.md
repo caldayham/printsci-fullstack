@@ -18,9 +18,16 @@ https://web.postman.co/workspace/My-Workspace~4694ba45-bdd6-4baf-8a29-e19dcacb1e
 
 # Colors
 
-Main Gray: rgb(25, 25, 25) or rgb(0, 0, 0, 0.9)
-or maybe rgb(14, 14, 14) or
-Light Gray: rgb(238, 238, 238)
-Secondary Blue: rgb(217, 235, 252)
-Great Blue: rgb(0, 110, 255)
-Dark Blue: rgb()
+**For action items that change state of page**
+Main Gray: rgb(14, 14, 14) or rgb(0, 0, 0, 0.9)
+Black: rgb(0, 0, 0)
+
+**For action items that reveal things**
+No Hover Light Blue: rgb(231, 241, 255)
+Hover Light Blue: rgb(193, 220, 255)
+
+**Other**
+Border Gray: rgb(200, 200, 200)
+Light Gray: rgb(241, 241, 241)
+White: rgb(255, 255, 255)
+Accent Blue: rgb(0, 110, 255)

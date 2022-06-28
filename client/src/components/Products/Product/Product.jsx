@@ -5,7 +5,7 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-import { Link } from "react-router-dom";
+import { CustomLink } from "../../../tools/globalStyles";
 
 const Product = ({ item }) => {
   return (
@@ -13,24 +13,29 @@ const Product = ({ item }) => {
       <Circle />
       <Image src={item.imgs[0]} />
       <Info>
+        <CustomLink
+          to={`/product/${item._id}`}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            zIndex: "4",
+          }}
+        />
         <Icon>
-          <ShoppingBagOutlinedIcon />
+          <CustomLink to={`/mycart`}>
+            <ShoppingBagOutlinedIcon />
+          </CustomLink>
         </Icon>
         <Icon>
-          <Link
-            to={`/product/${item._id}`}
-            style={{
-              textDecoration: "none",
-              color: "black",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
+          <CustomLink to={`/product/${item._id}`}>
             <YoutubeSearchedForIcon />
-          </Link>
+          </CustomLink>
         </Icon>
         <Icon>
-          <FavoriteBorderIcon />
+          <CustomLink to={`/home`}>
+            <FavoriteBorderIcon />
+          </CustomLink>
         </Icon>
       </Info>
     </Container>
