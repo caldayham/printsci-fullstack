@@ -48,6 +48,28 @@ import Newsletter from "../../components/Newsletter/Newsletter";
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
 
+  function calculatePrice(product) {
+    console.log(product);
+
+    var packagePrice = product.basePrice;
+
+    var currentPackagePriceMultiplier = 1;
+    product.options.map((option) => {
+      // getting the total multiples over the base price
+      currentPackagePriceMultiplier *=
+        option.optionSelections[option.selectedOption].selectionPriceMultiplier;
+      return currentPackagePriceMultiplier;
+    });
+
+    packagePrice = (
+      packagePrice *
+      currentPackagePriceMultiplier *
+      product.quantity
+    ).toFixed(2);
+
+    return packagePrice;
+  }
+
   return (
     <div>
       <Announcement />
@@ -109,7 +131,7 @@ const CartPage = () => {
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
-                  <ProductPrice>$87.42</ProductPrice>
+                  <ProductPrice>${calculatePrice(product)}</ProductPrice>
                   <ProductAmount />
                 </PriceDetail>
               </Product>
@@ -134,7 +156,7 @@ const CartPage = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$410.24</SummaryItemPrice>
+              <SummaryItemPrice>${cart.total.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <CheckoutButton>Checkout</CheckoutButton>
           </ProductCheckout>
