@@ -8,11 +8,8 @@ import {
   ActionWrapper,
   BackButton,
 } from "./styles";
-import { useNavigate } from "react-router-dom";
 
-const Register = () => {
-  let history = useNavigate();
-
+const Register = ({ setIsShowLoginOverlay }) => {
   return (
     <Wrapper>
       <Form>
@@ -27,7 +24,9 @@ const Register = () => {
           I consent to the <u>privacy policy</u>
         </Agreement>
         <Button>Register</Button>
-        <BackButton onClick={() => history(-1)}>go back</BackButton>
+        <BackButton onClick={() => setIsShowLoginOverlay(false)}>
+          go back
+        </BackButton>
       </ActionWrapper>
     </Wrapper>
   );

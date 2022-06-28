@@ -24,7 +24,7 @@ import ClickLogo from "../SubComponents/Logo/ClickLogo";
 
 import { useSelector } from "react-redux";
 
-const Navbar = () => {
+const Navbar = ({ setIsShowLoginOverlay }) => {
   const quantity = useSelector((state) => state.cart.quantity);
 
   return (
@@ -70,15 +70,10 @@ const Navbar = () => {
         </Center>
         <Right>
           <MenuItem>
-            <Link
-              to="/login"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <LocalMinorLink>
-                Login or <br />
-                Register
-              </LocalMinorLink>
-            </Link>
+            <LocalMinorLink onClick={() => setIsShowLoginOverlay(true)}>
+              Login or <br />
+              Register
+            </LocalMinorLink>
           </MenuItem>
           <MenuItem>
             <Link

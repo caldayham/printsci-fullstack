@@ -8,11 +8,8 @@ import {
   Wrapper,
   BackButton,
 } from "./styles";
-import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  let history = useNavigate();
-
+const Login = ({ setIsShowLoginOverlay }) => {
   return (
     <Wrapper>
       <Form>
@@ -23,7 +20,9 @@ const Login = () => {
       <ActionWrapper>
         <Link>Forgot some credentials?</Link>
         <Button>Login</Button>
-        <BackButton onClick={() => history(-1)}>go back</BackButton>
+        <BackButton onClick={() => setIsShowLoginOverlay(false)}>
+          go back
+        </BackButton>
       </ActionWrapper>
     </Wrapper>
   );

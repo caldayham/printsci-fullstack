@@ -25,10 +25,6 @@ import {
   Title,
 } from "../../tools/globalStyles";
 
-import Announcement from "../../components/Announcement/Announcement";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import Newsletter from "../../components/Newsletter/Newsletter";
 import ProductAmount from "../../components/SubComponents/ProductAmount/ProductAmount";
 
 import { useLocation } from "react-router-dom";
@@ -130,8 +126,6 @@ const ProductPage = () => {
 
   return (
     <div>
-      <Announcement />
-      <Navbar />
       {rendering ? (
         <div>"is rendering"</div>
       ) : (
@@ -279,8 +273,6 @@ const ProductPage = () => {
         </MainContainer>
       )}
       <button id="newsletter" />
-      <Newsletter />
-      <Footer />
     </div>
   );
 };

@@ -11,7 +11,14 @@ import ServiceTermsPage from "./pages/StaticPages/ServiceTermsPage";
 import ReturnPolicyPage from "./pages/StaticPages/ReturnPolicyPage";
 import PrivacyPolicyPage from "./pages/StaticPages/PrivacyPolicyPage";
 
-import React, { Fragment } from "react";
+import Announcement from "./components/Announcement/Announcement";
+import Navbar from "./components/Navbar/Navbar";
+import Newsletter from "./components/Newsletter/Newsletter";
+import Footer from "./components/Footer/Footer";
+
+import LoginRegisterOverlay from "./pages/LoginRegisterPage/LoginRegisterOverlay";
+
+import React, { Fragment, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -23,9 +30,22 @@ import ScrollToTop from "./tools/ScrollToTop";
 
 const App = () => {
   const user = false;
+  const [isShowLoginOverlay, setIsShowLoginOverlay] = useState(false);
+
+  const handleLoginClick = () => {
+    setIsShowLoginOverlay((isShowLoginOverlay) => !isShowLoginOverlay);
+  };
 
   return (
-    <Router>
+    <Router style={{ position: "relative" }}>
+      <Announcement />
+      <Navbar setIsShowLoginOverlay={setIsShowLoginOverlay} />
+
+      {isShowLoginOverlay ? (
+        <LoginRegisterOverlay setIsShowLoginOverlay={setIsShowLoginOverlay} />
+      ) : (
+        <div />
+      )}
       <Fragment>
         <ScrollToTop />
         <Routes>
@@ -59,6 +79,9 @@ const App = () => {
           <Route exact path="/*" element={<NotFound404Page />} />
         </Routes>
       </Fragment>
+
+      <Newsletter />
+      <Footer />
     </Router>
   );
 };

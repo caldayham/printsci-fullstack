@@ -7,12 +7,13 @@ const Container = styled.div`
   background-color: #eeeeee;
   position: relative;
   overflow: hidden;
+  margin-bottom: 20px;
 `;
 
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -29,6 +30,12 @@ const Arrow = styled.div`
   opacity: 0.9;
 
   z-index: 2;
+
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: rgb(14, 14, 14);
+    color: rgb(255, 255, 255);
+  }
 `;
 
 const Wrapper = styled.div`
@@ -44,7 +51,7 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: #${(props) => props.bg};
+  background-color: rgb(231, 241, 255);
 `;
 const ImgContainer = styled.div`
   height: 100%;
