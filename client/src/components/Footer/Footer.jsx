@@ -38,8 +38,8 @@ const Footer = () => {
       <Left>
         <ClickLogo />
         <Desc>
-          Composing high-fidelity 3D printing pipelines to get parts out of your
-          head and in your hands.
+          Composing high-fidelity manufacturing pipelines to get parts out of
+          your head and into your hands.
           <br />
           <br />
           You know the part, we know the path.

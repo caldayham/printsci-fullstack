@@ -1,13 +1,13 @@
 import React from "react";
 import {
   Container,
-  Title,
   OptionWrapper,
   OptionImg,
   OptionText,
   OptionColor,
   OptionsWrapper,
 } from "./styles";
+import { Paragraph } from "../../../tools/globalStyles";
 
 const ProductOptions = ({ product, changeProduct }) => {
   const handleSelection = (optionIndex, selectedOptionIndex) => {
@@ -22,12 +22,14 @@ const ProductOptions = ({ product, changeProduct }) => {
       {product.options.map((option, optionIndex) => (
         <Container key={optionIndex}>
           {
-            <Title>
-              {option.optionTitle + ": "}
+            <Paragraph>
+              <span style={{ fontSize: "16px" }}>
+                {option.optionTitle + ": "}
+              </span>
               <b style={{ fontSize: "20px" }}>
                 {option.optionSelections[option.selectedOption].selection}
               </b>
-            </Title>
+            </Paragraph>
           }
           <OptionsWrapper>
             {option.optionSelections.map(

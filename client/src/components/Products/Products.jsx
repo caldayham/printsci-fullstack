@@ -48,7 +48,7 @@ const Products = ({ category, filters, sort, num, paddingSides }) => {
     console.log("this is sort: " + sort);
     if (sort === "newest") {
       setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
+        [...prev].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
       );
     } else if (sort === "asc") {
       setFilteredProducts((prev) =>
@@ -60,7 +60,7 @@ const Products = ({ category, filters, sort, num, paddingSides }) => {
       );
     } else if (sort === "rating") {
       setFilteredProducts((prev) =>
-        [...prev].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        [...prev].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
       );
     }
   }, [sort]);

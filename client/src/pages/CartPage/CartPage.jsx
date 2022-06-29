@@ -11,10 +11,7 @@ import {
   ProductDetail,
   Image,
   Details,
-  ProductMaterial,
-  ProductSize,
   PriceDetail,
-  MaterialSwatch,
   ProductPrice,
   SummaryItem,
   SummaryItemText,
@@ -113,18 +110,33 @@ const CartPage = () => {
                       <b>Part ID:</b> {product.partId}
                     </Paragraph>
                   </div>
-                  <ProductMaterial>
-                    <b>Material:</b> PLA Plastic
-                    <MaterialSwatch color="#cf7500" />
-                  </ProductMaterial>
-                  <ProductSize>
-                    <b>Size:</b> Medium
-                  </ProductSize>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      columnGap: "10px",
+                      rowGap: "4px",
+                    }}
+                  >
+                    {product.options.map((option, i) => (
+                      <Paragraph key={i}>
+                        <span style={{ fontSize: "14px" }}>
+                          {option.optionTitle + ": "}
+                        </span>
+                        <b style={{ fontSize: "16px" }}>
+                          {
+                            option.optionSelections[option.selectedOption]
+                              .selection
+                          }
+                        </b>
+                      </Paragraph>
+                    ))}
+                  </div>
                 </Details>
               </ProductDetail>
               <PriceDetail>
                 <ProductPrice>${calculatePrice(product)}</ProductPrice>
-                <ProductAmount />
+                <ProductAmount quantity={product.quantity} />
               </PriceDetail>
             </Product>
           ))}
@@ -136,7 +148,7 @@ const CartPage = () => {
           <SummaryTitle>Order Summary</SummaryTitle>
           <SummaryItem>
             <SummaryItemText>Subtotal</SummaryItemText>
-            <SummaryItemPrice>$410.24</SummaryItemPrice>
+            <SummaryItemPrice>${cart.total}</SummaryItemPrice>
           </SummaryItem>
           <SummaryItem>
             <SummaryItemText>Estimated Shipping</SummaryItemText>

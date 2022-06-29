@@ -127,7 +127,6 @@ const Subtitle = styled.h2`
   padding-top: ${(props) => props.paddingTop};
   padding-bottom: ${(props) => props.paddingBottom};
 `;
-
 const Paragraph = styled.p`
   font-size: 18px;
   font-weight: 200;

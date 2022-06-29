@@ -28,7 +28,7 @@ export const categories = [
     img: "/images/SLA_SteriFlow_assembly_img2.PNG",
     title: "All",
     cat: "all",
-    desc: "Browse our entire collection of products.",
+    desc: "Browse our entire product collection.",
   },
   {
     id: 2,
@@ -42,14 +42,14 @@ export const categories = [
     img: "/images/TFlow_prone_img4.PNG",
     title: "Anesthesia",
     cat: "anesthesia",
-    desc: "Nose cones, masks, tubing, and other supplies.",
+    desc: "Nose cones, masks, and other supplies.",
   },
   {
     id: 4,
     img: "/images/MicroTube.png",
     title: "Consumables",
     cat: "consumables",
-    desc: "Transfer pipettes, underpads, centerfuge tubes and much more.",
+    desc: "Restock the essentials with quality.",
   },
 ];
 
