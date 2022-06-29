@@ -33,6 +33,8 @@ import {
   CustomLink,
 } from "../../tools/globalStyles";
 
+import numberWithCommas from "../../tools/stylingTools";
+
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import SaveAltOutlinedIcon from "@mui/icons-material/SaveAltOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
@@ -140,7 +142,9 @@ const CartPage = () => {
                 </Details>
               </ProductDetail>
               <PriceDetail>
-                <ProductPrice>${calculatePrice(product)}</ProductPrice>
+                <ProductPrice>
+                  ${numberWithCommas(calculatePrice(product))}
+                </ProductPrice>
                 <ProductAmount
                   quantity={product.quantity}
                   change={updateQuantity}
@@ -156,7 +160,7 @@ const CartPage = () => {
           <SummaryTitle>Order Summary</SummaryTitle>
           <SummaryItem>
             <SummaryItemText>Subtotal</SummaryItemText>
-            <SummaryItemPrice>${cart.total}</SummaryItemPrice>
+            <SummaryItemPrice>${numberWithCommas(cart.total)}</SummaryItemPrice>
           </SummaryItem>
           <SummaryItem>
             <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -168,7 +172,7 @@ const CartPage = () => {
           </SummaryItem>
           <SummaryItem type="total">
             <SummaryItemText>Total</SummaryItemText>
-            <SummaryItemPrice>${cart.total.toFixed(2)}</SummaryItemPrice>
+            <SummaryItemPrice>${numberWithCommas(cart.total)}</SummaryItemPrice>
           </SummaryItem>
           <CheckoutButton>Checkout</CheckoutButton>
         </ProductCheckout>

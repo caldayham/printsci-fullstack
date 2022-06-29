@@ -89,13 +89,11 @@ const ProductPage = () => {
           currentPackagePriceMultiplier
       );
 
-      setPackagePrice(
-        (product.basePrice * currentPackagePriceMultiplier).toFixed(2)
-      );
+      setPackagePrice(product.basePrice * currentPackagePriceMultiplier);
     };
 
     const updateTotalPrice = () => {
-      setTotalPrice((packagePrice * quantity).toFixed(2));
+      setTotalPrice(packagePrice * quantity);
     };
     !rendering && updateTotalPrice();
     !rendering && updatePackagePrice();
