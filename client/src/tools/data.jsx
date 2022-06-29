@@ -15,7 +15,7 @@ export const sliderItems = [
   },
   {
     id: 3,
-    img: "/images/TabConnect_img1.PNG",
+    img: "/images/tabconnect1.PNG",
     title: ["You know the part,", "we know the path."],
     desc: "Custom parts are SHIPPED FREE on orders over $100 this summer! ",
     bg: "fbf0f4",
@@ -46,7 +46,7 @@ export const categories = [
   },
   {
     id: 4,
-    img: "/images/MicroTube.png",
+    img: "/images/microtube1.png",
     title: "Consumables",
     cat: "consumables",
     desc: "Restock the essentials with quality.",

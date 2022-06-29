@@ -40,6 +40,11 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
 
+  const updateQuantity = () => {
+    console.log("new quantity");
+    return 2;
+  };
+
   function calculatePrice(product) {
     console.log(product);
 
@@ -136,7 +141,10 @@ const CartPage = () => {
               </ProductDetail>
               <PriceDetail>
                 <ProductPrice>${calculatePrice(product)}</ProductPrice>
-                <ProductAmount quantity={product.quantity} />
+                <ProductAmount
+                  quantity={product.quantity}
+                  change={updateQuantity}
+                />
               </PriceDetail>
             </Product>
           ))}
