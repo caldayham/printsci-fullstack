@@ -28,7 +28,6 @@ import { changePage } from "../../redux/currentPageRedux";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  dispatch(changePage("catalog"));
 
   const location = useLocation();
   const [category, setCategory] = useState(
@@ -54,6 +53,7 @@ const CatalogPage = () => {
           ? location.pathname.split("/")[2]
           : "all"
       );
+      dispatch(changePage("catalog"));
     };
     getCategory();
   });

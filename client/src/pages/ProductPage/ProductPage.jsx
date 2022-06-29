@@ -33,8 +33,10 @@ import ProductOptions from "../../components/SubComponents/ProductOptions/Produc
 import Rating from "../../components/SubComponents/Rating/Rating";
 
 import numberWithCommas from "../../tools/stylingTools";
-import { addProduct } from "../../redux/cartRedux";
+
 import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartRedux";
+import { changePage } from "../../redux/currentPageRedux";
 
 const ProductPage = () => {
   const location = useLocation();
@@ -64,12 +66,13 @@ const ProductPage = () => {
 
         setProduct(res.data);
         setRendering(false);
+        dispatch(changePage("product"));
       } catch (err) {
         console.log(err);
       }
     };
     getProduct();
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     const updatePackagePrice = () => {
