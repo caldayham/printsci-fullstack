@@ -52,6 +52,7 @@ const EditOptions = styled.div`
 
 const Image = styled.img`
   width: 180px;
+  height: 180px;
 `;
 
 const Product = styled.div`

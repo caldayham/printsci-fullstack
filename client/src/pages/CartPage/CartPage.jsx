@@ -47,11 +47,16 @@ const KEY = process.env.REACT_APP_STRIPE_PRINTSCI_TEST_PUB;
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
+  console.log(cart);
+  console.log(cart.total);
   const history = useNavigate();
 
   const [stripeToken, setStripeToken] = useState(null);
   const onToken = (token) => {
+    console.log(token);
     setStripeToken(token);
+    console.log("next is stripe token");
+    console.log(stripeToken);
   };
 
   useEffect(() => {
@@ -66,7 +71,7 @@ const CartPage = () => {
         return err;
       }
     };
-    makeRequest();
+    stripeToken && cart.total >= 1 && makeRequest();
   }, [stripeToken, cart.total, history]);
 
   const updateQuantity = () => {
@@ -134,9 +139,8 @@ const CartPage = () => {
                   </CustomLink>
                 </Icon>
               </EditOptions>
+              <Image src={product.imgs[0]} />
               <ProductDetail>
-                {console.log(product)}
-                <Image src={product.imgs[0]} />
                 <Details>
                   <div>
                     <Subtitle>{product.title}</Subtitle>
@@ -150,6 +154,7 @@ const CartPage = () => {
                       flexWrap: "wrap",
                       columnGap: "10px",
                       rowGap: "4px",
+                      paddingTop: "20px",
                     }}
                   >
                     {product.options.map((option, i) => (
@@ -207,7 +212,7 @@ const CartPage = () => {
             billingAddress
             shippingAddress
             description={`Your total is $${cart.total}`}
-            amount={Number(cart.total).toFixed(2) * 100}
+            amount={cart.total * 100}
             token={onToken}
             stripeKey={KEY}
           >
