@@ -3,7 +3,7 @@ const stripe = require("stripe")(process.env.STRIPE_PRINTSCI_TEST_SEC);
 
 router.post("/payment", (req, res) => {
     
-    stripe.charges.creat(
+    stripe.charges.create(
         {
         source: req.body.tokenId,
         amount: req.body.amount,

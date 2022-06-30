@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ProductAmount from "../../components/SubComponents/ProductAmount/ProductAmount";
@@ -39,8 +39,35 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import SaveAltOutlinedIcon from "@mui/icons-material/SaveAltOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
+import StripeCheckout from "react-stripe-checkout";
+import { userRequest } from "../../tools/requestMethods";
+import { useNavigate } from "react-router-dom";
+
+const KEY = process.env.REACT_APP_STRIPE_PRINTSCI_TEST_PUB;
+
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
+  const history = useNavigate();
+
+  const [stripeToken, setStripeToken] = useState(null);
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest("/checkout/payment", {
+          tokenId: stripeToken,
+          amount: cart.total * 100,
+        });
+        history.push("/success");
+      } catch (err) {
+        return err;
+      }
+    };
+    makeRequest();
+  }, [stripeToken, cart.total, history]);
 
   const updateQuantity = () => {
     console.log("new quantity");
@@ -174,7 +201,18 @@ const CartPage = () => {
             <SummaryItemText>Total</SummaryItemText>
             <SummaryItemPrice>${numberWithCommas(cart.total)}</SummaryItemPrice>
           </SummaryItem>
-          <CheckoutButton>Checkout</CheckoutButton>
+          <StripeCheckout
+            name="Print Scientific"
+            image="/images/favicon.png"
+            billingAddress
+            shippingAddress
+            description={`Your total is $${cart.total}`}
+            amount={Number(cart.total).toFixed(2) * 100}
+            token={onToken}
+            stripeKey={KEY}
+          >
+            <CheckoutButton style={{ width: "100%" }}>Checkout</CheckoutButton>
+          </StripeCheckout>
         </ProductCheckout>
       </CartCheckout>
     </MainContainer>
