@@ -47,27 +47,28 @@ const KEY = process.env.REACT_APP_STRIPE_PRINTSCI_TEST_PUB;
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
+  console.log("next is the cart");
   console.log(cart);
-  console.log(cart.total);
   const history = useNavigate();
 
   const [stripeToken, setStripeToken] = useState(null);
   const onToken = (token) => {
-    console.log(token);
     setStripeToken(token);
-    console.log("next is stripe token");
-    console.log(stripeToken);
   };
 
   useEffect(() => {
     const makeRequest = async () => {
       try {
+        console.log("this is the stripe token: ");
+        console.log(stripeToken);
         const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
+        console.log("WE GOT HERE LOL");
         history.push("/success", { data: res.data });
       } catch (err) {
+        console.log("A FUCKING ERROR WAS ENCOUNTERED! LOL");
         return err;
       }
     };

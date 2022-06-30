@@ -11,13 +11,13 @@ const cartSlice = createSlice({
         addProduct: (state, action) => {
             state.quantity += action.payload.quantity;
             state.products.push(action.payload);
-            state.total += Number(action.payload.totalPrice);
+            state.total += Number(Number(action.payload.totalPrice).toFixed(2));
         },
         updateProduct: (state, action) => { },
         deleteProduct: (state, action) => {
             state.quantity -= action.payload.quantity;
             state.products.splice(action.payload);
-            state.total -= Number(action.payload.totalPrice);
+            state.total -= Number(Number(action.payload.totalPrice).toFixed(2));
         }
     }
 })
