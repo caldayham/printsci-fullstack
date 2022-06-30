@@ -56,7 +56,7 @@ export const categories = [
 export const members = [
   {
     id: 1,
-    img: "/images/members/CalDayHam1.png",
+    img: "/images/memberImgs/CalDayHam1.png",
     title: "Cal Day Ham",
     position: "COO",
     loves: "efficiency & family",
@@ -133,7 +133,7 @@ export const members = [
   },
   {
     id: 2,
-    img: "/images/members/LouisJaeckle1.jpg",
+    img: "/images/memberImgs/LouisJaeckle1.jpg",
     title: "Louis Jaeckle",
     position: "CTO",
     loves: "python try-catch blocks",

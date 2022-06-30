@@ -56,7 +56,7 @@ router.get("/find/:id", async (req, res) => {
    
         const product = await Product.findById(req.params.id);
         console.log(product);
-       res.setHeader('Access-Control-Allow-Origin', '*').status(200).json(product);
+       res.status(200).json(product);
    
    } catch (err) {
 
@@ -88,7 +88,7 @@ router.get("/", async (req, res) => {
                 
                 await Product.find().limit(qNum ? qNum : 4);
         
-        res.setHeader('Access-Control-Allow-Origin', '*').status(200).json(products);
+        res.status(200).json(products);
         
     } catch (err) {
         

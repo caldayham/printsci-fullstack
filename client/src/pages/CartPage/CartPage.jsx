@@ -57,11 +57,11 @@ const CartPage = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await userRequest("/checkout/payment", {
-          tokenId: stripeToken,
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
-        history.push("/success");
+        history.push("/success", { data: res.data });
       } catch (err) {
         return err;
       }

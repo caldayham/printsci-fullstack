@@ -9,8 +9,12 @@ import { Container } from "./styles";
 
 import { useDispatch } from "react-redux";
 import { changePage } from "../../redux/currentPageRedux";
+import { useLocation } from "react-router-dom";
 
 const SuccessPage = () => {
+  const location = useLocation();
+  console.log(location);
+
   const dispatch = useDispatch();
   dispatch(changePage("checkout/success"));
 
