@@ -63,7 +63,8 @@ const CartPage = () => {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
-        history("/checkout/success", { data: res.data });
+        console.log(res);
+        history("/checkout/success", { state: { data: res.data } });
       } catch (err) {
         console.log("A FUCKING ERROR WAS ENCOUNTERED! LOL");
         return err;
