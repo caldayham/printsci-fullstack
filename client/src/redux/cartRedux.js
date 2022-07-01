@@ -18,9 +18,9 @@ const cartSlice = createSlice({
             state.quantity -= action.payload.quantity;
             state.products.splice(action.payload);
             state.total -= Number(Number(action.payload.totalPrice).toFixed(2));
-        }
-    }
-})
+        },
+    },
+});
 
 export const { addProduct, updateProduct, deleteProduct } = cartSlice.actions;
 export default cartSlice.reducer;
