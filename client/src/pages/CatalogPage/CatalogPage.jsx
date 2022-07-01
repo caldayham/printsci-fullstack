@@ -27,8 +27,6 @@ import { useDispatch } from "react-redux";
 import { changePage } from "../../redux/currentPageRedux";
 
 const CatalogPage = () => {
-  const dispatch = useDispatch();
-
   const location = useLocation();
   const [category, setCategory] = useState(
     location.pathname.split("/")[2] ? location.pathname.split("/")[2] : "all"
@@ -46,6 +44,7 @@ const CatalogPage = () => {
     // });
   };
 
+  const dispatch = useDispatch();
   useEffect(() => {
     const getCategory = () => {
       setCategory(

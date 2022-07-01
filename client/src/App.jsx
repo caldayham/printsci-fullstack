@@ -20,7 +20,7 @@ import Footer from "./components/Footer/Footer";
 
 import LoginRegisterOverlay from "./pages/LoginRegisterPage/LoginRegisterOverlay";
 
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -33,27 +33,14 @@ import { useSelector } from "react-redux";
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
-  const [isShowLoginOverlay, setIsShowLoginOverlay] = useState(false);
-  const [currentPage, setCurrentPage] = useState("home");
-
-  const handleLoginClick = () => {
-    setIsShowLoginOverlay((isShowLoginOverlay) => !isShowLoginOverlay);
-  };
 
   return (
     <Router style={{ position: "relative" }}>
       <Announcement />
-      <Navbar
-        setIsShowLoginOverlay={setIsShowLoginOverlay}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      <Navbar />
 
-      {isShowLoginOverlay ? (
-        <LoginRegisterOverlay
-          setIsShowLoginOverlay={setIsShowLoginOverlay}
-          handleLoginClick={handleLoginClick}
-        />
+      {useSelector((state) => state.overlay.loginShowing) ? (
+        <LoginRegisterOverlay />
       ) : (
         <div />
       )}

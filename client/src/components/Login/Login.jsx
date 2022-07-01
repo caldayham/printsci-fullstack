@@ -11,6 +11,7 @@ import {
 } from "./styles";
 
 import { login } from "../../redux/apiCalls";
+import { changeOverlay } from "../../redux/overlayRedux";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -23,6 +24,7 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
+    dispatch(changeOverlay(false));
   };
 
   return (

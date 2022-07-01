@@ -24,11 +24,12 @@ import ClickLogo from "../SubComponents/Logo/ClickLogo";
 
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../../redux/currentPageRedux";
+import { changeOverlay } from "../../redux/overlayRedux.js";
 import { CustomLink } from "../../tools/globalStyles.jsx";
 
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
-const Navbar = ({ setIsShowLoginOverlay }) => {
+const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
 
   const dispatch = useDispatch();
@@ -97,7 +98,7 @@ const Navbar = ({ setIsShowLoginOverlay }) => {
         <Right>
           {!useSelector((state) => state.user.currentUser) && (
             <MenuItem>
-              <LocalMinorLink onClick={() => setIsShowLoginOverlay(true)}>
+              <LocalMinorLink onClick={() => dispatch(changeOverlay(true))}>
                 Login or <br />
                 Register
               </LocalMinorLink>

@@ -1,10 +1,10 @@
 import React from "react";
-import { MainContainer } from "../../tools/globalStyles";
+import { MainContainer, Title } from "../../tools/globalStyles";
 
 const CustomPage = () => {
   return (
     <MainContainer flexDirection={"column"}>
-      <div>Custom Page</div>
+      <Title>Custom Page</Title>
     </MainContainer>
   );
 };

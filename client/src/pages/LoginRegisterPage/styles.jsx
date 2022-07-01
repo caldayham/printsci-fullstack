@@ -31,7 +31,7 @@ const Toggle = styled.div`
   display: flex;
   height: 8%;
   width: 20%;
-  min-width: 260px;
+  min-width: 320px;
   padding: 10px;
   justify-content: space-between;
 
@@ -51,7 +51,7 @@ const Button = styled.button`
 const Wrapper = styled.div`
   width: 20%;
   height: 50%;
-  min-width: 260px;
+  min-width: 320px;
   background-color: #ffffff;
   border-radius: 20px;
   display: flex;
