@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   MainContainer,
   Title,
@@ -16,7 +16,12 @@ const SuccessPage = () => {
   console.log(location);
 
   const dispatch = useDispatch();
-  dispatch(changePage("checkout/success"));
+  useEffect(() => {
+    const updatePage = () => {
+      dispatch(changePage("checkout/success"));
+    };
+    updatePage();
+  });
 
   return (
     <MainContainer>

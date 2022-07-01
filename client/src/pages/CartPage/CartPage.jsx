@@ -59,14 +59,11 @@ const CartPage = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        console.log("this is the stripe token: ");
-        console.log(stripeToken);
         const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
-        console.log("WE GOT HERE LOL");
-        history.push("/success", { data: res.data });
+        history("/checkout/success", { data: res.data });
       } catch (err) {
         console.log("A FUCKING ERROR WAS ENCOUNTERED! LOL");
         return err;
