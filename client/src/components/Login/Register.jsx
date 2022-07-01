@@ -14,10 +14,10 @@ const Register = ({ setIsShowLoginOverlay }) => {
     <Wrapper>
       <Form>
         <Input placeholder="first & last name" />
+        <Input placeholder="username" />
         <Input placeholder="organization" />
         <Input placeholder="email" />
-        <Input placeholder="password" />
-        <Input placeholder="repeat password" />
+        <Input placeholder="password" /> {/*have repeat password pop up after*/}
       </Form>
       <ActionWrapper>
         <Agreement>

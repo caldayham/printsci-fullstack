@@ -13,15 +13,7 @@ const LoginRegisterOverlay = ({ setIsShowLoginOverlay }) => {
   };
 
   return (
-    <Container
-      style={{
-        position: "fixed",
-        zIndex: "8",
-        width: "100%",
-        height: "100",
-        top: "0",
-      }}
-    >
+    <Container>
       <Background onClick={() => setIsShowLoginOverlay(false)} />
       <Toggle>
         <Button onClick={setLogin} isActive={!isRegister}>
