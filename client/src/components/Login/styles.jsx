@@ -38,6 +38,11 @@ const Button = styled.button`
   &:hover {
     background-color: rgb(0, 0, 0);
   }
+
+  &:disabled {
+    color: gray;
+    cursor: not-allowed;
+  }
 `;
 
 const ActionWrapper = styled.div`
@@ -59,19 +64,9 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const BackButton = styled.button`
-  border: none;
-  background-color: transparent;
-  display: flex;
-  justify-content: left;
-  font-size: 14px;
-  margin-top: 4px;
+const Error = styled.span`
+  color: red;
   font-weight: 200;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export {
@@ -83,5 +78,5 @@ export {
   ActionWrapper,
   Link,
   Wrapper,
-  BackButton,
+  Error,
 };

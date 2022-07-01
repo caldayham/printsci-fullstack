@@ -24,10 +24,8 @@ const LoginRegisterOverlay = ({ setIsShowLoginOverlay }) => {
         </Button>
       </Toggle>
       <Wrapper>
-        {isRegister && (
-          <Register setIsShowLoginOverlay={setIsShowLoginOverlay} />
-        )}
-        {!isRegister && <Login setIsShowLoginOverlay={setIsShowLoginOverlay} />}
+        {isRegister && <Register />}
+        {!isRegister && <Login />}
       </Wrapper>
     </Container>
   );

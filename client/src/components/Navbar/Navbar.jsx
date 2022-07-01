@@ -24,6 +24,9 @@ import ClickLogo from "../SubComponents/Logo/ClickLogo";
 
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../../redux/currentPageRedux";
+import { CustomLink } from "../../tools/globalStyles.jsx";
+
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 const Navbar = ({ setIsShowLoginOverlay }) => {
   const quantity = useSelector((state) => state.cart.quantity);
@@ -92,16 +95,26 @@ const Navbar = ({ setIsShowLoginOverlay }) => {
           </NavLinkBar>
         </Center>
         <Right>
+          {!useSelector((state) => state.user.currentUser) && (
+            <MenuItem>
+              <LocalMinorLink onClick={() => setIsShowLoginOverlay(true)}>
+                Login or <br />
+                Register
+              </LocalMinorLink>
+            </MenuItem>
+          )}
+          {useSelector((state) => state.user.currentUser) && (
+            <CustomLink to="/myaccount">
+              <BadgeWrapper>
+                <Badge>
+                  <ManageAccountsIcon style={{ fontSize: "inherit" }} />
+                </Badge>
+              </BadgeWrapper>
+            </CustomLink>
+          )}
           <MenuItem>
-            <LocalMinorLink onClick={() => setIsShowLoginOverlay(true)}>
-              Login or <br />
-              Register
-            </LocalMinorLink>
-          </MenuItem>
-          <MenuItem>
-            <Link
+            <CustomLink
               to="/mycart"
-              style={{ textDecoration: "none", color: "white" }}
               onClick={() => dispatch(changePage("cart"))}
             >
               <BadgeWrapper>
@@ -109,7 +122,7 @@ const Navbar = ({ setIsShowLoginOverlay }) => {
                   <ShoppingBagOutlinedIcon style={{ fontSize: "inherit" }} />
                 </Badge>
               </BadgeWrapper>
-            </Link>
+            </CustomLink>
           </MenuItem>
         </Right>
       </Wrapper>

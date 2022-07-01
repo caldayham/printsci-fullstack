@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Form,
   Input,
@@ -7,17 +7,18 @@ import {
   ActionWrapper,
   Link,
   Wrapper,
-  BackButton,
+  Error,
 } from "./styles";
 
 import { login } from "../../redux/apiCalls";
 
-const Login = ({ setIsShowLoginOverlay }) => {
+const Login = () => {
   const [username, setUsername] = useState("");
   // const [email, setEmail] = useState(""); // got to search with regex if the input is an email then set email or username based on that, for now it will just be username
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -39,10 +40,10 @@ const Login = ({ setIsShowLoginOverlay }) => {
       </Form>
       <ActionWrapper>
         <Link>Forgot some credentials?</Link>
-        <Button onClick={handleClick}>Login</Button>
-        <BackButton onClick={() => setIsShowLoginOverlay(false)}>
-          go back
-        </BackButton>
+        <Button onClick={handleClick} disabled={isFetching}>
+          Login
+        </Button>
+        {error && <Error>Someone made a fucky-wucky...</Error>}
       </ActionWrapper>
     </Wrapper>
   );
