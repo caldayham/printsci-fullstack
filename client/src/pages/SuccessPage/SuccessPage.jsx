@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   MainContainer,
   Title,
@@ -16,19 +16,13 @@ const SuccessPage = () => {
   console.log(location);
   console.log(location.state);
 
-  const [isLoading, setIsLoading] = useState(true);
-
-  if (document.readyState === "complete") {
-    setIsLoading(false);
-  }
-
   const dispatch = useDispatch();
   useEffect(() => {
     const updatePage = () => {
       dispatch(changePage("checkout/success"));
     };
-    !isLoading && updatePage();
-  }, [isLoading, dispatch]);
+    updatePage();
+  });
 
   return (
     <MainContainer>
