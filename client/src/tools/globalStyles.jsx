@@ -132,7 +132,7 @@ const Paragraph = styled.p`
   font-weight: 200;
   padding-top: ${(props) => props.paddingTop};
   padding-bottom: ${(props) => props.paddingBottom};
-  width: ${(props) => (props.width ? props.width : "100%")};
+  width: ${(props) => (props.width ? props.width : null)};
 `;
 
 const PageSection = styled.div`
