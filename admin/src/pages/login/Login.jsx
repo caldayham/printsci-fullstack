@@ -4,6 +4,10 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
       <input
@@ -16,7 +20,7 @@ const Login = () => {
         placeholder="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button>Login</button>
+      <button onClick={handleLoginClick()}>Login</button>
     </div>
   );
 };
