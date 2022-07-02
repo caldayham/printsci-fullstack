@@ -22,7 +22,7 @@ const AboutPage = () => {
   return (
     <MainContainer flexDirection={"column"}>
       <Title>About Us</Title>
-      <img src="/images/parts.png" alt="banner" />
+      <img src="/images/parts.png" alt="banners" />
       <PageSection>
         <Subtitle>What we do</Subtitle>
         <br />

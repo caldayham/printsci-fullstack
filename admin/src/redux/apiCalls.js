@@ -8,6 +8,8 @@ export const login = async (dispatch, user) => {
         const res = await publicRequest.post("/auth/login", user)       
         dispatch(loginSuccess(res.data));
     } catch (err) {
+        console.log("PHAT ERROR");
+        console.log(err);
         dispatch(loginFailure());
     }
 }
