@@ -21,7 +21,24 @@ const HeaderTitle = styled.h1`
 `;
 
 const AccountIcon = styled.div`
-  margin-right: 20px;
+  width: 90%;
+  height: 90%;
+
+  transition: all 0.1s ease;
+  &:hover {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
-export { Container, HeaderTitle, AccountIcon };
+const IconWrapper = styled.div`
+  margin-right: 20px;
+
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export { Container, HeaderTitle, IconWrapper, AccountIcon };

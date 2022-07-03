@@ -1,11 +1,11 @@
 import React from "react";
-import { Container } from "./styles";
+import { MainContainer, MainTitle } from "../../tools/globalStyles";
 
 const HomePage = () => {
   return (
-    <Container>
-      <h1>Home Page!</h1>
-    </Container>
+    <MainContainer>
+      <MainTitle>Home Page!</MainTitle>
+    </MainContainer>
   );
 };
 
