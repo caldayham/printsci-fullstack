@@ -8,7 +8,7 @@ const Container = styled.div`
   color: white;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   &:hover {
@@ -16,4 +16,12 @@ const Container = styled.div`
   }
 `;
 
-export { Container };
+const HeaderTitle = styled.h1`
+  padding-left: 20px;
+`;
+
+const AccountIcon = styled.div`
+  margin-right: 20px;
+`;
+
+export { Container, HeaderTitle, AccountIcon };

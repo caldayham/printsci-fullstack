@@ -14,13 +14,15 @@ import Login from "./pages/login/Login";
 function App() {
   var admin = false;
 
-  if (
-    JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
-      .currentUser !== null
-  ) {
-    admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
-      .currentUser.isAdmin;
-  }
+  admin = localStorage.getItem("persist:root")
+    ? JSON.parse(localStorage.getItem("persist:root")).user
+      ? JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
+          .currentUser
+        ? JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
+            .currentUser.isAdmin
+        : null
+      : null
+    : null;
 
   return (
     <Router>

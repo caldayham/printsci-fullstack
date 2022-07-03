@@ -1,14 +1,14 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, HeaderTitle, AccountIcon } from "./styles";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 const Header = () => {
   return (
     <Container>
-      <h1>Header</h1>
-      <ul>
-        <li>home</li>
-        <li>account</li>
-      </ul>
+      <HeaderTitle>Print Scientific Admin Panel</HeaderTitle>
+      <AccountIcon>
+        <ManageAccountsIcon />
+      </AccountIcon>
     </Container>
   );
 };

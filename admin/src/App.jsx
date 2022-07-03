@@ -23,7 +23,7 @@ const App = () => {
           <>
             <ScrollToTop />
             <Header />
-            <div>
+            <div style={{ display: "flex" }}>
               <SideNav />
               <Routes>
                 <Route exact path="/" element={<PrivateRoute />}>
