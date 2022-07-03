@@ -4,7 +4,11 @@ import { Container } from "./styles";
 const Header = () => {
   return (
     <Container>
-      <div>Header</div>
+      <h1>Header</h1>
+      <ul>
+        <li>home</li>
+        <li>account</li>
+      </ul>
     </Container>
   );
 };
