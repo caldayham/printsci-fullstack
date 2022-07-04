@@ -1,16 +1,16 @@
-import "./widgetSm.css";
+import { ProfileImg } from "./styles";
 import { Visibility } from "@mui/icons-material";
+import { ComponentContainer } from "../../tools/globalStyles";
 
 export default function WidgetSm() {
   return (
-    <div className="widgetSm">
+    <ComponentContainer>
       <span className="widgetSmTitle">New Join Members</span>
       <ul className="widgetSmList">
         <li className="widgetSmListItem">
-          <img
+          <ProfileImg
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
             alt=""
-            className="widgetSmImg"
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Anna Keller</span>
@@ -22,10 +22,9 @@ export default function WidgetSm() {
           </button>
         </li>
         <li className="widgetSmListItem">
-          <img
+          <ProfileImg
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
             alt=""
-            className="widgetSmImg"
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Anna Keller</span>
@@ -37,10 +36,9 @@ export default function WidgetSm() {
           </button>
         </li>
         <li className="widgetSmListItem">
-          <img
+          <ProfileImg
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
             alt=""
-            className="widgetSmImg"
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Anna Keller</span>
@@ -52,10 +50,9 @@ export default function WidgetSm() {
           </button>
         </li>
         <li className="widgetSmListItem">
-          <img
+          <ProfileImg
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
             alt=""
-            className="widgetSmImg"
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Anna Keller</span>
@@ -67,10 +64,9 @@ export default function WidgetSm() {
           </button>
         </li>
         <li className="widgetSmListItem">
-          <img
+          <ProfileImg
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
             alt=""
-            className="widgetSmImg"
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Anna Keller</span>
@@ -82,6 +78,6 @@ export default function WidgetSm() {
           </button>
         </li>
       </ul>
-    </div>
+    </ComponentContainer>
   );
 }

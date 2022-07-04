@@ -1,10 +1,11 @@
 import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
-import { Container, FeaturedItem } from "./styles";
+import { ComponentContainer } from "../../tools/globalStyles";
+import { Container } from "./styles";
 
 export default function FeaturedInfo() {
   return (
     <Container>
-      <FeaturedItem>
+      <ComponentContainer>
         <span className="featuredTitle">Revanue</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$2,415</span>
@@ -13,8 +14,8 @@ export default function FeaturedInfo() {
           </span>
         </div>
         <span className="featuredSub">Compared to last month</span>
-      </FeaturedItem>
-      <FeaturedItem>
+      </ComponentContainer>
+      <ComponentContainer>
         <span className="featuredTitle">Sales</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$4,415</span>
@@ -23,8 +24,8 @@ export default function FeaturedInfo() {
           </span>
         </div>
         <span className="featuredSub">Compared to last month</span>
-      </FeaturedItem>
-      <FeaturedItem>
+      </ComponentContainer>
+      <ComponentContainer flex={0.5}>
         <span className="featuredTitle">Cost</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$2,225</span>
@@ -33,7 +34,7 @@ export default function FeaturedInfo() {
           </span>
         </div>
         <span className="featuredSub">Compared to last month</span>
-      </FeaturedItem>
+      </ComponentContainer>
     </Container>
   );
 }

@@ -12,6 +12,9 @@ const ContentContainer = styled.div`
   overflow: scroll;
   width: calc(100vw - 260px);
   height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const MainTitle = styled.h1`
@@ -25,7 +28,7 @@ const MainTitle = styled.h1`
 
   background-color: rgb(255, 255, 255);
   z-index: 5;
-  border-bottom: 1px solid rgb(200, 200, 200);
+  border-bottom: 1px solid rgb(14, 14, 14);
 `;
 
 const MainButton = styled.button`
@@ -42,4 +45,17 @@ const MainButton = styled.button`
   }
 `;
 
-export { MainContainer, MainTitle, MainButton, ContentContainer };
+const ComponentContainer = styled.div`
+  padding: 20px;
+  border: 1px solid rgb(14, 14, 14);
+  border-radius: 10px;
+  flex: ${(props) => (props.flex ? props.flex : "1")};
+`;
+
+export {
+  MainContainer,
+  MainTitle,
+  MainButton,
+  ContentContainer,
+  ComponentContainer,
+};
