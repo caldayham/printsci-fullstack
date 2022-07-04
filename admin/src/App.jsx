@@ -18,6 +18,7 @@ const App = () => {
       <Fragment>
         <Routes>
           <Route exact path="/login" element={<LoginPage />} />
+          <Route exact path="/*" element={<PrivateRoute />} />
         </Routes>
         {isAdmin() && (
           <>
@@ -26,11 +27,14 @@ const App = () => {
             <div style={{ display: "flex" }}>
               <SideNav />
               <Routes>
-                <Route exact path="/" element={<PrivateRoute />}>
-                  <Route exact path="/" element={<HomePage />} />
-                  <Route exact path="/home" element={<HomePage />} />
-                  <Route exact path="/revenue" element={<RevenuePage />} />
-                </Route>
+                <Route exact path="/" element={<HomePage />} />
+                <Route exact path="/home" element={<HomePage />} />
+
+                <Route
+                  exact
+                  path="/analytics/revenue"
+                  element={<RevenuePage />}
+                />
               </Routes>
             </div>
           </>
