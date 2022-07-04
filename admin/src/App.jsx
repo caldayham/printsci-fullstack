@@ -4,8 +4,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import AccountPage from "./pages/AccountPage/AccountPage";
 
 import PrivateRoute from "./components/PrivateRoute";
-import SideNav from "./components/SideNav/SideNav";
-import Header from "./components/Header/Header";
+import SideNav from "./components/sideNav/SideNav";
+import Header from "./components/header/Header";
 
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -25,7 +25,15 @@ const App = () => {
           <>
             <ScrollToTop />
             <Header />
-            <div style={{ display: "flex" }}>
+            <div
+              style={{
+                display: "flex",
+                top: "60px",
+                position: "fixed",
+                width: "100%",
+                height: "calc(100vh - 60px)",
+              }}
+            >
               <SideNav />
               <Routes>
                 {/* DASHBOARD ROUTES */}

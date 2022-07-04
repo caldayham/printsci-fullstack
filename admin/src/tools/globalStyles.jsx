@@ -1,13 +1,31 @@
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  padding: 20px;
+  padding: 0px;
   width: 100%;
+
+  position: relative;
+`;
+
+const ContentContainer = styled.div`
+  padding: 20px;
+  overflow: scroll;
+  width: calc(100vw - 260px);
+  height: calc(100vh - 160px);
 `;
 
 const MainTitle = styled.h1`
-  padding: 0px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin: 0px;
+
+  position: sticky;
+  top: 0px;
+
+  background-color: rgb(255, 255, 255);
+  z-index: 5;
+  border-bottom: 1px solid rgb(200, 200, 200);
 `;
 
 const MainButton = styled.button`
@@ -24,4 +42,4 @@ const MainButton = styled.button`
   }
 `;
 
-export { MainContainer, MainTitle, MainButton };
+export { MainContainer, MainTitle, MainButton, ContentContainer };

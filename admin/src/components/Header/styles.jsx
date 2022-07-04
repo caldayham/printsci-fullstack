@@ -3,6 +3,9 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100vw;
   height: 60px;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
 
   background-color: rgb(14, 14, 14);
   color: white;

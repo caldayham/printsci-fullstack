@@ -1,23 +1,28 @@
 import React from "react";
-import { MainButton, MainContainer, MainTitle } from "../../tools/globalStyles";
-import { useSelector, useDispatch } from "react-redux";
+import {
+  ContentContainer,
+  MainButton,
+  MainContainer,
+  MainTitle,
+} from "../../tools/globalStyles";
+import { useDispatch } from "react-redux";
 import { logoutUser } from "../../redux/userRedux";
-import { useNavigate } from "react-router-dom";
 
 const AccountPage = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleLogOutClick = () => {
     console.log("log out clicked");
     dispatch(logoutUser());
-    navigate("/login");
+    window.location.reload();
   };
 
   return (
     <MainContainer>
       <MainTitle>Account Page</MainTitle>
-      <MainButton onClick={handleLogOutClick}>Log Out</MainButton>
+      <ContentContainer>
+        <MainButton onClick={handleLogOutClick}>Log Out</MainButton>
+      </ContentContainer>
     </MainContainer>
   );
 };

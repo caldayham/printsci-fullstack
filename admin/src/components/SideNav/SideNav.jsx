@@ -9,8 +9,8 @@ import {
   SectionContent,
 } from "./styles";
 
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import { ChevronRight, KeyboardArrowDownOutlined } from "@mui/icons-material";
+
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
@@ -52,8 +52,8 @@ const SideNav = () => {
         <SectionHeader onClick={() => setDashboard((prev) => !prev)}>
           <SectionHeaderTitle>Dashboard</SectionHeaderTitle>
           <CollapseIconWrapper>
-            {!dashboard && <ChevronRightIcon />}
-            {dashboard && <KeyboardArrowDownOutlinedIcon />}
+            {!dashboard && <ChevronRight />}
+            {dashboard && <KeyboardArrowDownOutlined />}
           </CollapseIconWrapper>
         </SectionHeader>
         <SectionContent open={dashboard}>
@@ -82,8 +82,8 @@ const SideNav = () => {
         <SectionHeader onClick={() => setCrud((prev) => !prev)}>
           <SectionHeaderTitle>CRUD Data</SectionHeaderTitle>
           <CollapseIconWrapper>
-            {!crud && <ChevronRightIcon />}
-            {crud && <KeyboardArrowDownOutlinedIcon />}{" "}
+            {!crud && <ChevronRight />}
+            {crud && <KeyboardArrowDownOutlined />}{" "}
           </CollapseIconWrapper>
         </SectionHeader>
         <SectionContent open={crud}>
@@ -116,8 +116,8 @@ const SideNav = () => {
         <SectionHeader onClick={() => setAnalytics((prev) => !prev)}>
           <SectionHeaderTitle>Analytics</SectionHeaderTitle>
           <CollapseIconWrapper>
-            {!analytics && <ChevronRightIcon />}
-            {analytics && <KeyboardArrowDownOutlinedIcon />}{" "}
+            {!analytics && <ChevronRight />}
+            {analytics && <KeyboardArrowDownOutlined />}{" "}
           </CollapseIconWrapper>
         </SectionHeader>
         <SectionContent open={analytics}>
@@ -144,8 +144,8 @@ const SideNav = () => {
         <SectionHeader onClick={() => setNotifications((prev) => !prev)}>
           <SectionHeaderTitle>Notifications</SectionHeaderTitle>
           <CollapseIconWrapper>
-            {!notifications && <ChevronRightIcon />}
-            {notifications && <KeyboardArrowDownOutlinedIcon />}{" "}
+            {!notifications && <ChevronRight />}
+            {notifications && <KeyboardArrowDownOutlined />}{" "}
           </CollapseIconWrapper>
         </SectionHeader>
         <SectionContent open={notifications}>
@@ -172,8 +172,8 @@ const SideNav = () => {
         <SectionHeader onClick={() => setTeam((prev) => !prev)}>
           <SectionHeaderTitle>Pog Team (⌐■_■)</SectionHeaderTitle>
           <CollapseIconWrapper>
-            {!team && <ChevronRightIcon />}
-            {team && <KeyboardArrowDownOutlinedIcon />}{" "}
+            {!team && <ChevronRight />}
+            {team && <KeyboardArrowDownOutlined />}{" "}
           </CollapseIconWrapper>
         </SectionHeader>
         <SectionContent open={team}>
