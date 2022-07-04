@@ -34,7 +34,7 @@ import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfi
 import { useNavigate } from "react-router";
 
 const SideNav = () => {
-  const [dashboard, setDashboard] = useState(false);
+  const [dashboard, setDashboard] = useState(true);
   const [crud, setCrud] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [notifications, setNotifications] = useState(false);

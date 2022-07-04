@@ -10,4 +10,18 @@ const MainTitle = styled.h1`
   margin: 0px;
 `;
 
-export { MainContainer, MainTitle };
+const MainButton = styled.button`
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.1s ease;
+
+  &:hover {
+    background-color: rgb(14, 14, 14);
+    color: white;
+  }
+`;
+
+export { MainContainer, MainTitle, MainButton };
