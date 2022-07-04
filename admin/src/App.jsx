@@ -13,8 +13,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./tools/ScrollToTop";
 import isAdmin from "./tools/isAdmin";
 
-import "./app.css";
-
 const App = () => {
   return (
     <Router>
@@ -39,6 +37,7 @@ const App = () => {
                 {/* CRUD DATA ROUTES */}
                 <Route exact path="crud/users" element={<RevenuePage />} />
                 <Route exact path="crud/products" element={<RevenuePage />} />
+                <Route exact path="crud/orders" element={<RevenuePage />} />
                 <Route
                   exact
                   path="crud/transactions"

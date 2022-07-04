@@ -20,36 +20,34 @@ const Container = styled.div`
   }
 `;
 
-const SectionHeader = styled.div`
-  margin: 0px;
+const SectionHeader = styled.button`
+  margin-bottom: 10px;
   position: sticky;
   top: 0px;
+  border: 1px solid rgb(200, 200, 200);
+  cursor: pointer;
 
   width: 100%;
   background-color: rgb(14, 14, 14);
+  color: white;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-const SectionWrapper = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-
-  position: relative;
 
   &:hover {
     background-color: rgb(0, 0, 0);
   }
 
-  &:hover ${SectionHeader} {
+  --active {
     background-color: rgb(0, 0, 0);
   }
+`;
+
+const SectionWrapper = styled.div`
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
 `;
 
 const SectionHeaderTitle = styled.h3`
@@ -58,12 +56,16 @@ const SectionHeaderTitle = styled.h3`
 `;
 
 const PageButton = styled.button`
-  padding: 8px;
+  padding: 5px 12px 5px 5px;
+  font-size: 14px;
   background-color: rgb(14, 14, 14);
   color: white;
-  border: 1px solid rgb(100, 100, 100);
+  border: 1px solid rgb(40, 40, 40);
 
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
 
   &:hover {
     background-color: rgb(0, 0, 0);
@@ -74,10 +76,21 @@ const CollapseIconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 24px;
 
   background-color: rgb(14, 14, 14);
   border-radius: 50%;
   margin: 4px;
+`;
+
+const SectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+
+  height: ${(props) => (props.open ? "auto" : "0px")};
+  overflow: hidden;
 `;
 
 export {
@@ -87,4 +100,5 @@ export {
   SectionWrapper,
   SectionHeaderTitle,
   CollapseIconWrapper,
+  SectionContent,
 };
