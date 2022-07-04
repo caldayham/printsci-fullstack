@@ -9,29 +9,56 @@ const Container = styled.div`
   position: sticky;
   top: 50px;
 
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const SectionHeader = styled.div`
+  margin: 0px;
+  position: sticky;
+  top: 0px;
+
+  width: 100%;
+  background-color: rgb(14, 14, 14);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const SectionWrapper = styled.div`
   padding-left: 20px;
   padding-right: 20px;
 
   display: flex;
   flex-direction: column;
-`;
-
-const SectionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
   gap: 5px;
 
-  margin-bottom: 40px;
+  position: relative;
+
+  &:hover {
+    background-color: rgb(0, 0, 0);
+  }
+
+  &:hover ${SectionHeader} {
+    background-color: rgb(0, 0, 0);
+  }
 `;
 
-const SectionHeader = styled.h3`
+const SectionHeaderTitle = styled.h3`
   font-weight: 600;
   margin: 0px;
-  padding-bottom: 5px;
 `;
 
 const PageButton = styled.button`
-  padding: 5px;
+  padding: 8px;
   background-color: rgb(14, 14, 14);
   color: white;
   border: 1px solid rgb(100, 100, 100);
@@ -43,4 +70,21 @@ const PageButton = styled.button`
   }
 `;
 
-export { Container, SectionHeader, PageButton, SectionWrapper };
+const CollapseIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(14, 14, 14);
+  border-radius: 50%;
+  margin: 4px;
+`;
+
+export {
+  Container,
+  SectionHeader,
+  PageButton,
+  SectionWrapper,
+  SectionHeaderTitle,
+  CollapseIconWrapper,
+};

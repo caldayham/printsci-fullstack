@@ -1,0 +1,9 @@
+::-webkit-scrollbar {
+    width: 2em;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(120 75% 50% / 1);
+}
+
+::-webkit-scrollbar {}

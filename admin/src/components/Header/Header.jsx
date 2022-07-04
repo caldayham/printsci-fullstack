@@ -1,10 +1,13 @@
 import React from "react";
 import { Container, HeaderTitle, IconWrapper, AccountIcon } from "./styles";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  let navigate = useNavigate();
+
   function handleAccountIconClick() {
-    console.log("AccountIcon Clicked");
+    navigate("/account");
   }
 
   return (
