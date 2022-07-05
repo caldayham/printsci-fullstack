@@ -4,11 +4,13 @@ import {
   MainContainer,
   MainTitle,
 } from "../../tools/globalStyles";
+import { WidgetsContainer } from "./styles";
 
 import Chart from "../../components/chart/Chart";
 import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import { userData } from "../../tools/dummyData";
-import WidgetSm from "../../components/widget/WidgetSm";
+import UsersWidget from "../../components/widget/UsersWidget";
+import PurchasesWidget from "../../components/widget/PurchasesWidget";
 
 const HomePage = () => {
   return (
@@ -22,9 +24,10 @@ const HomePage = () => {
           grid
           dataKey="Active User"
         />
-        <div className="homeWidgets">
-          <WidgetSm />
-        </div>
+        <WidgetsContainer>
+          <UsersWidget />
+          <PurchasesWidget />
+        </WidgetsContainer>
       </ContentContainer>
     </MainContainer>
   );

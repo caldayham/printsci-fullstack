@@ -7,6 +7,5 @@ export default function isAdmin() {
                     : null
                 : null
             : null;
-    //!auth && window.location.replace("/login")
     return auth
 }

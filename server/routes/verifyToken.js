@@ -2,7 +2,9 @@ const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers.token
+    console.log(req.headers.token)
     if (authHeader) { 
+        console.log("veryfy token called");
 
         const token = authHeader.split(" ")[1];
         jwt.verify(token, process.env.JWT_SEC, (err, user) => {
@@ -29,6 +31,7 @@ const verifyTokenAndAuth = (req, res, next) => {
 };
 
 const verifyTokenAndAdmin = (req, res, next) => {
+
     verifyToken(req, res, () => {
         
         if (req.user.isAdmin) {

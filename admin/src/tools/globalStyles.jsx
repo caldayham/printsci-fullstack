@@ -50,6 +50,7 @@ const ComponentContainer = styled.div`
   border: 1px solid rgb(14, 14, 14);
   border-radius: 10px;
   flex: ${(props) => (props.flex ? props.flex : "1")};
+  background-color: ${(props) => (props.color ? props.color : "#ffffff")};
 `;
 
 export {

@@ -25,7 +25,7 @@ export default function FeaturedInfo() {
         </div>
         <span className="featuredSub">Compared to last month</span>
       </ComponentContainer>
-      <ComponentContainer flex={0.5}>
+      <ComponentContainer>
         <span className="featuredTitle">Cost</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$2,225</span>
