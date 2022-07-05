@@ -9,8 +9,8 @@ import { WidgetsContainer } from "./styles";
 import Chart from "../../components/chart/Chart";
 import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import { userData } from "../../tools/dummyData";
-import UsersWidget from "../../components/widget/UsersWidget";
-import PurchasesWidget from "../../components/widget/PurchasesWidget";
+import UsersWidget from "../../components/widgets/UsersWidget";
+import OrdersWidget from "../../components/widgets/OrdersWidget";
 
 const HomePage = () => {
   return (
@@ -26,7 +26,7 @@ const HomePage = () => {
         />
         <WidgetsContainer>
           <UsersWidget />
-          <PurchasesWidget />
+          <OrdersWidget />
         </WidgetsContainer>
       </ContentContainer>
     </MainContainer>

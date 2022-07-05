@@ -1,12 +1,12 @@
 import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
-import { ComponentContainer } from "../../tools/globalStyles";
+import { ComponentContainer, SubTitle } from "../../tools/globalStyles";
 import { Container } from "./styles";
 
 export default function FeaturedInfo() {
   return (
     <Container>
       <ComponentContainer>
-        <span className="featuredTitle">Revanue</span>
+        <SubTitle>Revanue</SubTitle>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$2,415</span>
           <span className="featuredMoneyRate">
@@ -16,7 +16,7 @@ export default function FeaturedInfo() {
         <span className="featuredSub">Compared to last month</span>
       </ComponentContainer>
       <ComponentContainer>
-        <span className="featuredTitle">Sales</span>
+        <SubTitle>Sales</SubTitle>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$4,415</span>
           <span className="featuredMoneyRate">
@@ -26,7 +26,7 @@ export default function FeaturedInfo() {
         <span className="featuredSub">Compared to last month</span>
       </ComponentContainer>
       <ComponentContainer>
-        <span className="featuredTitle">Cost</span>
+        <SubTitle>Cost</SubTitle>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$2,225</span>
           <span className="featuredMoneyRate">

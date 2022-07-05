@@ -67,6 +67,7 @@ const PageButton = styled.button`
   align-items: center;
   gap: 5px;
 
+  cursor: pointer;
   &:hover {
     background-color: rgb(0, 0, 0);
   }

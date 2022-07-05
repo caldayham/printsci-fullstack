@@ -1,4 +1,4 @@
-import { ComponentContainer } from "../../tools/globalStyles";
+import { ComponentContainer, SubTitle } from "../../tools/globalStyles";
 import {
   LineChart,
   Line,
@@ -11,7 +11,7 @@ import {
 export default function Chart({ title, data, dataKey, grid }) {
   return (
     <ComponentContainer color="rgb(240,240,240)">
-      <h3>{title}</h3>
+      <SubTitle>{title}</SubTitle>
       <ResponsiveContainer width="100%" aspect={4 / 1}>
         <LineChart data={data}>
           <XAxis dataKey="name" stroke="rgb(14,14,14)" />

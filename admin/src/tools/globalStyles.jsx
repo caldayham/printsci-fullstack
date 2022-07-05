@@ -31,6 +31,20 @@ const MainTitle = styled.h1`
   border-bottom: 1px solid rgb(14, 14, 14);
 `;
 
+const SubTitle = styled.h3`
+  font-size: 22px;
+  font-weight: 600;
+
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+
+  border-bottom: 1px solid rgb(200, 200, 200);
+`;
+
 const MainButton = styled.button`
   padding: 10px;
   font-size: 20px;
@@ -59,4 +73,5 @@ export {
   MainButton,
   ContentContainer,
   ComponentContainer,
+  SubTitle,
 };
