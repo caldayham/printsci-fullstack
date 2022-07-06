@@ -1,39 +1,76 @@
+import { useEffect, useState } from "react";
+
 import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
-import { ComponentContainer, SubTitle } from "../../tools/globalStyles";
-import { Container } from "./styles";
+import {
+  ComponentContainer,
+  SubTitle,
+  LocalHeader,
+} from "../../tools/globalStyles";
+import { Container, PercentWrapper, MoneyInfoWrapper } from "./styles";
+
+import { userRequest } from "../../tools/requestMethods";
 
 export default function FeaturedInfo() {
+  const [income, setIncome] = useState([100, 200]);
+  const [perc, setPerc] = useState();
+
+  useEffect(() => {
+    const getIncome = async () => {
+      try {
+        const res = await userRequest.get("orders/income");
+        setIncome(res.data);
+        setPerc((res.data[1].total * 100) / res.data[0].total - 100);
+      } catch (err) {
+        console.log("THERE WAS AN ERROR");
+        console.log(err);
+      }
+    };
+    getIncome();
+  }, []);
+
+  console.log(income);
+  console.log(perc);
+
   return (
     <Container>
       <ComponentContainer>
         <SubTitle>Revanue</SubTitle>
-        <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$2,415</span>
-          <span className="featuredMoneyRate">
-            -11.4 <ArrowDownward className="featuredIcon negative" />
-          </span>
-        </div>
-        <span className="featuredSub">Compared to last month</span>
+        <MoneyInfoWrapper>
+          <LocalHeader>${income[1].total}</LocalHeader>
+          <PercentWrapper perc={perc}>
+            {perc >= 0 ? <ArrowUpward /> : <ArrowDownward />}
+            {Math.floor(perc)}%{" "}
+            <span style={{ fontSize: "12px", color: "rgb(40,40,40)" }}>
+              *compared to last month
+            </span>
+          </PercentWrapper>
+        </MoneyInfoWrapper>
       </ComponentContainer>
       <ComponentContainer>
         <SubTitle>Sales</SubTitle>
-        <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$4,415</span>
-          <span className="featuredMoneyRate">
-            -1.4 <ArrowDownward className="featuredIcon negative" />
-          </span>
-        </div>
-        <span className="featuredSub">Compared to last month</span>
+        <MoneyInfoWrapper>
+          <LocalHeader>${income[1].total}</LocalHeader>
+          <PercentWrapper perc={perc}>
+            {perc >= 0 ? <ArrowUpward /> : <ArrowDownward />}
+            {Math.floor(perc)}%{" "}
+            <span style={{ fontSize: "12px", color: "rgb(40,40,40)" }}>
+              *compared to last month
+            </span>
+          </PercentWrapper>
+        </MoneyInfoWrapper>
       </ComponentContainer>
       <ComponentContainer>
         <SubTitle>Cost</SubTitle>
-        <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$2,225</span>
-          <span className="featuredMoneyRate">
-            +2.4 <ArrowUpward className="featuredIcon" />
-          </span>
-        </div>
-        <span className="featuredSub">Compared to last month</span>
+        <MoneyInfoWrapper>
+          <LocalHeader>${income[0].total}</LocalHeader>
+          <PercentWrapper perc={(100 / perc) * -100}>
+            {(100 / perc) * -100 >= 0 ? <ArrowUpward /> : <ArrowDownward />}
+            {Math.floor((100 / perc) * -100)}%{" "}
+            <span style={{ fontSize: "12px", color: "rgb(40,40,40)" }}>
+              *compared to last month
+            </span>
+          </PercentWrapper>
+        </MoneyInfoWrapper>
       </ComponentContainer>
     </Container>
   );

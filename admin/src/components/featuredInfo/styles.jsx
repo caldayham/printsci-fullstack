@@ -6,12 +6,26 @@ const Container = styled.div`
   gap: 20px;
 `;
 
-const FeaturedItem = styled.div`
-  padding: 20px;
-  border: 1px solid rgb(14, 14, 14);
-  border-radius: 20px;
-  flex: 1;
-  min-width: 200px;
+const PercentWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 10px;
+  background-color: ${(props) =>
+    props.perc >= 0 ? "rgb(88, 206, 108)" : "rgb(236, 79, 79)"};
+
+  font-size: 20px;
+  font-weight: 100;
 `;
 
-export { Container, FeaturedItem };
+const MoneyInfoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+`;
+
+export { Container, PercentWrapper, MoneyInfoWrapper };

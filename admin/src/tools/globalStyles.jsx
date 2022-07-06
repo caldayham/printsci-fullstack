@@ -32,9 +32,6 @@ const MainTitle = styled.h1`
 `;
 
 const SubTitle = styled.h3`
-  font-size: 22px;
-  font-weight: 600;
-
   margin-left: -20px;
   margin-right: -20px;
   padding-left: 20px;
@@ -67,6 +64,10 @@ const ComponentContainer = styled.div`
   background-color: ${(props) => (props.color ? props.color : "#ffffff")};
 `;
 
+const LocalHeader = styled.h1`
+  font-weight: 200;
+`;
+
 export {
   MainContainer,
   MainTitle,
@@ -74,4 +75,5 @@ export {
   ContentContainer,
   ComponentContainer,
   SubTitle,
+  LocalHeader,
 };
