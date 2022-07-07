@@ -87,10 +87,6 @@ const SideNav = () => {
           </CollapseIconWrapper>
         </SectionHeader>
         <SectionContent open={crud}>
-          <PageButton onClick={() => handlePageClick("/crud/users")}>
-            Users
-            <GroupOutlinedIcon style={{ width: "20px" }} />
-          </PageButton>
           <PageButton onClick={() => handlePageClick("/crud/products")}>
             Products
             <CategoryOutlinedIcon style={{ width: "20px" }} />
@@ -98,6 +94,10 @@ const SideNav = () => {
           <PageButton onClick={() => handlePageClick("/crud/orders")}>
             Orders
             <LocalShippingOutlinedIcon style={{ width: "20px" }} />
+          </PageButton>
+          <PageButton onClick={() => handlePageClick("/crud/users")}>
+            Users
+            <GroupOutlinedIcon style={{ width: "20px" }} />
           </PageButton>
           <PageButton onClick={() => handlePageClick("/crud/transactions")}>
             Transactions
