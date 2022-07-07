@@ -8,7 +8,8 @@ import SideNav from "./components/sideNav/SideNav";
 import Header from "./components/header/Header";
 
 import UsersPage from "./pages/CRUDPages/UsersPage";
-import ProductsPage from "./pages/CRUDPages/ProductsPage";
+import ProductsPage from "./pages/CRUDPages/Products/ProductsPage";
+import ProductPage from "./pages/CRUDPages/Products/ProductPage";
 import OrdersPage from "./pages/CRUDPages/OrdersPage";
 import TransactionsPage from "./pages/CRUDPages/TransactionsPage";
 import ResearchPage from "./pages/CRUDPages/ResearchPage";
@@ -49,8 +50,13 @@ const App = () => {
                 <Route exact path="/analytics" element={<HomePage />} />
                 <Route exact path="/notifications" element={<HomePage />} />
                 {/* CRUD DATA ROUTES */}
-                <Route exact path="crud/users" element={<UsersPage />} />
-                <Route exact path="crud/products" element={<ProductsPage />} />
+                <Route exact path="/crud/users" element={<UsersPage />} />
+                <Route exact path="/crud/products" element={<ProductsPage />} />
+                <Route
+                  exact
+                  path="/crud/products/:id"
+                  element={<ProductPage />}
+                />
                 <Route exact path="crud/orders" element={<OrdersPage />} />
                 <Route
                   exact

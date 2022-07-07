@@ -1,51 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ComponentContainer } from "../../tools/globalStyles";
 
 import { DataGrid } from "@mui/x-data-grid";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/apiCalls";
 import { Link } from "react-router-dom";
-import { ProductListProduct } from "./styles";
+import {
+  ProductListProduct,
+  ProductImg,
+  ProductListEditButton,
+} from "./styles";
 
 const ProductList = () => {
-  const [data, setData] = useState([]);
+  const assetBaseURL = process.env.REACT_APP_ASSET_CDN_BASE_URL;
+
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
-  console.log(products);
 
   useEffect(() => {
     getProducts(dispatch);
   }, [dispatch]);
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
-
   const columns = [
-    { field: "_id", headerName: "ID", width: 90 },
+    { field: "_id", headerName: "ID", width: 220 },
     {
       field: "product",
       headerName: "Product",
-      width: 200,
+      width: 250,
       renderCell: (params) => {
         return (
           <ProductListProduct>
-            <img src={params.row.imgs[1]} alt="" />
+            <ProductImg src={`${assetBaseURL + params.row.imgs[0]}`} alt="" />
             {params.row.title}
           </ProductListProduct>
         );
       },
     },
-    { field: "stock", headerName: "Stock", width: 200 },
+    { field: "inStock", headerName: "Stock", width: 100 },
     {
-      field: "status",
-      headerName: "Status",
+      field: "rating.totalAvgRating",
+      headerName: "Rating",
       width: 120,
+      renderCell: (params) => {
+        return (
+          <p>
+            {params.row.rating.totalAvgRating +
+              " x " +
+              params.row.rating.totalNumRatings}
+          </p>
+        );
+      },
     },
     {
-      field: "price",
+      field: "basePrice",
       headerName: "Price",
       width: 160,
     },
@@ -56,13 +64,9 @@ const ProductList = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row._id}>
-              <button className="productListEdit">Edit</button>
+            <Link to={"/crud/products/" + params.row._id}>
+              <ProductListEditButton>Edit</ProductListEditButton>
             </Link>
-            <DeleteOutlineIcon
-              className="productListDelete"
-              onClick={() => handleDelete(params.row._id)}
-            />
           </>
         );
       },
