@@ -7,11 +7,13 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/apiCalls";
 import { Link } from "react-router-dom";
+import { ProductListProduct } from "./styles";
 
 const ProductList = () => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
+  console.log(products);
 
   useEffect(() => {
     getProducts(dispatch);
@@ -29,10 +31,10 @@ const ProductList = () => {
       width: 200,
       renderCell: (params) => {
         return (
-          <div className="productListItem">
-            <img className="productListImg" src={params.row.img} alt="" />
-            {params.row.name}
-          </div>
+          <ProductListProduct>
+            <img src={params.row.imgs[1]} alt="" />
+            {params.row.title}
+          </ProductListProduct>
         );
       },
     },
