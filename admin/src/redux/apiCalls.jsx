@@ -1,8 +1,11 @@
-import { publicRequest } from "../tools/requestMethods";
+import { publicRequest, userRequest } from "../tools/requestMethods";
 import {
   getProductFailure,
   getProductStart,
   getProductSuccess,
+  deleteProductFailure,
+  deleteProductStart,
+  deleteProductSuccess,
 } from "./productRedux";
 import { loginSuccess, loginFailure, loginStart } from "./userRedux";
 
@@ -32,5 +35,18 @@ export const getProducts = async (dispatch) => {
     console.log("PHAT PRODUCTS ERROR");
     console.log(err);
     dispatch(getProductFailure());
+  }
+};
+
+export const deleteProduct = async (id, dispatch) => {
+  dispatch(deleteProductStart());
+
+  try {
+    // const res = await userRequest.delete(`/products/${id}`);
+    dispatch(deleteProductSuccess(id));
+  } catch (err) {
+    console.log("PHAT PRODUCTS ERROR");
+    console.log(err);
+    dispatch(deleteProductFailure());
   }
 };

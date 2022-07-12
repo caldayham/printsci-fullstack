@@ -13,6 +13,7 @@ import ProductPage from "./pages/CRUDPages/Products/ProductPage";
 import OrdersPage from "./pages/CRUDPages/OrdersPage";
 import TransactionsPage from "./pages/CRUDPages/TransactionsPage";
 import ResearchPage from "./pages/CRUDPages/ResearchPage";
+import CreateProductPage from "./pages/CRUDPages/Products/CreateProductPage";
 
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -52,6 +53,11 @@ const App = () => {
                 {/* CRUD DATA ROUTES */}
                 <Route exact path="/crud/users" element={<UsersPage />} />
                 <Route exact path="/crud/products" element={<ProductsPage />} />
+                <Route
+                  exact
+                  path="/crud/products/create"
+                  element={<CreateProductPage />}
+                />
                 <Route
                   exact
                   path="/crud/products/:id"

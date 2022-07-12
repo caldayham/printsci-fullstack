@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 const MainContainer = styled.div`
   padding: 0px;
   width: 100%;
@@ -68,6 +70,13 @@ const LocalHeader = styled.h1`
   font-weight: 200;
 `;
 
+const CustomLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+`;
+
 export {
   MainContainer,
   MainTitle,
@@ -76,4 +85,5 @@ export {
   ComponentContainer,
   SubTitle,
   LocalHeader,
+  CustomLink,
 };
