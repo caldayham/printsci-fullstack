@@ -7,7 +7,15 @@ import {
   Title,
 } from "../../tools/globalStyles";
 
+import { Wrapper } from "./styles";
+
 const CustomPage = () => {
+  console.log(
+    `${
+      process.env.REACT_APP_IMGURL + "/images/SLA_SteriFlow_assembly_img1.PNG"
+    }`
+  );
+
   return (
     <MainContainer flexDirection={"column"}>
       <Title>Custom Parts</Title>
@@ -19,17 +27,57 @@ const CustomPage = () => {
         </i>{" "}
         <br /> <b style={{ fontSize: "22px" }}>- Dr. Agarwal</b>
       </Subtitle>
-      <HoverCardWrapper style={{ maxHeight: "120px" }}>
-        <Subtitle>CAD Model to Part</Subtitle>
-        <ShopNowButton>Send it to us!</ShopNowButton>
+      <HoverCardWrapper>
+        <Wrapper>
+          <Subtitle>CAD Model to Part</Subtitle>
+          <ShopNowButton style={{ width: "100%" }}>Get it built!</ShopNowButton>
+        </Wrapper>
+        <Wrapper align="center">
+          <img
+            src={`${
+              process.env.REACT_APP_IMGURL +
+              "/images/SLA_SteriFlow_assembly_img1.PNG"
+            }`}
+            alt=""
+            style={{ height: "200px", width: "200px" }}
+          />
+        </Wrapper>
       </HoverCardWrapper>
-      <HoverCardWrapper style={{ maxHeight: "120px" }}>
-        <Subtitle>Replacement, Repair, or Duplication of Parts</Subtitle>
-        <ShopNowButton>Ship it in!</ShopNowButton>
+
+      <HoverCardWrapper>
+        <Wrapper>
+          <Subtitle>Replacement, Replication, Repair</Subtitle>
+          <ShopNowButton style={{ width: "100%" }}>Ship it in!</ShopNowButton>
+        </Wrapper>
+        <Wrapper align="center">
+          <img
+            src={`${
+              process.env.REACT_APP_IMGURL +
+              "/images/SLA_SteriFlow_assembly_img1.PNG"
+            }`}
+            alt=""
+            style={{ height: "200px", width: "200px" }}
+          />
+        </Wrapper>
       </HoverCardWrapper>
-      <HoverCardWrapper style={{ maxHeight: "120px" }}>
-        <Subtitle>Idea or Issue to Part</Subtitle>
-        <ShopNowButton>Chat with a build expert!</ShopNowButton>
+
+      <HoverCardWrapper>
+        <Wrapper>
+          <Subtitle>Ideas or Issue to Part</Subtitle>
+          <ShopNowButton style={{ width: "100%" }}>
+            Talk with a build expert!
+          </ShopNowButton>
+        </Wrapper>
+        <Wrapper align="center">
+          <img
+            src={`${
+              process.env.REACT_APP_IMGURL +
+              "/images/SLA_SteriFlow_assembly_img1.PNG"
+            }`}
+            alt=""
+            style={{ height: "200px", width: "200px" }}
+          />
+        </Wrapper>
       </HoverCardWrapper>
     </MainContainer>
   );

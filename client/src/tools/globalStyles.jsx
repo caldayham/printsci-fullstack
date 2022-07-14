@@ -150,12 +150,11 @@ const HoverCardWrapper = styled.div`
   align-items: left;
   justify-content: space-between;
   margin-top: 2%;
-  height: auto;
-  flex: 1;
   padding: 20px;
   color: black;
   border: 1px solid rgb(200, 200, 200);
   background: rgb(231, 241, 255);
+  margin-bottom: 0%;
 
   transition: all 0.1s ease;
   &:hover {

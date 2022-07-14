@@ -6,6 +6,9 @@ node_modules
 .pnp.js
 .env
 
+#github
+.github
+
 # testing
 /coverage
 
