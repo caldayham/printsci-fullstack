@@ -15,7 +15,8 @@ const ContentContainer = styled.div`
   width: calc(100vw - 260px);
   height: calc(100vh - 160px);
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) =>
+    props.flexDirection ? props.flexDirection : "column"};
   gap: 20px;
 `;
 

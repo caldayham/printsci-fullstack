@@ -1,8 +1,10 @@
 import React from "react";
 import {
+  ComponentContainer,
   ContentContainer,
   MainContainer,
   MainTitle,
+  SubTitle,
 } from "../../../tools/globalStyles";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -39,14 +41,33 @@ const ProductPage = () => {
     <MainContainer>
       <MainTitle>{product.title}</MainTitle>
       <ContentContainer>
-        <img
-          src={`${assetBaseURL + product.imgs[0]}`}
-          alt=""
-          style={{ width: "100px" }}
-        />
-        <button onClick={() => handleDelete()}>
-          <DeleteOutlineIcon />
-        </button>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <ComponentContainer style={{ flex: 1 }}>
+            <SubTitle>Sales Performance</SubTitle>
+          </ComponentContainer>
+          <ComponentContainer style={{ flex: 1 }}>
+            <SubTitle>{product.title}</SubTitle>
+            <p>
+              Id: <b>{product._id}</b>
+            </p>
+            <p>Base Price: {product.basePrice}</p>
+            <p>In Stock: {product.inStock ? "true" : "false"}</p>
+            <p>
+              Sales: <b>239</b>
+            </p>
+            <img
+              src={`${assetBaseURL + product.imgs[0]}`}
+              alt=""
+              style={{ width: "100px" }}
+            />
+          </ComponentContainer>
+        </div>
+        <ComponentContainer>
+          <SubTitle>Edit Product</SubTitle>
+          <button onClick={() => handleDelete()}>
+            <DeleteOutlineIcon />
+          </button>
+        </ComponentContainer>
       </ContentContainer>
     </MainContainer>
   );
