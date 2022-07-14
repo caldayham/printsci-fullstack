@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Container,
-  MemberWrapper,
   MemberDesc,
   MemberImage,
   MemberText,
@@ -14,6 +13,7 @@ import {
   SocialContainer,
   SocialIcon,
   SocialIconContainer,
+  HoverCardWrapper,
 } from "../../tools/globalStyles.jsx";
 import Icon from "react-icons-kit";
 
@@ -23,7 +23,7 @@ const Members = () => {
   return (
     <Container>
       {members.map((item, i) => (
-        <MemberWrapper key={i}>
+        <HoverCardWrapper key={i}>
           <MemberText>
             <MemberTitleWrapper>
               <MemberTitle>{item.title}</MemberTitle>
@@ -74,7 +74,7 @@ const Members = () => {
             </SocialContainer>
           </MemberText>
           <MemberImage src={item.img} />
-        </MemberWrapper>
+        </HoverCardWrapper>
       ))}
     </Container>
   );

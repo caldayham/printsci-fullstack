@@ -8,26 +8,6 @@ const Container = styled.div`
   gap: 4%;
 `;
 
-const MemberWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  justify-content: space-between;
-  margin-top: 2%;
-  height: auto;
-  flex: 1;
-  padding: 20px;
-  background-color: white;
-  color: black;
-  border: 1px solid rgb(200, 200, 200);
-  background: rgb(231, 241, 255);
-
-  transition: all 0.1s ease;
-  &:hover {
-    background: rgb(193, 220, 255);
-  }
-`;
-
 const MemberDesc = styled.p`
   padding: none;
   font-size: 16px;
@@ -80,7 +60,6 @@ const MemberSubTitle = styled.h2`
 export {
   MemberSubTitle,
   Container,
-  MemberWrapper,
   MemberDesc,
   MemberImage,
   MemberText,
