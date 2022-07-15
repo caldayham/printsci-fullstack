@@ -34,10 +34,7 @@ const CustomPage = () => {
         </Wrapper>
         <Wrapper align="center">
           <img
-            src={`${
-              process.env.REACT_APP_IMGURL +
-              "/images/SLA_SteriFlow_assembly_img1.PNG"
-            }`}
+            src={`${process.env.REACT_APP_IMGURL + "/images/tflow-cad.PNG"}`}
             alt=""
             style={{ height: "200px", width: "200px" }}
           />
