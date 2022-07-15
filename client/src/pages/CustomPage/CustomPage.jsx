@@ -10,12 +10,6 @@ import {
 import { Wrapper } from "./styles";
 
 const CustomPage = () => {
-  console.log(
-    `${
-      process.env.REACT_APP_IMGURL + "/images/SLA_SteriFlow_assembly_img1.PNG"
-    }`
-  );
-
   return (
     <MainContainer flexDirection={"column"}>
       <Title>Custom Parts</Title>
@@ -29,12 +23,12 @@ const CustomPage = () => {
       </Subtitle>
       <HoverCardWrapper>
         <Wrapper>
-          <Subtitle>CAD Model to Part</Subtitle>
+          <Subtitle>Have a CAD model?</Subtitle>
           <ShopNowButton style={{ width: "100%" }}>Get it built!</ShopNowButton>
         </Wrapper>
         <Wrapper align="center">
           <img
-            src={`${process.env.REACT_APP_IMGURL + "/images/tflow-cad.PNG"}`}
+            src={`${process.env.REACT_APP_IMGURL + "tflow-cad.PNG"}`}
             alt=""
             style={{ height: "200px", width: "200px" }}
           />
@@ -43,14 +37,13 @@ const CustomPage = () => {
 
       <HoverCardWrapper>
         <Wrapper>
-          <Subtitle>Replacement, Replication, Repair</Subtitle>
+          <Subtitle>Replacement, replication, or repair?</Subtitle>
           <ShopNowButton style={{ width: "100%" }}>Ship it in!</ShopNowButton>
         </Wrapper>
         <Wrapper align="center">
           <img
             src={`${
-              process.env.REACT_APP_IMGURL +
-              "/images/SLA_SteriFlow_assembly_img1.PNG"
+              process.env.REACT_APP_IMGURL + "SLA_SteriFlow_assembly_img1.PNG"
             }`}
             alt=""
             style={{ height: "200px", width: "200px" }}
@@ -60,17 +53,14 @@ const CustomPage = () => {
 
       <HoverCardWrapper>
         <Wrapper>
-          <Subtitle>Ideas or Issue to Part</Subtitle>
+          <Subtitle>Ideas or Issue?</Subtitle>
           <ShopNowButton style={{ width: "100%" }}>
             Talk with a build expert!
           </ShopNowButton>
         </Wrapper>
         <Wrapper align="center">
           <img
-            src={`${
-              process.env.REACT_APP_IMGURL +
-              "/images/SLA_SteriFlow_assembly_img1.PNG"
-            }`}
+            src={`${process.env.REACT_APP_IMGURL + "display-hinge.png"}`}
             alt=""
             style={{ height: "200px", width: "200px" }}
           />
