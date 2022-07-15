@@ -1,13 +1,18 @@
 import React from "react";
 import {
-  HoverCardWrapper,
   MainContainer,
   ShopNowButton,
   Subtitle,
   Title,
 } from "../../tools/globalStyles";
 
-import { Wrapper } from "./styles";
+import {
+  ImageLayer,
+  LayeredImgWrapper,
+  Wrapper,
+  HoverCardWrapper,
+  ImageLayerFocus,
+} from "./styles";
 
 const CustomPage = () => {
   return (
@@ -17,7 +22,7 @@ const CustomPage = () => {
         <i style={{ fontSize: "20px" }}>
           'Print Scientific has provided the best custom part delivery
           experience our lab has needed. Mostly because they understand why we
-          need the [custom part] thing'
+          need the [custom part] thing in the first place.'
         </i>{" "}
         <br /> <b style={{ fontSize: "22px" }}>- Dr. Agarwal</b>
       </Subtitle>
@@ -26,13 +31,18 @@ const CustomPage = () => {
           <Subtitle>Have a CAD model?</Subtitle>
           <ShopNowButton style={{ width: "100%" }}>Get it built!</ShopNowButton>
         </Wrapper>
-        <Wrapper align="center">
-          <img
-            src={`${process.env.REACT_APP_IMGURL + "tflow-cad.PNG"}`}
-            alt=""
-            style={{ height: "200px", width: "200px" }}
+        <LayeredImgWrapper>
+          <ImageLayerFocus
+            src={`${
+              process.env.REACT_APP_IMGURL + "display-imgs/cad-part.png"
+            }`}
           />
-        </Wrapper>
+          <ImageLayer
+            src={`${
+              process.env.REACT_APP_IMGURL + "display-imgs/cad-planes.png"
+            }`}
+          />
+        </LayeredImgWrapper>
       </HoverCardWrapper>
 
       <HoverCardWrapper>
@@ -40,15 +50,19 @@ const CustomPage = () => {
           <Subtitle>Replacement, replication, or repair?</Subtitle>
           <ShopNowButton style={{ width: "100%" }}>Ship it in!</ShopNowButton>
         </Wrapper>
-        <Wrapper align="center">
-          <img
+        <LayeredImgWrapper>
+          <ImageLayer
             src={`${
-              process.env.REACT_APP_IMGURL + "SLA_SteriFlow_assembly_img1.PNG"
+              process.env.REACT_APP_IMGURL +
+              "display-imgs/hinge-display-body.png"
             }`}
-            alt=""
-            style={{ height: "200px", width: "200px" }}
           />
-        </Wrapper>
+          <ImageLayerFocus
+            src={`${
+              process.env.REACT_APP_IMGURL + "display-imgs/hinge-display.png"
+            }`}
+          />
+        </LayeredImgWrapper>
       </HoverCardWrapper>
 
       <HoverCardWrapper>
@@ -58,13 +72,20 @@ const CustomPage = () => {
             Talk with a build expert!
           </ShopNowButton>
         </Wrapper>
-        <Wrapper align="center">
-          <img
-            src={`${process.env.REACT_APP_IMGURL + "display-hinge.png"}`}
-            alt=""
-            style={{ height: "200px", width: "200px" }}
+        <LayeredImgWrapper>
+          <ImageLayer
+            src={`${
+              process.env.REACT_APP_IMGURL +
+              "display-imgs/broken-display-main.png"
+            }`}
           />
-        </Wrapper>
+          <ImageLayerFocus
+            src={`${
+              process.env.REACT_APP_IMGURL +
+              "display-imgs/broken-display-bit.png"
+            }`}
+          />
+        </LayeredImgWrapper>
       </HoverCardWrapper>
     </MainContainer>
   );
