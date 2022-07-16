@@ -1,19 +1,39 @@
 import React from "react";
-import { Container } from "./styles";
+import {
+  HoverCardWrapper,
+  AbstractBox,
+  LayeredImgWrapper,
+  ImageLayer,
+} from "./styles";
 import { researchData } from "../../Data/researchData";
+import { Subtitle } from "../../tools/globalStyles";
 
 const Research = () => {
   console.log(researchData);
 
   return (
-    <Container>
+    <div>
       {researchData.map((paper) => (
-        <div
-          style={{ width: "100%", height: "20px", backgroundColor: "black" }}
-          key={paper.uploadNum}
-        />
+        <HoverCardWrapper key={paper.uploadNum}>
+          <div
+            style={{
+              flex: 2,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <Subtitle style={{ fontSize: "22px", fontWeight: "500" }}>
+              {paper.title}
+            </Subtitle>
+            <AbstractBox>{paper.abstract}</AbstractBox>
+          </div>
+          <LayeredImgWrapper>
+            <ImageLayer src={paper.imageUrl} />
+          </LayeredImgWrapper>
+        </HoverCardWrapper>
       ))}
-    </Container>
+    </div>
   );
 };
 
