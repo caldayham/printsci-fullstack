@@ -3,26 +3,42 @@ import styled from "styled-components";
 const AbstractBox = styled.div`
   height: 100px;
   overflow: scroll;
+  overflow-x: hidden;
   font-weight: 100;
-  border: 1px solid rgb(14, 14, 14);
   padding: 10px;
+  margin-top: 20px;
+  color: rgb(100, 100, 100);
+
+  transition: all 0.1s ease;
+  background-color: white;
 `;
 
 const LayeredImgWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1;
-  height: 100px;
-  align-items: end;
+  align-items: center;
+  width: 100%;
+  padding-top: 100%;
   position: relative;
 `;
 
 const ImageLayer = styled.img`
   position: absolute;
-  height: 100%;
+  top: 0px;
+  width: 100%;
 
   transition: all 0.1s ease;
+`;
+
+const RightWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-left: 40px;
+  border-left: 1px solid rgb(200, 200, 200);
 `;
 
 const HoverCardWrapper = styled.div`
@@ -43,8 +59,19 @@ const HoverCardWrapper = styled.div`
   }
 
   &:hover ${ImageLayer} {
-    height: 110%;
+    width: 110%;
+  }
+
+  &:hover ${AbstractBox} {
+    background-color: rgb(231, 241, 255);
+    height: 200px;
   }
 `;
 
-export { HoverCardWrapper, ImageLayer, LayeredImgWrapper, AbstractBox };
+export {
+  HoverCardWrapper,
+  ImageLayer,
+  LayeredImgWrapper,
+  AbstractBox,
+  RightWrapper,
+};
