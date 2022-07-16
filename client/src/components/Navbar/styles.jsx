@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { mobile } from "../../tools/responsive";
+import { mobile, tablet } from "../../tools/responsive";
 
 import { useSelector } from "react-redux";
 
 const Container = styled.div`
+  display: relative;
   height: auto;
   position: fixed;
   top: 50px;
@@ -74,9 +75,11 @@ const MenuItem = styled.div`
 const NavLinkBar = styled.div`
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 100%;
   justify-content: space-between;
   padding: 0% 10% 0% 10%;
+
+  ${tablet({ display: "none" })}
 `;
 
 const LocalLink = styled.p`
@@ -111,7 +114,29 @@ const BadgeWrapper = styled.div`
   }
 `;
 
+const MobileNav = styled.div`
+  display: none;
+  ${tablet({ display: "block" })}
+
+  &:hover {
+    border: 2px solid white;
+  }
+
+  border: ${(props) => (props.showingMobileMenu ? "2px solid white" : "none")};
+`;
+
+const MobileMenu = styled.div`
+  display: ${(props) => (props.showingMobileMenu ? "absolute" : "none")};
+  height: 60px;
+  background-color: rgb(14, 14, 14);
+  border: 2px solid white;
+
+  z-index: 8;
+`;
+
 export {
+  MobileMenu,
+  MobileNav,
   BadgeWrapper,
   Container,
   Wrapper,

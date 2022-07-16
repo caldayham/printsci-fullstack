@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { changePage } from "../../redux/currentPageRedux";
 import {
   MainContainer,
   ShopNowButton,
@@ -15,6 +17,14 @@ import {
 } from "./styles";
 
 const CustomPage = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const updatePage = () => {
+      dispatch(changePage("custom"));
+    };
+    updatePage();
+  });
+
   return (
     <MainContainer flexDirection={"column"}>
       <Title>Custom Parts</Title>

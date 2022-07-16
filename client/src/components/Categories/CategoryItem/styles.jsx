@@ -3,15 +3,18 @@ import styled from "styled-components";
 const Container = styled.div`
   flex: 1;
   height: 70vh;
-  background-color: #e0e0e0;
+  background-color: rgb(200, 200, 200);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 200px;
+
+  overflow: hidden;
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 400px;
   object-fit: cover;
   position: absolute;
   transform: translateX(-50%) translateY(-50%);

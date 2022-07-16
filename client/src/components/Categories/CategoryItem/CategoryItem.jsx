@@ -7,7 +7,7 @@ const CategoryItem = ({ item }) => {
   return (
     <Container>
       <Link to={`/catalog/${item.cat}`}>
-        <Image src={item.img} />
+        <Image src={process.env.REACT_APP_IMGURL + item.img} />
         <Info>
           <Title>{item.title}</Title>
           <ShopNowButton>SHOP NOW</ShopNowButton>

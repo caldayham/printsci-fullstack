@@ -31,7 +31,6 @@ const CatalogPage = () => {
   const [category, setCategory] = useState(
     location.pathname.split("/")[2] ? location.pathname.split("/")[2] : "all"
   );
-  console.log(category);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
 
@@ -75,7 +74,7 @@ const CatalogPage = () => {
                   <CategoryTitle>{item.title}</CategoryTitle>
                   <CategoryDesc>{item.desc}</CategoryDesc>
                 </CategoryText>
-                <CategoryImage src={item.img} />
+                <CategoryImage src={process.env.REACT_APP_IMGURL + item.img} />
               </CategoryWrapper>
             </CustomLink>
           ))}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Wrapper,
@@ -9,28 +9,29 @@ import {
   Center,
   Right,
   MenuItem,
-  NavLinkBar,
-  LocalLink,
   LocalMinorLink,
   BadgeWrapper,
+  MobileMenu,
+  NavLinkBar,
+  LocalLink,
 } from "./styles.jsx";
 
 import { Badge } from "@mui/material";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-
-import { Link } from "react-router-dom";
 import ClickLogo from "../SubComponents/Logo/ClickLogo";
 
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../../redux/currentPageRedux";
 import { changeOverlay } from "../../redux/overlayRedux.js";
 import { CustomLink } from "../../tools/globalStyles.jsx";
+import LinkMenu from "./LinkMenu.jsx";
 
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
+  const [showingMobileMenu, setShowingMobileMenu] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -48,52 +49,10 @@ const Navbar = () => {
         </Left>
         <Center>
           <ClickLogo />
-          <NavLinkBar>
-            <Link
-              to="/catalog"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <LocalLink
-                onClick={() => dispatch(changePage("catalog"))}
-                thisPage={"catalog"}
-              >
-                Catalog
-              </LocalLink>
-            </Link>
-            <Link
-              to="/custom"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <LocalLink
-                onClick={() => dispatch(changePage("custom"))}
-                thisPage={"custom"}
-              >
-                Custom
-              </LocalLink>
-            </Link>
-            <Link
-              to="/research"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <LocalLink
-                onClick={() => dispatch(changePage("research"))}
-                thisPage={"research"}
-              >
-                Research
-              </LocalLink>
-            </Link>
-            <Link
-              to="/about"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <LocalLink
-                onClick={() => dispatch(changePage("about"))}
-                thisPage={"about"}
-              >
-                About Us
-              </LocalLink>
-            </Link>
-          </NavLinkBar>
+          <LinkMenu
+            showingMobileMenu={showingMobileMenu}
+            setShowingMobileMenu={setShowingMobileMenu}
+          />
         </Center>
         <Right>
           {!useSelector((state) => state.user.currentUser) && (
@@ -127,6 +86,22 @@ const Navbar = () => {
           </MenuItem>
         </Right>
       </Wrapper>
+      <MobileMenu showingMobileMenu={showingMobileMenu}>
+        <NavLinkBar>
+          <CustomLink to="/catalog">
+            <LocalLink thisPage={"catalog"}>Catalog</LocalLink>
+          </CustomLink>
+          <CustomLink to="/custom">
+            <LocalLink thisPage={"custom"}>Custom</LocalLink>
+          </CustomLink>
+          <CustomLink to="/research">
+            <LocalLink thisPage={"research"}>Research</LocalLink>
+          </CustomLink>
+          <CustomLink to="/about">
+            <LocalLink thisPage={"about"}>About Us</LocalLink>
+          </CustomLink>
+        </NavLinkBar>
+      </MobileMenu>
     </Container>
   );
 };
