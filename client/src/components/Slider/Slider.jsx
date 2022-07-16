@@ -15,7 +15,7 @@ import { useState } from "react";
 import KeyboardDoubleArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftOutlined";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 
-import { sliderItems } from "../../tools/data";
+import { sliderItems } from "../../Data/data";
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);

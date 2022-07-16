@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 import ClickLogo from "../SubComponents/Logo/ClickLogo.jsx";
 
 import Icon from "react-icons-kit";
-import { companySocials } from "../../tools/data";
+import { companySocials } from "../../Data/data";
 
 import { useDispatch } from "react-redux";
 import { changePage } from "../../redux/currentPageRedux";

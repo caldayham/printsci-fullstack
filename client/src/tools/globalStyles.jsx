@@ -155,6 +155,7 @@ const HoverCardWrapper = styled.div`
   border: 1px solid rgb(200, 200, 200);
   background: rgb(231, 241, 255);
   margin-bottom: 0%;
+  flex: 1;
 
   transition: all 0.1s ease;
   &:hover {

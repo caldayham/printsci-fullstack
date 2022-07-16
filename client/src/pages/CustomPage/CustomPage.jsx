@@ -54,12 +54,13 @@ const CustomPage = () => {
           <ImageLayer
             src={`${
               process.env.REACT_APP_IMGURL +
-              "display-imgs/hinge-display-body.png"
+              "display-imgs/broken-display-main.png"
             }`}
           />
           <ImageLayerFocus
             src={`${
-              process.env.REACT_APP_IMGURL + "display-imgs/hinge-display.png"
+              process.env.REACT_APP_IMGURL +
+              "display-imgs/broken-display-bit.png"
             }`}
           />
         </LayeredImgWrapper>
@@ -76,13 +77,12 @@ const CustomPage = () => {
           <ImageLayer
             src={`${
               process.env.REACT_APP_IMGURL +
-              "display-imgs/broken-display-main.png"
+              "display-imgs/hinge-display-body.png"
             }`}
           />
           <ImageLayerFocus
             src={`${
-              process.env.REACT_APP_IMGURL +
-              "display-imgs/broken-display-bit.png"
+              process.env.REACT_APP_IMGURL + "display-imgs/hinge-display.png"
             }`}
           />
         </LayeredImgWrapper>

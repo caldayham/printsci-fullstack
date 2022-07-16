@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { MainContainer, Title } from "../../tools/globalStyles";
+import { MainContainer, Subtitle, Title } from "../../tools/globalStyles";
 import Research from "../../components/Research/Research";
 
 import { useDispatch } from "react-redux";
@@ -17,6 +17,10 @@ const ResearchPage = () => {
   return (
     <MainContainer flexDirection={"column"}>
       <Title>Research</Title>
+      <Subtitle>
+        Supporting the work that uncovers, organizes, and distributes knowledge
+        is our <i style={{ fontWeight: "bold" }}>primary directive.</i>
+      </Subtitle>
       <Research />
     </MainContainer>
   );

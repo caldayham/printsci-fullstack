@@ -21,7 +21,7 @@ import {
 } from "../../tools/globalStyles";
 
 import { useLocation } from "react-router-dom";
-import { categories } from "../../tools/data";
+import { categories } from "../../Data/data";
 
 import { useDispatch } from "react-redux";
 import { changePage } from "../../redux/currentPageRedux";

@@ -17,7 +17,7 @@ import {
 } from "../../tools/globalStyles.jsx";
 import Icon from "react-icons-kit";
 
-import { members } from "../../tools/data";
+import { members } from "../../Data/data";
 
 const Members = () => {
   return (
