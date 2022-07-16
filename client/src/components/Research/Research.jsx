@@ -29,7 +29,7 @@ const Research = () => {
             <AbstractBox>{paper.abstract}</AbstractBox>
           </div>
           <LayeredImgWrapper>
-            <ImageLayer src={paper.imageUrl} />
+            <ImageLayer src={process.env.REACT_APP_IMGURL + paper.imageUrl} />
           </LayeredImgWrapper>
         </HoverCardWrapper>
       ))}

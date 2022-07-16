@@ -13,7 +13,7 @@ const LayeredImgWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  height: 200px;
+  height: 100px;
   align-items: end;
   position: relative;
 `;
