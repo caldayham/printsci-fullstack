@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./styles";
 import CategoryItem from "./CategoryItem/CategoryItem";
-import { categories } from "../../Data/data";
+import { categories } from "../../Data/categoryData";
 
 const Categories = ({ paddingSides }) => {
   const subCategories = categories.slice(1);

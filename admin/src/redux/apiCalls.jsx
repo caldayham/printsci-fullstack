@@ -50,3 +50,10 @@ export const deleteProduct = async (id, dispatch) => {
     dispatch(deleteProductFailure());
   }
 };
+
+export const updateSidNavState = (dispatch) => {
+  try {
+  } catch (err) {
+    console.log(err);
+  }
+};

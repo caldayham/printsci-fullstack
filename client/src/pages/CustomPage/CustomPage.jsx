@@ -39,7 +39,7 @@ const CustomPage = () => {
           />
           <ImageLayer
             src={`${
-              process.env.REACT_APP_IMGURL + "display-imgs/cad-planes.png"
+              process.env.REACT_APP_IMGURL + "display-imgs/cad-planes2.png"
             }`}
           />
         </LayeredImgWrapper>

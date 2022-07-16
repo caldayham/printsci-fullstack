@@ -37,11 +37,11 @@ const Research = () => {
                   color: "rgb(100, 100, 100)",
                 }}
               >
-                <b>Authors</b> Susanna R. Var 1,2,3 , Maple Shiao 1,3 ,
-                Venkatramana Krishna 2 , Grant Badger 1,3 , Nicole Emmitt 1,2 ,
-                Callum Day Ham 1,3 , Derek Chen 1,3 , Andrew Crane 1,3 , Maxim
-                Cheeran 2 , Cyndy Sanberg 4 , Paul R. Sanberg 4 , Nicole
-                Kuzmin-Nichols 4 , Andrew W. Grande 1,3 , Walter C. Low 1,3
+                <b>Susanna R. Var 1,2,3</b>, Maple Shiao 1,3 , Venkatramana
+                Krishna 2 , Grant Badger 1,3 , Nicole Emmitt 1,2 , Callum Day
+                Ham 1,3 , Derek Chen 1,3 , Andrew Crane 1,3 , Maxim Cheeran 2 ,
+                Cyndy Sanberg 4 , Paul R. Sanberg 4 , Nicole Kuzmin-Nichols 4 ,
+                Andrew W. Grande 1,3 , Walter C. Low 1,3
               </p>
             </div>
             <div>

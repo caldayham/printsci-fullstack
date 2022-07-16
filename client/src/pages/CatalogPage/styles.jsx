@@ -15,6 +15,7 @@ const CategoriesWrapper = styled.div`
   height: auto;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 
   justify-content: center;
   align-items: top;

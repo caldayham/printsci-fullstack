@@ -4,7 +4,7 @@ const sideNavSlice = createSlice({
   name: "sideNavState",
   initialState: {
     dashboard: true,
-    crudData: false,
+    crud: false,
     analytics: false,
     notifications: false,
     team: false,
@@ -13,8 +13,26 @@ const sideNavSlice = createSlice({
     updateDashboard: (state) => {
       state.dashboard = !state.dashboard;
     },
+    updateCrud: (state) => {
+      state.crud = !state.crud;
+    },
+    updateAnalytics: (state) => {
+      state.analytics = !state.analytics;
+    },
+    updateNotifications: (state) => {
+      state.notifications = !state.notifications;
+    },
+    updateTeam: (state) => {
+      state.team = !state.team;
+    },
   },
 });
 
-export const { changePage } = currentPageSlice.actions;
-export default currentPageSlice.reducer;
+export const {
+  updateDashboard,
+  updateCrud,
+  updateAnalytics,
+  updateNotifications,
+  updateTeam,
+} = sideNavSlice.actions;
+export default sideNavSlice.reducer;

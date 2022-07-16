@@ -74,6 +74,8 @@ const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   height: auto;
+  flex-wrap: wrap;
+  gap: 20px;
 `;
 
 const Filter = styled.div`

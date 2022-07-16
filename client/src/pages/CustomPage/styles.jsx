@@ -13,13 +13,14 @@ const LayeredImgWrapper = styled.div`
 const ImageLayer = styled.img`
   position: absolute;
   height: 100%;
-
+  z-index: 1;
   transition: all 0.1s ease;
 `;
 
 const ImageLayerFocus = styled.img`
   position: absolute;
   height: 100%;
+  z-index: 2;
 
   transition: all 0.2s ease;
 `;
