@@ -34,7 +34,7 @@ export default function FeaturedInfo() {
   return (
     <Container>
       <ComponentContainer>
-        <SubTitle>Revanue</SubTitle>
+        <SubTitle>Revenue</SubTitle>
         <MoneyInfoWrapper>
           <LocalHeader>${income[1].total}</LocalHeader>
           <PercentWrapper perc={perc}>

@@ -39,6 +39,9 @@ const CustomPage = () => {
       <HoverCardWrapper>
         <Wrapper>
           <Subtitle>Have a CAD model?</Subtitle>
+          <p style={{ fontWeight: "100" }}>
+            We specialize in taking models from computer to physical.
+          </p>
           <ShopNowButton style={{ width: "100%" }}>Get it built!</ShopNowButton>
         </Wrapper>
         <LayeredImgWrapper>
@@ -58,6 +61,10 @@ const CustomPage = () => {
       <HoverCardWrapper>
         <Wrapper>
           <Subtitle>Replacement, replication, or repair?</Subtitle>
+          <p style={{ fontWeight: "100" }}>
+            Sometimes you have an old part that needs some love or some friends,
+            click below to talk to a build expert today.
+          </p>
           <ShopNowButton style={{ width: "100%" }}>Ship it in!</ShopNowButton>
         </Wrapper>
         <LayeredImgWrapper>
@@ -79,6 +86,10 @@ const CustomPage = () => {
       <HoverCardWrapper>
         <Wrapper>
           <Subtitle>Ideas or Issue?</Subtitle>
+          <p style={{ fontWeight: "100" }}>
+            At our root we are a company that solves problems through building,
+            if you have an idea or issue we can definitely help get you there!
+          </p>
           <ShopNowButton style={{ width: "100%" }}>
             Talk with a build expert!
           </ShopNowButton>
