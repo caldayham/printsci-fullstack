@@ -54,7 +54,7 @@ const HomePage = () => {
 
   return (
     <MainContainer>
-      <MainTitle>Home</MainTitle>
+      <MainTitle>Home Panel</MainTitle>
       <ContentContainer>
         <FeaturedInfo />
         <Chart
