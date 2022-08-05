@@ -40,7 +40,8 @@ const CustomPage = () => {
         <Wrapper>
           <Subtitle>Have a CAD model?</Subtitle>
           <p style={{ fontWeight: "100" }}>
-            We specialize in taking models from computer to physical.
+            Every manufacturing process at Print Scientific starts with a
+            computer model. If you already have one, all the better!
           </p>
           <ShopNowButton style={{ width: "100%" }}>Get it built!</ShopNowButton>
         </Wrapper>
@@ -62,8 +63,8 @@ const CustomPage = () => {
         <Wrapper>
           <Subtitle>Replacement, replication, or repair?</Subtitle>
           <p style={{ fontWeight: "100" }}>
-            Sometimes you have an old part that needs some love or some friends,
-            click below to talk to a build expert today.
+            Sometimes you have an old part that needs a repair, or you just
+            need, more click below to talk to a build expert today.
           </p>
           <ShopNowButton style={{ width: "100%" }}>Ship it in!</ShopNowButton>
         </Wrapper>

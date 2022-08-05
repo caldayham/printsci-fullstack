@@ -15,7 +15,7 @@ import { useState } from "react";
 import KeyboardDoubleArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftOutlined";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 
-import { sliderItems } from "../../Data/data";
+import { sliderItems } from "../../Data/sliderData";
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -36,7 +36,7 @@ const Slider = () => {
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
-              <Image src={item.img} />
+              <Image src={`${process.env.REACT_APP_IMGURL + item.img}`} />
             </ImgContainer>
             <InfoContainer>
               <Title>
