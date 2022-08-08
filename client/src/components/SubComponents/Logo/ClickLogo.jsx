@@ -1,11 +1,4 @@
-import {
-  Container,
-  Logo,
-  LogoImageBox,
-  LogoImage,
-  LogoTitle,
-  LogoSlogan,
-} from "./styles";
+import { Container, Logo, LogoImageBox, LogoImage, LogoTitle } from "./styles";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -21,12 +14,9 @@ const ClickLogo = () => {
           <LogoImageBox>
             <LogoImage src="/favicon.ico" alt="logo" />
           </LogoImageBox>
-          <div>
-            <LogoTitle>
-              Print <br /> Scientific
-            </LogoTitle>
-            <LogoSlogan>Make it happen.</LogoSlogan>
-          </div>
+          <LogoTitle>
+            Print <br /> Scientific
+          </LogoTitle>
         </Logo>
       </Link>
     </Container>
