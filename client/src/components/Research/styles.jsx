@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AbstractBox = styled.div`
-  height: 100px;
+  height: 200px;
   overflow: scroll;
   overflow-x: hidden;
   font-weight: 100;
