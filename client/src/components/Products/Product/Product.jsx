@@ -11,7 +11,7 @@ const Product = ({ item }) => {
   return (
     <Container>
       <Circle />
-      <Image src={item.imgs[0]} />
+      <Image src={process.env.REACT_APP_IMGURL + item.imgs[0]} />
       <Info>
         <CustomLink
           to={`/product/${item._id}`}
