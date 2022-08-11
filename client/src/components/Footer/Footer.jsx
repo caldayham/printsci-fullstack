@@ -143,7 +143,7 @@ const Footer = () => {
         <Title>Contact</Title>
         <ContactItem>
           <PinDropIcon style={{ marginRight: "20px" }} />
-          1101 University Ave SE, Minneapolis, MN, suite 106
+          Palo Alto CA, 94303
         </ContactItem>
         <ContactItem>
           <PermPhoneMsgIcon style={{ marginRight: "20px" }} />

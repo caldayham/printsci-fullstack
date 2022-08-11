@@ -15,9 +15,10 @@ const cartSlice = createSlice({
         },
         updateProduct: (state, action) => { },
         deleteProduct: (state, action) => {
-            state.quantity -= action.payload.quantity;
-            state.products.splice(action.payload);
-            state.total -= Number(Number(action.payload.totalPrice).toFixed(2));
+            console.log(action.payload.newQuantity);
+            state.products.splice(action.payload.productIndex, 1);
+            state.quantity = Number(action.payload.newQuantity);
+            state.total = Number(action.payload.newTotalPrice);
         },
     },
 });

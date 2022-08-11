@@ -12,7 +12,7 @@ import {
   ImageDeck,
   DeckImage,
   OptionsWrapper,
-  BulletDesc,
+  Features,
   Specs,
   InfoSection,
   InfoSectionTitle,
@@ -59,10 +59,6 @@ const ProductPage = () => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
-        console.log("--------------------------------");
-        console.log("next is the fetched product");
-        console.log(res.data);
-        console.log("--------------------------------");
 
         setProduct(res.data);
         setRendering(false);
@@ -138,7 +134,7 @@ const ProductPage = () => {
                   <DeckImage
                     key={index}
                     onClick={() => changeImage(index)}
-                    src={img}
+                    src={process.env.REACT_APP_IMGURL + img}
                     selectedImg={selectedImg}
                     thisImg={index}
                   />
@@ -146,7 +142,7 @@ const ProductPage = () => {
               </ImageDeck>
               <div style={{ width: "100%", margin: "0px" }}>
                 <SelectedImage
-                  src={product.imgs[selectedImg]}
+                  src={process.env.REACT_APP_IMGURL + product.imgs[selectedImg]}
                   alt="product image"
                 />
               </div>
@@ -228,9 +224,9 @@ const ProductPage = () => {
               </OptionsWrapper>
               <div style={{ height: "50px" }} />
             </InfoSection>
-            <BulletDesc>
+            <Features>
               <InfoSectionTitle paddingTop={"5px"} paddingBottom={"5px"}>
-                Description
+                Features
               </InfoSectionTitle>
               {product.bulletDesc.map((desc, i) => (
                 <Paragraph key={i}>
@@ -239,7 +235,7 @@ const ProductPage = () => {
                 </Paragraph>
               ))}
               <div style={{ height: "50px" }} />
-            </BulletDesc>
+            </Features>
             <Specs>
               <InfoSectionTitle paddingTop={"5px"} paddingBottom={"5px"}>
                 Product Specs

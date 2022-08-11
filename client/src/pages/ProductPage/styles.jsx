@@ -139,14 +139,14 @@ const OptionsWrapper = styled.div`
   width: 100%;
 `;
 
-const BulletDesc = styled.div``;
+const Features = styled.div``;
 
 const Specs = styled.div``;
 
 export {
   ImgWrapper,
   InfoSectionTitle,
-  BulletDesc,
+  Features,
   Specs,
   OptionsWrapper,
   ImgContainer,

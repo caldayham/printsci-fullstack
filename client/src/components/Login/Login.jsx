@@ -45,7 +45,9 @@ const Login = () => {
         <Button onClick={handleClick} disabled={isFetching}>
           Login
         </Button>
-        {error && <Error>Someone made a fucky-wucky...</Error>}
+        {error && (
+          <Error>There was an error, contact support for help...</Error>
+        )}
       </ActionWrapper>
     </Wrapper>
   );

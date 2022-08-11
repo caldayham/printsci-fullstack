@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import ProductAmount from "../../components/SubComponents/ProductAmount/ProductAmount";
 
@@ -42,6 +42,7 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import StripeCheckout from "react-stripe-checkout";
 import { userRequest } from "../../tools/requestMethods";
 import { useNavigate } from "react-router-dom";
+import { deleteProduct } from "../../redux/cartRedux";
 
 const KEY = process.env.REACT_APP_STRIPE_PRINTSCI_TEST_PUB;
 
@@ -66,7 +67,7 @@ const CartPage = () => {
         console.log(res);
         history("/checkout/success", { state: { data: res.data } });
       } catch (err) {
-        console.log("A FUCKING ERROR WAS ENCOUNTERED! LOL");
+        console.log("A ERROR WAS ENCOUNTERED! LOL");
         return err;
       }
     };
@@ -100,6 +101,32 @@ const CartPage = () => {
     return packagePrice;
   }
 
+  const dispatch = useDispatch();
+  const removeCartItem = (productIndex) => {
+    console.log("remove cart item clicked! ID: " + productIndex);
+
+    // show a popup asking if the user meant to delete the item
+
+    // calculate the new cart totalPrice
+    var newTotalPrice = 0;
+    var newQuantity = 0;
+    cart.products.map((item, i) => {
+      if (i === productIndex) {
+        return null;
+      } else {
+        newTotalPrice += item.totalPrice;
+        newQuantity += item.quantity;
+      }
+      return null;
+    });
+
+    console.log(newTotalPrice);
+    console.log(newQuantity);
+
+    // pass the of the index of the cart item in the cart products array to the deleteProduct slice. The ID isn't good enough becuase there could be multiple items with the ID but with different options.
+    dispatch(deleteProduct({ productIndex, newQuantity, newTotalPrice }));
+  };
+
   return (
     <MainContainer>
       {/*here is the left side content for the cart content*/}
@@ -132,13 +159,11 @@ const CartPage = () => {
                     <SaveAltOutlinedIcon />
                   </CustomLink>
                 </Icon>
-                <Icon>
-                  <CustomLink to={`/home`}>
-                    <DeleteOutlinedIcon />
-                  </CustomLink>
+                <Icon onClick={() => removeCartItem(i)}>
+                  <DeleteOutlinedIcon />
                 </Icon>
               </EditOptions>
-              <Image src={product.imgs[0]} />
+              <Image src={process.env.REACT_APP_IMGURL + product.imgs[0]} />
               <ProductDetail>
                 <Details>
                   <div>

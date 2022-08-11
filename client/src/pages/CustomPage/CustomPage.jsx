@@ -99,7 +99,7 @@ const CustomPage = () => {
             if you have an idea or issue we can definitely help get you there!
           </p>
           <ShopNowButton style={{ width: "100%" }}>
-            Talk with a build expert!
+            Talk with an expert!
           </ShopNowButton>
         </Wrapper>
         <LayeredImgWrapper>

@@ -1,10 +1,14 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:5000/api/"
-var TOKEN = ""
-localStorage.getItem("persist:root") != null ?
-    TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.accessToken
-    : TOKEN = ""
+var TOKEN = "";
+
+try {
+    TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
+          .currentUser.accessToken
+} catch {
+    TOKEN = null;
+}
         
 console.log(TOKEN);
 

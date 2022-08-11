@@ -42,7 +42,7 @@ const ServiceTermsPage = () => {
       <Subtitle>APPLICABLE LAW</Subtitle>
       <Subtitle>SITE POLICIES</Subtitle>
       <Subtitle>OUR ADRESS</Subtitle>
-      <p>1101 University Ave SE, Minneapolis MN, 55414</p>
+      <p>Palo Alto CA, 94303</p>
       <Subtitle>SOFTWARE TERMS</Subtitle>
       <Subtitle>HOW TO SERVE A SUBPOENA OR OTHER LEGAL PROCESS</Subtitle>
       <Subtitle>

@@ -43,7 +43,12 @@ const ProductOptions = ({ product, changeProduct }) => {
                   }
                 >
                   {selectedOption.selectionContentType === "img" && (
-                    <OptionImg src={selectedOption.selectionContent} />
+                    <OptionImg
+                      src={
+                        process.env.REACT_APP_IMGURL +
+                        selectedOption.selectionContent
+                      }
+                    />
                   )}
                   {selectedOption.selectionContentType === "text" && (
                     <OptionText>{selectedOption.selectionContent}</OptionText>
