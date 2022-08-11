@@ -17,7 +17,7 @@ import {
 } from "../../tools/globalStyles.jsx";
 import Icon from "react-icons-kit";
 
-import { members } from "../../Data/data";
+import { members } from "../../Data/memberData";
 
 const Members = () => {
   return (
@@ -73,7 +73,7 @@ const Members = () => {
               ))}
             </SocialContainer>
           </MemberText>
-          <MemberImage src={item.img} />
+          <MemberImage src={process.env.REACT_APP_IMGURL + item.img} />
         </HoverCardWrapper>
       ))}
     </Container>

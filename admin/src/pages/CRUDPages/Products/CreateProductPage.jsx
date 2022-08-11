@@ -6,6 +6,7 @@ import {
   MainTitle,
   SubTitle,
 } from "../../../tools/globalStyles";
+import { InputDiv } from "./styles";
 
 const CreateProductPage = () => {
   return (
@@ -23,20 +24,60 @@ const CreateProductPage = () => {
           <form
             style={{ display: "flex", flexDirection: "column", gap: "20px" }}
           >
-            <div>
+            <InputDiv>
               <label>Part title: </label>
               <input type="text" placeholder="part title" />
-            </div>
+            </InputDiv>
 
-            <div>
+            <InputDiv>
               <label>Part id: </label>
               <input type="text" placeholder="part id" />
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <label>Summary description: </label>
+            </InputDiv>
+            <InputDiv>
+              <label>Rating:</label>
+              <input type="number" placeholder="Average Rating" />
+              <input type="number" placeholder="Number of Ratings" />
+              <input type="number" placeholder="Answered Questions" />
+            </InputDiv>
+            <InputDiv>
+              <label>Description: </label>
               <input type="text" placeholder="summary description" />
-            </div>
+            </InputDiv>
+            <InputDiv>
+              <label>Images: </label>
+              <input type="file" id="file" />
+            </InputDiv>
+            <InputDiv>
+              <label>Categories: </label>
+              <input
+                type="text"
+                placeholder="Categories, put spaces between entries."
+              />
+            </InputDiv>
+            <InputDiv>
+              <label>Family: </label>
+              <input type="text" placeholder="product family" />
+            </InputDiv>
+            <InputDiv>
+              <label>Options: </label>
+              <input type="text" placeholder="Option" />
+            </InputDiv>
+            <InputDiv>
+              <label>Base Price: </label>
+              <input type="text" placeholder="base price" />
+            </InputDiv>
+            <InputDiv>
+              <label>Features: </label>
+              <input type="text" placeholder="product features" />
+            </InputDiv>
+            <InputDiv>
+              <label>Specifications: </label>
+              <input type="text" placeholder="product specifications" />
+            </InputDiv>
+            <InputDiv>
+              <label>In Stock: </label>
+              <input type="text" placeholder="true / false" />
+            </InputDiv>
           </form>
           <div
             style={{

@@ -30,10 +30,18 @@ const CustomPage = () => {
       <Title>Custom Parts</Title>
       <Subtitle>
         <i style={{ fontSize: "20px" }}>
-          'Print Scientific has provided the best custom part delivery. They
-          understand why we need the [custom part] in the first place.'
+          'Print Scientific began as a custom part delivery service for research
+          labs. We have seen the environment, we have seen the use cases, we
+          know the process.'
         </i>{" "}
-        <br /> <b style={{ fontSize: "22px" }}>- Dr. Agarwal</b>
+        <br />{" "}
+        <b style={{ fontSize: "22px" }}>
+          - Cal Day Ham
+          <br />
+        </b>
+        <div style={{ fontWeight: "100", fontSize: "16px", marginTop: "0px" }}>
+          Founder, Print Scientific
+        </div>
       </Subtitle>
       <HoverCardWrapper>
         <Wrapper>

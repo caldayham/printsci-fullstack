@@ -28,7 +28,7 @@ const ProductSchema = new mongoose.Schema(
         }
     ],
         basePrice: { type: Number, required: true },                     // price of the product
-        bulletDesc: { type: Array },                                // this is where bullet point items will be saved
+        features: { type: Array },                                // this is where bullet point items will be saved
         specs: {type: Array},                                       // this is where specs will be saved
         inStock:{type: Boolean, default: true},                      // whether the product is in stock
     },

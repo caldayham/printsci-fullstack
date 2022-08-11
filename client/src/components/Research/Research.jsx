@@ -10,8 +10,6 @@ import { researchData } from "../../Data/researchData";
 import { CustomLink, ShopNowButton, Subtitle } from "../../tools/globalStyles";
 
 const Research = () => {
-  researchData.pop();
-
   return (
     <div>
       {researchData.map((paper) => (
