@@ -4,8 +4,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import AccountPage from "./pages/AccountPage/AccountPage";
 
 import PrivateRoute from "./components/PrivateRoute";
-import SideNav from "./components/sideNav/SideNav";
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
+import SideNav from "./components/SideNav/SideNav";
 
 import UsersPage from "./pages/CRUDPages/UsersPage";
 import ProductsPage from "./pages/CRUDPages/Products/ProductsPage";
